@@ -27,17 +27,26 @@ public class PlayerMovement : MonoBehaviour
         animator.SetFloat("MoveY", -1);
     }
 
+    public void Update(){
+
+      if(Input.GetButtonDown("attack") && currentState != PlayerState.attack){
+         Debug.Log ("attack");
+          StartCoroutine(AttackCo());
+        }
+
+    }
+
     // Update is called once per frame
     void FixedUpdate() // can be changed to Update()
     {
         change = Vector3.zero; 
         change.x = Input.GetAxisRaw("Horizontal"); 
         change.y = Input.GetAxisRaw("Vertical");
-        if(Input.GetButtonDown("attack") && currentState != PlayerState.attack){
+        /*if(Input.GetButtonDown("attack") && currentState != PlayerState.attack){
           StartCoroutine(AttackCo());
-        }
+        }*/
 
-        else if(currentState == PlayerState.walk){
+     if(currentState == PlayerState.walk){
           UpdateAnimationAndMove();
         }
     }
