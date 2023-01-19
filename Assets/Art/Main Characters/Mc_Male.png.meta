@@ -70,7 +70,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -3916,9 +3916,9 @@ TextureImporter:
       Mc_Male_11: 1084320468
       Mc_Male_15: 993530011
       Mc_Male_106: 233713769
-      Mc_Male_20: 32281076
-      Mc_Male_156: -913715300
       Mc_Male_175: 1474574842
+      Mc_Male_156: -913715300
+      Mc_Male_20: 32281076
       Mc_Male_161: -189111277
       Mc_Male_78: 379912057
       Mc_Male_101: -388931881
@@ -3961,8 +3961,8 @@ TextureImporter:
       Mc_Male_176: 1652911324
       Mc_Male_100: 416697825
       Mc_Male_58: 1402446199
-      Mc_Male_87: 1655869698
       Mc_Male_160: -528802600
+      Mc_Male_87: 1655869698
       Mc_Male_80: 565237452
       Mc_Male_142: -1194392853
       Mc_Male_172: 709510623
@@ -4002,8 +4002,8 @@ TextureImporter:
       Mc_Male_178: -1464208601
       Mc_Male_56: 895749558
       Mc_Male_12: 1036357243
-      Mc_Male_54: -1197075262
       Mc_Male_124: 2103522025
+      Mc_Male_54: -1197075262
       Mc_Male_76: 1126869058
       Mc_Male_95: -12358524
       Mc_Male_22: -1093806086
