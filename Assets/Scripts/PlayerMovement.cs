@@ -30,7 +30,7 @@ public class PlayerMovement : MonoBehaviour
     public void Update(){
 
       if(Input.GetButtonDown("attack") && currentState != PlayerState.attack){
-         Debug.Log ("attack");
+        // Debug.Log ("attack");
           StartCoroutine(AttackCo());
         }
 
@@ -58,7 +58,7 @@ public class PlayerMovement : MonoBehaviour
         currentState = PlayerState.attack;
         yield return null; 
         animator.SetBool("Attacking", false);
-        yield return new WaitForSeconds(.1f);
+        yield return new WaitForSeconds(.3f);
         currentState = PlayerState.walk; 
     }
 
