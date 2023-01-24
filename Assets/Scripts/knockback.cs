@@ -10,7 +10,7 @@ public class knockback : MonoBehaviour
 
 private void OnTriggerEnter2D (Collider2D other){
 
- if(other.gameObject.CompareTag("breakable")){
+ if(other.gameObject.CompareTag("breakable") && this.gameObject.CompareTag("Player")){
 
             other.GetComponent<pot>().Smash();
         }
