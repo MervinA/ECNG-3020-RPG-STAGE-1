@@ -17,7 +17,8 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D myRigidbody; 
     private Vector3 change; 
     private Animator animator; 
-
+    public FloatValue currentHealth; 
+    public SignalSender PlayerHealthSignal; 
     // Start is called before the first frame update
     void Start()
     {
@@ -81,14 +82,21 @@ public class PlayerMovement : MonoBehaviour
             );
     }
 
-    public void Knock(float knockTime){
-        StartCoroutine(KnockCo(knockTime));
+    public void Knock(float knockTime, float damage)
+    {
+        currentHealth.initialValue -= damage;
+        if(currentHealth.initialValue> 0 )
+        {
+            PlayerHealthSignal.Raise();
+             StartCoroutine(KnockCo(knockTime));
+        }
+        
     }
 
     
     private IEnumerator KnockCo( float knockTime){
 
-    if(myRigidbody != null ){
+    if(myRigidbody != null){
         yield return new WaitForSeconds(knockTime);
         myRigidbody.velocity = Vector2.zero; 
         currentState = PlayerState.idle;
