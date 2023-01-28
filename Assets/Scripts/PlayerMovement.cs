@@ -19,6 +19,7 @@ public class PlayerMovement : MonoBehaviour
     private Animator animator; 
     public FloatValue currentHealth; 
     public SignalSender PlayerHealthSignal; 
+    public VectorValue startingPosition; 
     // Start is called before the first frame update
     void Start()
     {
@@ -27,6 +28,8 @@ public class PlayerMovement : MonoBehaviour
         myRigidbody = GetComponent<Rigidbody2D>(); 
         animator.SetFloat("MoveX", 0);
         animator.SetFloat("MoveY", -1);
+
+        transform.position = startingPosition.initialValue; 
     }
 
     public void Update(){
