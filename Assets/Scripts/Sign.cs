@@ -5,7 +5,8 @@ using UnityEngine.UI;
 
 public class Sign : MonoBehaviour
 {
-
+    public SignalSender contextOn;
+    public SignalSender contextOff; 
     public GameObject dialogBox; 
     public Text dialogText; 
     public string dialog; 
@@ -45,6 +46,7 @@ if(playerInRange){
   private  void OnTriggerEnter2D (Collider2D other){
 
         if(other.CompareTag("Player")){
+            contextOn.Raise();
             playerInRange = true; 
         }
     }
@@ -52,6 +54,7 @@ if(playerInRange){
     private void OnTriggerExit2D(Collider2D  other){
 
         if (other.CompareTag("Player")){
+            contextOff.Raise();
             playerInRange = false; 
             dialogBox.SetActive(false);
         }
