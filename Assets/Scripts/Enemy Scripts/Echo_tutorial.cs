@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Echo_tutorial : Enemy
 {
-    private Rigidbody2D myRigidbody; 
+    public Rigidbody2D myRigidbody; 
     public Transform target; 
     public float chaseRadius; 
     public float attackRadius; 
@@ -14,9 +14,10 @@ public class Echo_tutorial : Enemy
     void Start()
     {
         currentState = EnemyState.idle; 
-        myRigidbody = GetComponent<Rigidbody2D>(); 
         anim = GetComponent<Animator>(); 
+        myRigidbody = GetComponent<Rigidbody2D>(); 
         target = GameObject.FindWithTag("Player").transform; 
+        anim.SetBool("moving", true);
         
     }
 
@@ -26,7 +27,7 @@ public class Echo_tutorial : Enemy
         CheckDistance();
     }
 
-    void CheckDistance(){
+    public virtual void CheckDistance(){
 
         if (Vector3.Distance(target.position,
                              transform.position)<=chaseRadius
@@ -42,9 +43,9 @@ public class Echo_tutorial : Enemy
             myRigidbody.MovePosition(temp);
           
             ChangeState(EnemyState.walk);
-        anim.SetBool("moving", true);
+            anim.SetBool("moving", true);
                 }
-       }else{
+       }else if (Vector3.Distance(target.position, transform.position) > chaseRadius){
             anim.SetBool("moving",false);
        }
 
@@ -54,7 +55,8 @@ public class Echo_tutorial : Enemy
         anim.SetFloat("moveX", setVector.x);
         anim.SetFloat("moveY", setVector.y);
     }
-    private void changeAnim(Vector2 direction){
+
+    public void changeAnim(Vector2 direction){
         if(Mathf.Abs(direction.x)>Mathf.Abs(direction.y)){
             if(direction.x>0){
                 SetAnimFloat(Vector2.right);
