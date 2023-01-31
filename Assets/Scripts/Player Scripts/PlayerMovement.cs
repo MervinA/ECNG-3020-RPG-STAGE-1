@@ -34,7 +34,7 @@ public class PlayerMovement : MonoBehaviour
         myRigidbody = GetComponent<Rigidbody2D>(); 
         animator.SetFloat("MoveX", 0);
         animator.SetFloat("MoveY", -1);
-
+        Application.targetFrameRate = 60;
         transform.position = startingPosition.initialValue; 
     }
 
@@ -49,7 +49,7 @@ public class PlayerMovement : MonoBehaviour
     } */
 
     // Update is called once per frame
-    void FixedUpdate() // can be changed to Update()
+    void Update() // can be changed to Update()
     {
         //is the player in an interaction
         if(currentState == PlayerState.interact)
