@@ -24,7 +24,7 @@ public class Patrol_Echo_turotial : Echo_tutorial
                              && Vector3.Distance(target.position, 
                                                     transform.position)>attackRadius)
        {
-                if(currentState == EnemyState.idle || currentState == EnemyState.walk 
+                if((currentState == EnemyState.idle || currentState == EnemyState.walk)
                    && currentState != EnemyState.stagger)
                    {
 

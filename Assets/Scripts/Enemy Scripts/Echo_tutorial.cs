@@ -34,7 +34,7 @@ public class Echo_tutorial : Enemy
                              && Vector3.Distance(target.position, 
                                                     transform.position)>attackRadius)
        {
-                if(currentState == EnemyState.idle || currentState == EnemyState.walk 
+                if((currentState == EnemyState.idle || currentState == EnemyState.walk) 
                    && currentState != EnemyState.stagger){
 
             //if (currentState != EnemyState.stagger){

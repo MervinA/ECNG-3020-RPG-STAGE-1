@@ -24,17 +24,17 @@ public class Enemy : MonoBehaviour
         health = maxHealth.initialValue; 
     }
 
-private void TakeDamage(float damage){
-
-    health -= damage; 
-    if (health <= 0){
-        this.gameObject.SetActive(false);
-    }
-}
 
 public void Knock(Rigidbody2D myRigidbody, float knockTime, float damage){
+    health -= damage; 
+    if(health > 0)
+    {
     StartCoroutine(KnockCo(myRigidbody, knockTime));
-    TakeDamage(damage);
+    }else
+    {
+        this.gameObject.SetActive(false);
+    }
+    //TakeDamage(damage);
 }
     // Start is called before the first frame update
 private IEnumerator KnockCo(Rigidbody2D myRigidbody, float knocktime){
