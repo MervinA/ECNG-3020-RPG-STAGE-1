@@ -45,7 +45,8 @@ public class Echo_tutorial : Enemy
             ChangeState(EnemyState.walk);
             anim.SetBool("moving", true);
                 }
-       }else if (Vector3.Distance(target.position, transform.position) > chaseRadius){
+       }else if ((Vector3.Distance(target.position, transform.position) > chaseRadius) ||
+        (Vector3.Distance(target.position, transform.position) < attackRadius)){
             anim.SetBool("moving",false);
        }
 

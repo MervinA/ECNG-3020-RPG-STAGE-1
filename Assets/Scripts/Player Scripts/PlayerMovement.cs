@@ -20,6 +20,7 @@ public class PlayerMovement : MonoBehaviour
     public FloatValue currentHealth; 
     public SignalSender PlayerHealthSignal; 
     public VectorValue startingPosition; 
+    //public VectorValue startingPosition_bed; 
     public Inventory playerInventory;
     public SpriteRenderer receivedItemSprite; 
 
@@ -36,6 +37,7 @@ public class PlayerMovement : MonoBehaviour
         animator.SetFloat("MoveY", -1);
         Application.targetFrameRate = 60;
         transform.position = startingPosition.initialValue; 
+       // transform.position = startingPosition_bed.initialValue; 
     }
 
    /* public void Update(){

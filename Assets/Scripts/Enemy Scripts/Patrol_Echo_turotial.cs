@@ -27,16 +27,15 @@ public class Patrol_Echo_turotial : Echo_tutorial
                 if((currentState == EnemyState.idle || currentState == EnemyState.walk)
                    && currentState != EnemyState.stagger)
                    {
-
-            //if (currentState != EnemyState.stagger){
             Vector3 temp = Vector3.MoveTowards(transform.position, target.position, moveSpeed*Time.deltaTime);
             changeAnim(temp-transform.position);
             myRigidbody.MovePosition(temp);
           
            // ChangeState(EnemyState.walk);
             anim.SetBool("moving", true);
-                }
-       }else if (Vector3.Distance(target.position, transform.position) > chaseRadius)
+                     }
+       }
+       else if (Vector3.Distance(target.position, transform.position) > chaseRadius)
        {
             if(Vector3.Distance(transform.position, path[currentPoint].position)>roundingDistance)
             {
@@ -47,6 +46,9 @@ public class Patrol_Echo_turotial : Echo_tutorial
             }else{
                 ChangeGoal(); 
             }
+       }
+        else if(Vector3.Distance(target.position, transform.position) < attackRadius){ //can remove second check if needed to move enemy even after entering attack radius 
+            anim.SetBool("moving",false);
        }
 
     }
