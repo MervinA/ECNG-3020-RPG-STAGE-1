@@ -50,6 +50,45 @@ SpriteAtlas:
     cachedData: {fileID: 0}
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
+  - {fileID: -328630240, guid: 73041e717b168eb4380b0c428c779ff5, type: 3}
+  - {fileID: -1749390389, guid: 73041e717b168eb4380b0c428c779ff5, type: 3}
+  - {fileID: -1575308426, guid: 73041e717b168eb4380b0c428c779ff5, type: 3}
+  - {fileID: 133887586, guid: 73041e717b168eb4380b0c428c779ff5, type: 3}
+  - {fileID: -239888756, guid: 73041e717b168eb4380b0c428c779ff5, type: 3}
+  - {fileID: 2140416745, guid: 73041e717b168eb4380b0c428c779ff5, type: 3}
+  - {fileID: -1446438538, guid: 73041e717b168eb4380b0c428c779ff5, type: 3}
+  - {fileID: -1843736878, guid: 73041e717b168eb4380b0c428c779ff5, type: 3}
+  - {fileID: -179351091, guid: 73041e717b168eb4380b0c428c779ff5, type: 3}
+  - {fileID: -859357667, guid: 73041e717b168eb4380b0c428c779ff5, type: 3}
+  - {fileID: -712890893, guid: 73041e717b168eb4380b0c428c779ff5, type: 3}
+  - {fileID: -938895896, guid: 73041e717b168eb4380b0c428c779ff5, type: 3}
+  - {fileID: 1744998169, guid: 73041e717b168eb4380b0c428c779ff5, type: 3}
+  - {fileID: 265454584, guid: 73041e717b168eb4380b0c428c779ff5, type: 3}
+  - {fileID: -1438316105, guid: 73041e717b168eb4380b0c428c779ff5, type: 3}
+  - {fileID: 778993108, guid: 73041e717b168eb4380b0c428c779ff5, type: 3}
+  - {fileID: -1979392381, guid: 73041e717b168eb4380b0c428c779ff5, type: 3}
+  - {fileID: -2073235881, guid: 73041e717b168eb4380b0c428c779ff5, type: 3}
+  - {fileID: 964756628, guid: 73041e717b168eb4380b0c428c779ff5, type: 3}
+  - {fileID: 1760670961, guid: 73041e717b168eb4380b0c428c779ff5, type: 3}
+  - {fileID: -1612571617, guid: 73041e717b168eb4380b0c428c779ff5, type: 3}
+  - {fileID: 625402534, guid: 73041e717b168eb4380b0c428c779ff5, type: 3}
+  - {fileID: -95952614, guid: 73041e717b168eb4380b0c428c779ff5, type: 3}
+  - {fileID: -585914864, guid: 73041e717b168eb4380b0c428c779ff5, type: 3}
+  - {fileID: -110118433, guid: 73041e717b168eb4380b0c428c779ff5, type: 3}
+  - {fileID: -713248158, guid: 73041e717b168eb4380b0c428c779ff5, type: 3}
+  - {fileID: -1677027678, guid: 73041e717b168eb4380b0c428c779ff5, type: 3}
+  - {fileID: -454127617, guid: 73041e717b168eb4380b0c428c779ff5, type: 3}
+  - {fileID: 1314606125, guid: 73041e717b168eb4380b0c428c779ff5, type: 3}
+  - {fileID: 553386414, guid: 73041e717b168eb4380b0c428c779ff5, type: 3}
+  - {fileID: -1963459363, guid: 73041e717b168eb4380b0c428c779ff5, type: 3}
+  - {fileID: -1856127986, guid: 73041e717b168eb4380b0c428c779ff5, type: 3}
+  - {fileID: -2072802175, guid: 73041e717b168eb4380b0c428c779ff5, type: 3}
+  - {fileID: 191132810, guid: 73041e717b168eb4380b0c428c779ff5, type: 3}
+  - {fileID: 289474180, guid: 73041e717b168eb4380b0c428c779ff5, type: 3}
+  - {fileID: 437351644, guid: 73041e717b168eb4380b0c428c779ff5, type: 3}
+  - {fileID: -978811568, guid: 73041e717b168eb4380b0c428c779ff5, type: 3}
+  - {fileID: -340263635, guid: 73041e717b168eb4380b0c428c779ff5, type: 3}
+  - {fileID: -1152843549, guid: 73041e717b168eb4380b0c428c779ff5, type: 3}
   - {fileID: 21300000, guid: fe365c445413d3f4994d92c5af89c4a8, type: 3}
   - {fileID: 21300000, guid: 90cd8017d953a614ea22cc00a4daefa2, type: 3}
   - {fileID: 21300000, guid: 20f1093779135014288ae505b59abad5, type: 3}
@@ -1255,6 +1294,45 @@ SpriteAtlas:
   - {fileID: 1994370148, guid: fc3abb3c5f4ddc343ba95e5909f6b41f, type: 3}
   - {fileID: 21300000, guid: d201ac6c897499f44812277221fd280a, type: 3}
   m_PackedSpriteNamesToIndex:
+  - dungeonworld_8
+  - dungeonworld_9
+  - dungeonworld_4
+  - dungeonworld_5
+  - dungeonworld_6
+  - dungeonworld_7
+  - dungeonworld_0
+  - dungeonworld_1
+  - dungeonworld_2
+  - dungeonworld_3
+  - dungeonworld_17
+  - dungeonworld_16
+  - dungeonworld_15
+  - dungeonworld_14
+  - dungeonworld_13
+  - dungeonworld_12
+  - dungeonworld_28
+  - dungeonworld_11
+  - dungeonworld_29
+  - dungeonworld_10
+  - dungeonworld_22
+  - dungeonworld_38
+  - dungeonworld_23
+  - dungeonworld_20
+  - dungeonworld_19
+  - dungeonworld_21
+  - dungeonworld_35
+  - dungeonworld_18
+  - dungeonworld_26
+  - dungeonworld_34
+  - dungeonworld_27
+  - dungeonworld_37
+  - dungeonworld_24
+  - dungeonworld_36
+  - dungeonworld_25
+  - dungeonworld_31
+  - dungeonworld_30
+  - dungeonworld_33
+  - dungeonworld_32
   - cave
   - log
   - character

@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-public class Bed : Interactable
+public class Object_scene_shift : Interactable
 {
-    public string sceneToLoad_bed; 
-    public Vector2 playerPosition_bed; 
-    public VectorValue playerStorage_bed; 
+    public string sceneToLoad; 
+    public Vector2 playerPosition; 
+    public VectorValue playerStorage; 
     public GameObject fadeInPanel;
     public GameObject fadeoutPanel; 
     public float fade_wait; 
@@ -25,7 +25,7 @@ public class Bed : Interactable
     void Update()
     {
         if(Input.GetKeyDown(KeyCode.Space)&& playerInRange){
-            playerStorage_bed.initialValue = playerPosition_bed; 
+            playerStorage.initialValue = playerPosition; 
             StartCoroutine(FadeCo());
         } 
     }
@@ -62,7 +62,7 @@ public class Bed : Interactable
         Instantiate(fadeoutPanel, Vector3.zero, Quaternion.identity); 
         }
         yield return new WaitForSeconds(fade_wait);
-        AsyncOperation asyncOperation = SceneManager.LoadSceneAsync(sceneToLoad_bed);
+        AsyncOperation asyncOperation = SceneManager.LoadSceneAsync(sceneToLoad);
         while(!asyncOperation.isDone)
         {
             yield return null; 
