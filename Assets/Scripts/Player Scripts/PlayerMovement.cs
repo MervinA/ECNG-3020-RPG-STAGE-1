@@ -19,12 +19,11 @@ public class PlayerMovement : MonoBehaviour
     private Animator animator; 
     public FloatValue currentHealth; 
     public SignalSender PlayerHealthSignal; 
-    public VectorValue startingPosition; 
+    //public VectorValue startingPosition; 
     //public VectorValue startingPosition_bed; 
     public Inventory playerInventory;
     public SpriteRenderer receivedItemSprite; 
-
-
+    public static string spawnPointName; 
 
 
     // Start is called before the first frame update
@@ -36,19 +35,9 @@ public class PlayerMovement : MonoBehaviour
         animator.SetFloat("MoveX", 0);
         animator.SetFloat("MoveY", -1);
         Application.targetFrameRate = 60;
-        transform.position = startingPosition.initialValue; 
+     //   transform.position = startingPosition.initialValue; 
        // transform.position = startingPosition_bed.initialValue; 
     }
-
-   /* public void Update(){
-
-
-      if(Input.GetButtonDown("attack") && currentState != PlayerState.attack){
-        // Debug.Log ("attack");
-          StartCoroutine(AttackCo());
-        }
-
-    } */
 
     // Update is called once per frame
     void Update() // can be changed to Update()

@@ -123,6 +123,82 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &86290810
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 86290811}
+  m_Layer: 0
+  m_Name: 'Comp Point '
+  m_TagString: Untagged
+  m_Icon: {fileID: 7148428337604731935, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &86290811
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 86290810}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 10.5, y: 32, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1146473806}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &116180432
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 116180433}
+  - component: {fileID: 116180434}
+  m_Layer: 0
+  m_Name: 'Home Point '
+  m_TagString: Untagged
+  m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &116180433
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 116180432}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 25, y: 39.7, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1146473806}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &116180434
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 116180432}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e6d88ce7f9aa6f4980f071f1c3e17d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnName: Dungeon Hub spawn
 --- !u!1 &155363609
 GameObject:
   m_ObjectHideFlags: 0
@@ -138,7 +214,7 @@ GameObject:
   - component: {fileID: 155363614}
   m_Layer: 0
   m_Name: Reality Door
-  m_TagString: Untagged
+  m_TagString: Home
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -277,14 +353,13 @@ MonoBehaviour:
   context: {fileID: 11400000, guid: 87dcfc7209208e440af83fccb17d0962, type: 2}
   playerInRange: 0
   sceneToLoad: Home
-  playerPosition: {x: 23.3, y: 43.5}
-  playerStorage: {fileID: 11400000, guid: e59760bb4ccc93045be918e882f8f5f3, type: 2}
   fadeInPanel: {fileID: 7770201179040915610, guid: 1ac0344d478082b4e97be900755a92a9, type: 3}
   fadeoutPanel: {fileID: 5445169717137078238, guid: 392230d584003d84e8ac1c63a5b0ff5d, type: 3}
   fade_wait: 1
   dialogText: {fileID: 1808838854}
   dialogBox: {fileID: 1791422606}
   dialog: 'Do you want to wake up? '
+  exitspawnName: Home Bed
 --- !u!1001 &173877524
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2896,6 +2971,37 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!1 &922134433
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 922134434}
+  m_Layer: 0
+  m_Name: Home Point  (4)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &922134434
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 922134433}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1146473806}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1094963698
 GameObject:
   m_ObjectHideFlags: 0
@@ -28153,6 +28259,73 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1146473805
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1146473806}
+  m_Layer: 0
+  m_Name: Spawn Points
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1146473806
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1146473805}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 116180433}
+  - {fileID: 86290811}
+  - {fileID: 1869690493}
+  - {fileID: 1146662021}
+  - {fileID: 922134434}
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1146662020
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1146662021}
+  m_Layer: 0
+  m_Name: Home Point  (3)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1146662021
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1146662020}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1146473806}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1444494593
 GameObject:
   m_ObjectHideFlags: 0
@@ -28307,14 +28480,13 @@ MonoBehaviour:
   context: {fileID: 0}
   playerInRange: 0
   sceneToLoad: 
-  playerPosition: {x: 0, y: 0}
-  playerStorage: {fileID: 0}
   fadeInPanel: {fileID: 0}
   fadeoutPanel: {fileID: 0}
   fade_wait: 0
   dialogText: {fileID: 0}
   dialogBox: {fileID: 0}
   dialog: 
+  exitspawnName: 
 --- !u!1 &1676145251
 GameObject:
   m_ObjectHideFlags: 0
@@ -28469,14 +28641,13 @@ MonoBehaviour:
   context: {fileID: 0}
   playerInRange: 0
   sceneToLoad: 
-  playerPosition: {x: 0, y: 0}
-  playerStorage: {fileID: 0}
   fadeInPanel: {fileID: 0}
   fadeoutPanel: {fileID: 0}
   fade_wait: 0
   dialogText: {fileID: 0}
   dialogBox: {fileID: 0}
   dialog: 
+  exitspawnName: 
 --- !u!1001 &1680901525
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -28692,14 +28863,13 @@ MonoBehaviour:
   context: {fileID: 0}
   playerInRange: 0
   sceneToLoad: 
-  playerPosition: {x: 0, y: 0}
-  playerStorage: {fileID: 0}
   fadeInPanel: {fileID: 0}
   fadeoutPanel: {fileID: 0}
   fade_wait: 0
   dialogText: {fileID: 0}
   dialogBox: {fileID: 0}
   dialog: 
+  exitspawnName: 
 --- !u!1 &1765443580
 GameObject:
   m_ObjectHideFlags: 0
@@ -28825,6 +28995,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1869690492
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1869690493}
+  m_Layer: 0
+  m_Name: Home Point  (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1869690493
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1869690492}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1146473806}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &2101416821
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -29063,14 +29264,13 @@ MonoBehaviour:
   context: {fileID: 0}
   playerInRange: 0
   sceneToLoad: 
-  playerPosition: {x: 0, y: 0}
-  playerStorage: {fileID: 0}
   fadeInPanel: {fileID: 0}
   fadeoutPanel: {fileID: 0}
   fade_wait: 0
   dialogText: {fileID: 0}
   dialogBox: {fileID: 0}
   dialog: 
+  exitspawnName: 
 --- !u!114 &3201987937694258434
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -29207,9 +29407,9 @@ MonoBehaviour:
   speed: 7
   currentHealth: {fileID: 11400000, guid: a3540b8a13ec3a04fbf004dcebcef426, type: 2}
   PlayerHealthSignal: {fileID: 11400000, guid: e43ba7f87279126409ca8c1db6d42ce0, type: 2}
-  startingPosition: {fileID: 11400000, guid: bfa866134baf5b548a4772d4d45f395e, type: 2}
   playerInventory: {fileID: 11400000, guid: 81a005c450129524e90d00685adafa2d, type: 2}
   receivedItemSprite: {fileID: 1106271362}
+  spawnPointName: 
 --- !u!95 &3201987937897709911
 Animator:
   serializedVersion: 5

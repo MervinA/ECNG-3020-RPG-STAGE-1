@@ -3,29 +3,33 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+
+[System.Serializable]
 public class Object_scene_shift : Interactable
 {
     public string sceneToLoad; 
-    public Vector2 playerPosition; 
-    public VectorValue playerStorage; 
+ //   public Vector2 playerPosition; 
+   // public VectorValue playerStorage; 
     public GameObject fadeInPanel;
     public GameObject fadeoutPanel; 
     public float fade_wait; 
     public Text dialogText; 
      public GameObject dialogBox; 
     public string dialog; 
+    private  PlayerMovement Player; 
+    public string exitspawnName; 
    
     // Start is called before the first frame update
     void Start()
     {
-        
+          Player = FindObjectOfType<PlayerMovement>(); 
     }
 
     // Update is called once per frame
     void Update()
     {
         if(Input.GetKeyDown(KeyCode.Space)&& playerInRange){
-            playerStorage.initialValue = playerPosition; 
+         //   playerStorage.initialValue = playerPosition; 
             StartCoroutine(FadeCo());
         } 
     }
@@ -36,6 +40,7 @@ public class Object_scene_shift : Interactable
         if(other.CompareTag("Player_Passive") && !other.isTrigger)
         {
             context.Raise();
+            PlayerMovement.spawnPointName = exitspawnName; 
             playerInRange = true;  
              dialogBox.SetActive(true);
              dialogText.text = dialog; 

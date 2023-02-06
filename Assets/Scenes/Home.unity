@@ -220,6 +220,51 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 18463d3426ed391468d897e54be5d1cb, type: 3}
+--- !u!1 &309214137
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 309214138}
+  - component: {fileID: 309214139}
+  m_Layer: 0
+  m_Name: Door in
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &309214138
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 309214137}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 26.5, y: 5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 804175761}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &309214139
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 309214137}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e6d88ce7f9aa6f4980f071f1c3e17d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnName: Home Door In
 --- !u!1 &479285380
 GameObject:
   m_ObjectHideFlags: 0
@@ -488,6 +533,39 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &804175760
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 804175761}
+  m_Layer: 0
+  m_Name: 'Spawn Points '
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &804175761
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 804175760}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1294532383}
+  - {fileID: 309214138}
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &981525775 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 211304460818690528, guid: 18463d3426ed391468d897e54be5d1cb, type: 3}
@@ -553,7 +631,7 @@ GameObject:
   - component: {fileID: 1129533414}
   - component: {fileID: 603608777295949934}
   m_Layer: 0
-  m_Name: Scene Transition
+  m_Name: Door
   m_TagString: Untagged
   m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -8636,6 +8714,51 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!1 &1294532382
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1294532383}
+  - component: {fileID: 1294532384}
+  m_Layer: 0
+  m_Name: 'Home Bed '
+  m_TagString: Untagged
+  m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1294532383
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1294532382}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 23, y: 42, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 804175761}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1294532384
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1294532382}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e6d88ce7f9aa6f4980f071f1c3e17d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnName: Home Bed
 --- !u!1 &1357571022
 GameObject:
   m_ObjectHideFlags: 0
@@ -37579,14 +37702,13 @@ MonoBehaviour:
   context: {fileID: 11400000, guid: 87dcfc7209208e440af83fccb17d0962, type: 2}
   playerInRange: 0
   sceneToLoad: Dungeon Hub
-  playerPosition: {x: 25, y: 25}
-  playerStorage: {fileID: 11400000, guid: bc28a866925fc484891142507bb910cb, type: 2}
   fadeInPanel: {fileID: 7770201179040915610, guid: 1ac0344d478082b4e97be900755a92a9, type: 3}
   fadeoutPanel: {fileID: 5445169717137078238, guid: 392230d584003d84e8ac1c63a5b0ff5d, type: 3}
   fade_wait: 1
   dialogText: {fileID: 981525775}
   dialogBox: {fileID: 1966065308}
   dialog: 'Do you wish to go to bed? '
+  exitspawnName: Dungeon Hub spawn
 --- !u!61 &2016558121
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -37724,6 +37846,7 @@ MonoBehaviour:
   fadeInPanel: {fileID: 7770201179040915610, guid: 1ac0344d478082b4e97be900755a92a9, type: 3}
   fadeOutPanel: {fileID: 5445169717137078238, guid: 392230d584003d84e8ac1c63a5b0ff5d, type: 3}
   fadeWait: 0.33
+  exitspawnName: Home Door Out
 --- !u!114 &3201987938078084928
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -37856,7 +37979,6 @@ MonoBehaviour:
   speed: 7
   currentHealth: {fileID: 11400000, guid: a3540b8a13ec3a04fbf004dcebcef426, type: 2}
   PlayerHealthSignal: {fileID: 11400000, guid: e43ba7f87279126409ca8c1db6d42ce0, type: 2}
-  startingPosition: {fileID: 11400000, guid: 52d200ba00869564f85e2fd7352930cb, type: 2}
   playerInventory: {fileID: 11400000, guid: 81a005c450129524e90d00685adafa2d, type: 2}
   receivedItemSprite: {fileID: 1774871697}
 --- !u!61 &3201987938296576327
@@ -37940,7 +38062,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3201987938296576334}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 22.3, y: 43.5, z: 0}
+  m_LocalPosition: {x: 24.69, y: 39.15, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:

@@ -13,6 +13,7 @@ public class SceneTransition : MonoBehaviour
     public GameObject fadeInPanel; 
     public GameObject fadeOutPanel; 
     public float fadeWait;
+    public string exitspawnName; 
 
     private void Awake()
     {
@@ -28,7 +29,8 @@ public class SceneTransition : MonoBehaviour
     {
         if((other.CompareTag("Player") ||other.CompareTag("Player_Passive") )&& !other.isTrigger)
         {
-            playerStorage.initialValue = playerPosition; 
+           // playerStorage.initialValue = playerPosition; 
+           PlayerMovement.spawnPointName = exitspawnName; 
             StartCoroutine(FadeCo());
             //SceneManager.LoadScene(sceneToLoad);
         }
