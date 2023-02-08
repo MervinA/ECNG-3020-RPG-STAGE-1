@@ -60,7 +60,7 @@ public class TreasureChest : Interactable
 
     public void ChestAlreadyOpen()
     {
-        
+        playerInRange = false; 
        //Dialog Window off
        dialogBox.SetActive(false);
     
@@ -69,7 +69,7 @@ public class TreasureChest : Interactable
       }
 
 
-private  void OnTriggerEnter2D (Collider2D other)
+public override void OnTriggerEnter2D (Collider2D other)
     {
 
         if(other.CompareTag("Player") && !other.isTrigger && !isOpen)
@@ -79,7 +79,7 @@ private  void OnTriggerEnter2D (Collider2D other)
         }
     }
 
-    private void OnTriggerExit2D(Collider2D  other)
+public override void OnTriggerExit2D(Collider2D  other)
     {
 
         if (other.CompareTag("Player") && !other.isTrigger && !isOpen)

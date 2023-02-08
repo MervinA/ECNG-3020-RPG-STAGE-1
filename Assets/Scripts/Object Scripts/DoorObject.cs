@@ -4,10 +4,18 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-[System.Serializable]
-public class Object_scene_shift : Interactable
+public enum DoorType
 {
-    public string sceneToLoad; 
+    key, 
+    enemy, 
+    doorbutton
+
+}
+public class DoorObject : Interactable
+{
+    
+
+public string sceneToLoad; 
     public GameObject fadeInPanel;
     public GameObject fadeoutPanel; 
     public float fade_wait; 
@@ -15,24 +23,55 @@ public class Object_scene_shift : Interactable
      public GameObject dialogBox; 
     public string dialog; 
     private  PlayerMovement Player; 
-    public string exitspawnName; 
+    public string exitspawnName;
+    public DoorType thisDoorType;
+    public bool open; 
+
+    private Animator anim; 
+    public Inventory playerInventory; 
    
     // Start is called before the first frame update
     void Start()
     {
           Player = FindObjectOfType<PlayerMovement>(); 
+          anim = GetComponent<Animator>(); 
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Space)&& playerInRange){
-          
-            StartCoroutine(FadeCo());
+        if(Input.GetKeyDown(KeyCode.Space)&& playerInRange)
+        {
+            if(open == false)
+            {
+                //&& (playerInventory.numberofkeys > 0)
+               OpenDoor();
+               
+            }
+
+         if(open == true)
+         {
+           StartCoroutine(FadeCo());
+         } 
+           
         } 
     }
 
-   public override void OnTriggerEnter2D (Collider2D other)
+public void OpenDoor() 
+{
+// set animation to door open 
+//playerInventory.numberofkeys --; 
+open = true; 
+anim.SetBool("DoorOpened", true); 
+//StartCoroutine(Waitingco());
+}
+
+
+public void DoorIsClose() 
+{
+
+}
+public override void OnTriggerEnter2D (Collider2D other)
     {
 
         if(other.CompareTag("Player_Passive") && !other.isTrigger)
@@ -59,11 +98,12 @@ public class Object_scene_shift : Interactable
         }
     }
 
-    
-    private  IEnumerator FadeCo()
+    private IEnumerator FadeCo()
     {
+        yield return new WaitForSeconds(1.3f);
         if (fadeoutPanel != null)
         {
+     
         Instantiate(fadeoutPanel, Vector3.zero, Quaternion.identity); 
         }
         yield return new WaitForSeconds(fade_wait);
@@ -73,5 +113,5 @@ public class Object_scene_shift : Interactable
             yield return null; 
         }
     }
-}
 
+}
