@@ -897,10 +897,10 @@ TextureImporter:
       name: objects_41
       rect:
         serializedVersion: 2
-        x: 2
-        y: 258
-        width: 11
-        height: 11
+        x: 0
+        y: 256
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -918,10 +918,10 @@ TextureImporter:
       name: objects_42
       rect:
         serializedVersion: 2
-        x: 19
-        y: 258
-        width: 10
-        height: 11
+        x: 16
+        y: 256
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -939,10 +939,10 @@ TextureImporter:
       name: objects_44
       rect:
         serializedVersion: 2
-        x: 51
-        y: 258
-        width: 10
-        height: 11
+        x: 48
+        y: 256
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -960,10 +960,10 @@ TextureImporter:
       name: objects_45
       rect:
         serializedVersion: 2
-        x: 65
+        x: 63
         y: 256
-        width: 13
-        height: 15
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -981,10 +981,10 @@ TextureImporter:
       name: objects_46
       rect:
         serializedVersion: 2
-        x: 81
+        x: 79
         y: 256
-        width: 14
-        height: 15
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1002,9 +1002,9 @@ TextureImporter:
       name: objects_47
       rect:
         serializedVersion: 2
-        x: 97
+        x: 95
         y: 256
-        width: 14
+        width: 16
         height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -1023,10 +1023,10 @@ TextureImporter:
       name: objects_48
       rect:
         serializedVersion: 2
-        x: 113
+        x: 111
         y: 256
-        width: 14
-        height: 15
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1044,9 +1044,9 @@ TextureImporter:
       name: objects_49
       rect:
         serializedVersion: 2
-        x: 128
+        x: 127
         y: 256
-        width: 15
+        width: 16
         height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -1065,9 +1065,9 @@ TextureImporter:
       name: objects_50
       rect:
         serializedVersion: 2
-        x: 145
+        x: 143
         y: 256
-        width: 14
+        width: 16
         height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -1086,10 +1086,10 @@ TextureImporter:
       name: objects_51
       rect:
         serializedVersion: 2
-        x: 161
+        x: 159
         y: 256
-        width: 14
-        height: 15
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1107,10 +1107,10 @@ TextureImporter:
       name: objects_52
       rect:
         serializedVersion: 2
-        x: 179
-        y: 260
-        width: 8
-        height: 8
+        x: 175
+        y: 256
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1128,10 +1128,10 @@ TextureImporter:
       name: objects_53
       rect:
         serializedVersion: 2
-        x: 196
-        y: 260
-        width: 7
-        height: 7
+        x: 191
+        y: 256
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1149,10 +1149,10 @@ TextureImporter:
       name: objects_54
       rect:
         serializedVersion: 2
-        x: 213
-        y: 261
-        width: 20
-        height: 5
+        x: 207
+        y: 256
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1422,10 +1422,10 @@ TextureImporter:
       name: objects_69
       rect:
         serializedVersion: 2
-        x: 33
-        y: 226
-        width: 14
-        height: 13
+        x: 32
+        y: 224
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1528,9 +1528,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 48
-        y: 226
+        y: 224
         width: 16
-        height: 6
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2640,10 +2640,10 @@ TextureImporter:
       name: objects_43
       rect:
         serializedVersion: 2
-        x: 35
-        y: 258
-        width: 10
-        height: 11
+        x: 32
+        y: 256
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2762,6 +2762,27 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: objects_67
+      rect:
+        serializedVersion: 2
+        x: 223
+        y: 256
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e3c6516f2a2566a47b7da3e11b989fd4
+      internalID: -791477458
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -2773,7 +2794,6 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      objects_4: 2013333285
       objects_118: 1718059792
       objects_98: -241441185
       objects_84: -595595454
@@ -2789,6 +2809,7 @@ TextureImporter:
       objects_41: 13813218
       objects_89: 1642221572
       objects_109: -1452391462
+      objects_20: 666224879
       objects_3: 747126404
       objects_119: -552989568
       objects_18: -1149487891
@@ -2837,9 +2858,9 @@ TextureImporter:
       objects_131: 1674453383
       objects_87: -451943176
       objects_104: 1884604134
+      objects_107: -1501105636
       objects_7: 1121554993
       objects_80: 673294123
-      objects_107: -1501105636
       objects_22: -1242085532
       objects_47: -1463705880
       objects_42: -760471620
@@ -2911,9 +2932,9 @@ TextureImporter:
       objects_111: 1840211562
       objects_61: -1790744882
       objects_88: 657174051
+      objects_4: 2013333285
       objects_127: 1894106070
       objects_128: -1029752371
-      objects_20: 666224879
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

@@ -19,7 +19,7 @@ public class Enemy : MonoBehaviour
     public string enemyName; 
     public int baseAttack; 
     public float moveSpeed; 
-
+    public GameObject deathEffect; 
     private void Awake(){
         health = maxHealth.initialValue; 
     }
@@ -32,9 +32,19 @@ public void Knock(Rigidbody2D myRigidbody, float knockTime, float damage){
     StartCoroutine(KnockCo(myRigidbody, knockTime));
     }else
     {
+        DeathEffect();
         this.gameObject.SetActive(false);
     }
     //TakeDamage(damage);
+}
+
+private void DeathEffect()
+{
+    if(deathEffect != null) 
+    {
+        GameObject effect = Instantiate(deathEffect, transform.position, Quaternion.identity);
+        Destroy(effect, 1f);
+    }
 }
     // Start is called before the first frame update
 private IEnumerator KnockCo(Rigidbody2D myRigidbody, float knocktime){
