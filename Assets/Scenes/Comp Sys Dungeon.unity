@@ -2254,7 +2254,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5076592146499609799, guid: 1036a60340f4da24b90b148035932669, type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 5076592146499609799, guid: 1036a60340f4da24b90b148035932669, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2846,6 +2846,7 @@ Transform:
   m_Children:
   - {fileID: 1903018919}
   - {fileID: 390105099}
+  - {fileID: 1498640672}
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -28133,7 +28134,7 @@ GameObject:
   - component: {fileID: 1498640669}
   - component: {fileID: 1498640668}
   m_Layer: 0
-  m_Name: Coin
+  m_Name: Comp Sys Coins
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -28178,6 +28179,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   resourceSignal: {fileID: 11400000, guid: feff80c331037cc41ac26a0e72b91b93, type: 2}
+  CoinType: 1
   playerInventory: {fileID: 11400000, guid: 81a005c450129524e90d00685adafa2d, type: 2}
 --- !u!95 &1498640670
 Animator:
@@ -28237,8 +28239,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 502468551
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 1816010198, guid: e684f04d4a78b52439acdafc84f82744, type: 3}
   m_Color: {r: 0.47525808, g: 0.9349931, b: 0.9433962, a: 1}
@@ -28258,13 +28260,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1498640667}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.202983, y: 6.2208543, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 27.88683, y: -3.8365135, z: 0.94205076}
   m_LocalScale: {x: 2.5, y: 2.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_Father: {fileID: 890996771}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1711756383
 PrefabInstance:

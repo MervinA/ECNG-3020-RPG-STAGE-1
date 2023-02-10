@@ -9,6 +9,7 @@ public class CoinTextManager : MonoBehaviour
     public TextMeshProUGUI CoinDisplay; 
     public void UpdateCoinCount()
     {
-        CoinDisplay.text = ""+playerInventory.coins;
+        CoinDisplay.text = ""+playerInventory.CompSysCoins;
+      //  CoinDisplay.text = playerInventory.CompSysCoins.ToString("0000");
     }
 }
