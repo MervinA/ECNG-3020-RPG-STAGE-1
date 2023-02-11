@@ -8,8 +8,8 @@ public enum DoorType
 {
     key, 
     enemy, 
-    doorbutton
-
+    doorbutton,
+    hubReturn
 }
 public class DoorObject : Interactable
 {
@@ -28,7 +28,6 @@ public string sceneToLoad;
     public bool open; 
 
     private Animator anim; 
-    public Inventory playerInventory; 
    
     // Start is called before the first frame update
     void Start()
@@ -40,7 +39,7 @@ public string sceneToLoad;
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Space)&& playerInRange)
+        if(Input.GetKeyDown(KeyCode.Space)&& playerInRange && (thisDoorType == DoorType.key))
         {
             if(open == false)
             {
@@ -55,6 +54,11 @@ public string sceneToLoad;
          } 
            
         } 
+        if (Input.GetKeyDown(KeyCode.Space)&& playerInRange && (thisDoorType == DoorType.hubReturn))
+        {
+            OpenDoor(); 
+            StartCoroutine(FadeCo()); 
+        }
     }
 
 public void OpenDoor() 
@@ -74,7 +78,7 @@ public void DoorIsClose()
 public override void OnTriggerEnter2D (Collider2D other)
     {
 
-        if(other.CompareTag("Player_Passive") && !other.isTrigger)
+        if((other.CompareTag("Player_Passive")|| other.CompareTag("Player")) && !other.isTrigger)
         {
             context.Raise();
             PlayerMovement.spawnPointName = exitspawnName; 
@@ -89,7 +93,7 @@ public override void OnTriggerEnter2D (Collider2D other)
     public override void OnTriggerExit2D(Collider2D  other)
     {
 
-        if (other.CompareTag("Player_Passive") && !other.isTrigger)
+        if ((other.CompareTag("Player_Passive")|| other.CompareTag("Player")) && !other.isTrigger)
         {
             context.Raise();
             playerInRange = false; 

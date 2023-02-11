@@ -46,7 +46,8 @@ if(playerInRange){
         
     public override void OnTriggerExit2D(Collider2D  other){
 
-        if (other.CompareTag("Player") && !other.isTrigger){
+         if((other.CompareTag("Player") ||other.CompareTag("Player_Passive")) && !other.isTrigger)
+         {
             context.Raise();
             playerInRange = false; 
             dialogBox.SetActive(false);

@@ -10,7 +10,7 @@ public class Interactable : MonoBehaviour
     public virtual void OnTriggerEnter2D (Collider2D other)
     {
 
-        if(other.CompareTag("Player") && !other.isTrigger)
+        if((other.CompareTag("Player") ||other.CompareTag("Player_Passive")) && !other.isTrigger)
         {
             context.Raise();
             playerInRange = true; 
@@ -20,7 +20,7 @@ public class Interactable : MonoBehaviour
     public virtual void OnTriggerExit2D(Collider2D  other)
     {
 
-        if (other.CompareTag("Player") && !other.isTrigger)
+         if((other.CompareTag("Player") ||other.CompareTag("Player_Passive")) && !other.isTrigger)
         {
             context.Raise();
             playerInRange = false; 

@@ -132,6 +132,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 86290811}
+  - component: {fileID: 86290812}
   m_Layer: 0
   m_Name: 'Comp Point '
   m_TagString: Untagged
@@ -154,6 +155,19 @@ Transform:
   m_Father: {fileID: 1146473806}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &86290812
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 86290810}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e6d88ce7f9aa6f4980f071f1c3e17d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnName: EnterHub
 --- !u!1 &116180432
 GameObject:
   m_ObjectHideFlags: 0
@@ -28380,6 +28394,14 @@ PrefabInstance:
       propertyPath: dialogText
       value: 
       objectReference: {fileID: 1808838854}
+    - target: {fileID: 6782657500976079011, guid: 1834ff836db61024e9345e250c2b48b8, type: 3}
+      propertyPath: sceneToLoad
+      value: Comp Sys Dungeon
+      objectReference: {fileID: 0}
+    - target: {fileID: 6782657500976079011, guid: 1834ff836db61024e9345e250c2b48b8, type: 3}
+      propertyPath: exitspawnName
+      value: EnterComp
+      objectReference: {fileID: 0}
     - target: {fileID: 6782657500976079012, guid: 1834ff836db61024e9345e250c2b48b8, type: 3}
       propertyPath: m_RootOrder
       value: 1
