@@ -14,4 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentItem: {fileID: 0}
   items: []
-  numberofkeys: 3
+  numberofkeys: 0
+  CompSysCoins: 0
+  CommSysCoins: 0
+  ControlSysCoins: 0
+  ElecPowerCoins: 0
+  AccSysCoins: 0

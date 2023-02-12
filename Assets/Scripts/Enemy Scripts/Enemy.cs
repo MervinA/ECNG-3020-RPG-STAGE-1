@@ -20,12 +20,23 @@ public class Enemy : MonoBehaviour
     public int baseAttack; 
     public float moveSpeed; 
     public GameObject deathEffect; 
-    private void Awake(){
+    public Vector2 StartPosition; 
+
+private void Awake()
+{
         health = maxHealth.initialValue; 
-    }
+}
+
+    public void OnEnable()
+{
+    health = maxHealth.initialValue; 
+    transform.position = StartPosition; 
+    currentState = EnemyState.idle; 
+    //anim.SetBool("moving", true);
+} 
 
 
-public void Knock(Rigidbody2D myRigidbody, float knockTime, float damage){
+public void TakeDamage(Rigidbody2D myRigidbody, float knockTime, float damage){
     health -= damage; 
     if(health > 0)
     {

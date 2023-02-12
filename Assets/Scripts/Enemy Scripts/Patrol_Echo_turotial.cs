@@ -10,30 +10,33 @@ public class Patrol_Echo_turotial : Echo_tutorial
     public float roundingDistance; 
     // Update is called once per frame
     
-    void Update()
-    {
-        //c
-    }
+
 
     
     public override void CheckDistance(){
         
 
         if (Vector3.Distance(target.position,
-                             transform.position)<=chaseRadius
-                             && Vector3.Distance(target.position, 
-                                                    transform.position)>attackRadius)
+                            transform.position) <= chaseRadius
+           && Vector3.Distance(target.position,
+                               transform.position) > attackRadius)
        {
                 if((currentState == EnemyState.idle || currentState == EnemyState.walk)
                    && currentState != EnemyState.stagger)
                    {
-            Vector3 temp = Vector3.MoveTowards(transform.position, target.position, moveSpeed*Time.deltaTime);
+             Vector3 temp = Vector3.MoveTowards(transform.position,
+                                                         target.position,
+                                                         moveSpeed * Time.deltaTime);
             changeAnim(temp-transform.position);
             myRigidbody.MovePosition(temp);
-          
-           // ChangeState(EnemyState.walk);
+            ChangeState(EnemyState.walk);
             anim.SetBool("moving", true);
                      }
+
+                    /*else if (Vector3.Distance(target.position, transform.position) > chaseRadius)
+        {
+            anim.SetBool("wakeUp", false);
+        }*/
        }
        else if (Vector3.Distance(target.position, transform.position) > chaseRadius)
        {
@@ -42,15 +45,16 @@ public class Patrol_Echo_turotial : Echo_tutorial
             Vector3 temp = Vector3.MoveTowards(transform.position, path[currentPoint].position, moveSpeed*Time.deltaTime);
             changeAnim(temp-transform.position);
             myRigidbody.MovePosition(temp);
-           // anim.SetBool("moving",false);
+            anim.SetBool("moving",true);
             }else{
                 ChangeGoal(); 
             }
        }
+
         else if(Vector3.Distance(target.position, transform.position) < attackRadius){ //can remove second check if needed to move enemy even after entering attack radius 
             anim.SetBool("moving",false);
        }
-
+    
     }
 
     private void ChangeGoal()

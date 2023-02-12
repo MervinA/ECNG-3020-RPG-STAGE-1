@@ -29,7 +29,7 @@ private void OnTriggerEnter2D (Collider2D other){
             if (other.gameObject.CompareTag("enemy") && other.isTrigger)
             {
             hit.GetComponent<Enemy>().currentState = EnemyState.stagger;
-            other.GetComponent<Enemy>().Knock(hit,knockTime, damage);
+            other.GetComponent<Enemy>().TakeDamage(hit,knockTime, damage);
            
             }
             
