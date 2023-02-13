@@ -45,6 +45,7 @@ public class Patrol_Echo_turotial : Echo_tutorial
             Vector3 temp = Vector3.MoveTowards(transform.position, path[currentPoint].position, moveSpeed*Time.deltaTime);
             changeAnim(temp-transform.position);
             myRigidbody.MovePosition(temp);
+            ChangeState(EnemyState.walk);
             anim.SetBool("moving",true);
             }else{
                 ChangeGoal(); 

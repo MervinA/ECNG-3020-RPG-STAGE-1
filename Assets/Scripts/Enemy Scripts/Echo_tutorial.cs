@@ -17,16 +17,9 @@ public class Echo_tutorial : Enemy
         anim = GetComponent<Animator>(); 
         myRigidbody = GetComponent<Rigidbody2D>(); 
         target = GameObject.FindWithTag("Player").transform; 
-        anim.SetBool("moving", true);
+       
         
     }
-    /*public void OnEnable()
-{
-    health = maxHealth.initialValue; 
-    transform.position = StartPosition; 
-    currentState = EnemyState.idle; 
-    anim.SetBool("moving", true);
-} */
    
 
     // Update is called once per frame
