@@ -34,6 +34,10 @@ public string sceneToLoad;
     {
           Player = FindObjectOfType<PlayerMovement>(); 
           anim = GetComponent<Animator>(); 
+          if(thisDoorType == DoorType.hubReturn)
+          {
+            anim.SetBool("DoorOpened", true); 
+          }
     }
 
     // Update is called once per frame
@@ -45,7 +49,7 @@ public string sceneToLoad;
             {
                 //&& (playerInventory.numberofkeys > 0)
                OpenDoor();
-               
+               anim.SetBool("DoorOpened", true); 
             }
 
          if(open == true)
@@ -57,6 +61,7 @@ public string sceneToLoad;
         if (Input.GetKeyDown(KeyCode.Space)&& playerInRange && (thisDoorType == DoorType.hubReturn))
         {
             OpenDoor(); 
+            
             StartCoroutine(FadeCo()); 
         }
     }
@@ -66,7 +71,7 @@ public void OpenDoor()
 // set animation to door open 
 //playerInventory.numberofkeys --; 
 open = true; 
-anim.SetBool("DoorOpened", true); 
+//anim.SetBool("DoorOpened", true); 
 //StartCoroutine(Waitingco());
 }
 
