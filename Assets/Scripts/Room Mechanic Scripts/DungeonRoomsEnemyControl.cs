@@ -54,7 +54,7 @@ public class DungeonRoomsEnemyControl : DungeonRooms
         {
             ChangeActivation(pots[i], true); 
         }
-
+        virtualCamera.SetActive(true); 
         StartCoroutine(DoorCloseWaitCo());
       
     }
@@ -72,6 +72,7 @@ public class DungeonRoomsEnemyControl : DungeonRooms
         {
             ChangeActivation(pots[i], false); 
         }
+        virtualCamera.SetActive(false); 
     }
   } 
 

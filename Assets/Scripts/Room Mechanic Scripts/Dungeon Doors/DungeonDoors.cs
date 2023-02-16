@@ -37,9 +37,9 @@ public class DungeonDoors : Interactable
     {
         if(Input.GetKeyDown(KeyCode.Space)&& playerInRange && (thisDoorType == DoorType2.key))
         {
-            if(open == false && playerInventory.numberofkeys > 0)
+            if(open == false && playerInventory.CopperKeys > 0)
             {
-                playerInventory.numberofkeys--; 
+                playerInventory.CopperKeys--; 
                 //&& (playerInventory.numberofkeys > 0)
                //OpenDooDungeonr();
                DoorHasOpened.Raise(); 

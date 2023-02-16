@@ -6,14 +6,7 @@ public class DungeonRooms : MonoBehaviour
 {
   public Enemy [] enemies; 
   public pot[] pots; 
-/*public HealthUp[] healthRegen;
-  public Coin[] coins; 
-*/
-
-/*public virtual void Start()
-{
-
-}*/
+  public GameObject virtualCamera; 
 
   public virtual void OnTriggerEnter2D(Collider2D other)
   {
@@ -27,14 +20,7 @@ public class DungeonRooms : MonoBehaviour
         {
             ChangeActivation(pots[i], true); 
         }
-      /*    for (int i = 0; i < healthRegen.Length; i++)
-        {
-            ChangeActivation(healthRegen[i], true); 
-        }
-         for (int i = 0; i < coins.Length; i++)
-        {
-            ChangeActivation(coins[i], true); 
-        } */
+        virtualCamera.SetActive(true); 
     }
   }
 
@@ -50,14 +36,7 @@ public class DungeonRooms : MonoBehaviour
         {
             ChangeActivation(pots[i], false); 
         }
-      /*  for (int i = 0; i < healthRegen.Length; i++)
-        {
-            ChangeActivation(healthRegen[i], false); 
-        }
-        for (int i = 0; i < coins.Length; i++)
-        {
-            ChangeActivation(coins[i], false); 
-        } */
+      virtualCamera.SetActive(false); 
     }
   }
 
