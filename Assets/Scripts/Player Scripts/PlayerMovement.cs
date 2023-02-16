@@ -19,8 +19,6 @@ public class PlayerMovement : MonoBehaviour
     private Animator animator; 
     public FloatValue currentHealth; 
     public SignalSender PlayerHealthSignal; 
-    //public VectorValue startingPosition; 
-    //public VectorValue startingPosition_bed; 
     public Inventory playerInventory;
     public SpriteRenderer receivedItemSprite; 
     public static string spawnPointName; 
@@ -35,8 +33,6 @@ public class PlayerMovement : MonoBehaviour
         animator.SetFloat("MoveX", 0);
         animator.SetFloat("MoveY", -1);
         Application.targetFrameRate = 60;
-     //   transform.position = startingPosition.initialValue; 
-       // transform.position = startingPosition_bed.initialValue; 
     }
 
     // Update is called once per frame

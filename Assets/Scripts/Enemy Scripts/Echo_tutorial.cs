@@ -8,7 +8,7 @@ public class Echo_tutorial : Enemy
     public Transform target; 
     public float chaseRadius; 
     public float attackRadius; 
-    public Transform homePosition; 
+    //public Transform homePosition; 
     public Animator anim; 
     // Start is called before the first frame update
    public void Start()
@@ -17,7 +17,7 @@ public class Echo_tutorial : Enemy
         anim = GetComponent<Animator>(); 
         myRigidbody = GetComponent<Rigidbody2D>(); 
         target = GameObject.FindWithTag("Player").transform; 
-       
+        
         
     }
    

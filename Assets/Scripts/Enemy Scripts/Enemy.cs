@@ -21,6 +21,7 @@ public class Enemy : MonoBehaviour
     public float moveSpeed; 
     public GameObject deathEffect; 
     public Vector2 StartPosition; 
+    public SignalSender enemyDeathSignal; 
 
 private void Awake()
 {
@@ -44,6 +45,7 @@ public void TakeDamage(Rigidbody2D myRigidbody, float knockTime, float damage){
     StartCoroutine(KnockCo(myRigidbody, knockTime));
     }else
     {
+        enemyDeathSignal.Raise(); 
         DeathEffect();
         this.gameObject.SetActive(false);
     }

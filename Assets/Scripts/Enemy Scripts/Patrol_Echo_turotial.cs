@@ -40,7 +40,7 @@ public class Patrol_Echo_turotial : Echo_tutorial
        }
        else if (Vector3.Distance(target.position, transform.position) > chaseRadius)
        {
-            if(Vector3.Distance(transform.position, path[currentPoint].position)>roundingDistance)
+            if(Vector3.Distance(transform.position, path[currentPoint].position) > roundingDistance)
             {
             Vector3 temp = Vector3.MoveTowards(transform.position, path[currentPoint].position, moveSpeed*Time.deltaTime);
             changeAnim(temp-transform.position);

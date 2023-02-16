@@ -38,6 +38,11 @@ public string sceneToLoad;
           {
             anim.SetBool("DoorOpened", true); 
           }
+          if(thisDoorType==DoorType.enemy)
+          {
+            Debug.Log("opening door");
+            this.gameObject.SetActive(false);
+          }
     }
 
     // Update is called once per frame
