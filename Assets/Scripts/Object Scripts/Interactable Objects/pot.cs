@@ -6,6 +6,7 @@ public class pot : MonoBehaviour
 {
 
     private Animator anim; 
+    public LootTable thisLoot; 
 
     // Start is called before the first frame update
     void Start()
@@ -23,10 +24,24 @@ public class pot : MonoBehaviour
     public void Smash(){
        anim.SetBool("smash",true); 
        StartCoroutine(breakCo());
+      
     }
 
     IEnumerator breakCo(){
         yield return new WaitForSeconds(.3f);
         this.gameObject.SetActive(false);
+         MakeLoot();
     }
+
+    private void MakeLoot()
+{
+    if(thisLoot != null)
+    {
+        Resources current = thisLoot.LootResources(); 
+        if(current != null)
+        {
+            Instantiate(current.gameObject, transform.position, Quaternion.identity);
+        }
+    }
+}
 }

@@ -1800,10 +1800,10 @@ TextureImporter:
       name: objects_101
       rect:
         serializedVersion: 2
-        x: 66
-        y: 177
-        width: 12
-        height: 12
+        x: 64
+        y: 175
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1821,10 +1821,10 @@ TextureImporter:
       name: objects_102
       rect:
         serializedVersion: 2
-        x: 83
-        y: 177
-        width: 11
-        height: 12
+        x: 80
+        y: 175
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1842,10 +1842,10 @@ TextureImporter:
       name: objects_103
       rect:
         serializedVersion: 2
-        x: 100
-        y: 177
-        width: 10
-        height: 12
+        x: 96
+        y: 175
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1863,10 +1863,10 @@ TextureImporter:
       name: objects_104
       rect:
         serializedVersion: 2
-        x: 115
-        y: 177
-        width: 11
-        height: 12
+        x: 112
+        y: 175
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2794,6 +2794,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
+      objects_4: 2013333285
       objects_118: 1718059792
       objects_98: -241441185
       objects_84: -595595454
@@ -2809,7 +2810,6 @@ TextureImporter:
       objects_41: 13813218
       objects_89: 1642221572
       objects_109: -1452391462
-      objects_20: 666224879
       objects_3: 747126404
       objects_119: -552989568
       objects_18: -1149487891
@@ -2858,9 +2858,9 @@ TextureImporter:
       objects_131: 1674453383
       objects_87: -451943176
       objects_104: 1884604134
-      objects_107: -1501105636
       objects_7: 1121554993
       objects_80: 673294123
+      objects_107: -1501105636
       objects_22: -1242085532
       objects_47: -1463705880
       objects_42: -760471620
@@ -2932,9 +2932,9 @@ TextureImporter:
       objects_111: 1840211562
       objects_61: -1790744882
       objects_88: 657174051
-      objects_4: 2013333285
       objects_127: 1894106070
       objects_128: -1029752371
+      objects_20: 666224879
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

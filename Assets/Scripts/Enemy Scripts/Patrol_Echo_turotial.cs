@@ -16,27 +16,34 @@ public class Patrol_Echo_turotial : Echo_tutorial
     public override void CheckDistance(){
         
 
-        if (Vector3.Distance(target.position,
-                            transform.position) <= chaseRadius
-           && Vector3.Distance(target.position,
-                               transform.position) > attackRadius)
+          if (Vector3.Distance(target.position,
+                             transform.position)<=chaseRadius
+                             && Vector3.Distance(target.position, 
+                             transform.position)>attackRadius)
        {
-                if((currentState == EnemyState.idle || currentState == EnemyState.walk)
-                   && currentState != EnemyState.stagger)
-                   {
-             Vector3 temp = Vector3.MoveTowards(transform.position,
-                                                         target.position,
-                                                         moveSpeed * Time.deltaTime);
+                if((currentState == EnemyState.idle || 
+                    currentState == EnemyState.walk) 
+                   && currentState != EnemyState.stagger){
+
+            //if (currentState != EnemyState.stagger){
+            Vector3 temp = Vector3.MoveTowards(transform.position, target.position, 
+                           moveSpeed*Time.deltaTime);
+           
             changeAnim(temp-transform.position);
             myRigidbody.MovePosition(temp);
             ChangeState(EnemyState.walk);
             anim.SetBool("moving", true);
-                     }
-
-                    /*else if (Vector3.Distance(target.position, transform.position) > chaseRadius)
-        {
-            anim.SetBool("wakeUp", false);
-        }*/
+                }
+          
+       }
+         else if ((Vector3.Distance(target.position, transform.position) <= chaseRadius) &&
+        (Vector3.Distance(target.position, transform.position) <= attackRadius)){
+           // anim.SetBool("moving",false);
+              if((currentState == EnemyState.idle || 
+                  currentState == EnemyState.walk) 
+                   && currentState != EnemyState.stagger){
+                StartCoroutine(AttackCo());
+            }
        }
        else if (Vector3.Distance(target.position, transform.position) > chaseRadius)
        {
@@ -52,10 +59,24 @@ public class Patrol_Echo_turotial : Echo_tutorial
             }
        }
 
-        else if(Vector3.Distance(target.position, transform.position) < attackRadius){ //can remove second check if needed to move enemy even after entering attack radius 
-            anim.SetBool("moving",false);
-       }
+       
     
+    }
+
+    private IEnumerator AttackCo(){
+
+        /*currentState = EnemyState.attack;
+        anim.SetBool("Attacking", true);
+        yield return new WaitForSeconds(1f);
+        currentState = EnemyState.walk;
+        anim.SetBool("Attacking", false); */
+        anim.SetBool("moving", false);
+        currentState = EnemyState.attack;
+        anim.SetBool("Attacking", true);
+        yield return null;
+        anim.SetBool("Attacking", false);
+        yield return new WaitForSeconds(1f);
+        currentState = EnemyState.walk;
     }
 
     private void ChangeGoal()

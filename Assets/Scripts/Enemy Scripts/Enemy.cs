@@ -22,6 +22,7 @@ public class Enemy : MonoBehaviour
     public GameObject deathEffect; 
     public Vector2 StartPosition; 
     public SignalSender enemyDeathSignal; 
+    public LootTable thisLoot; 
 
 private void Awake()
 {
@@ -38,20 +39,33 @@ private void Awake()
 } 
 
 
-public void TakeDamage(Rigidbody2D myRigidbody, float knockTime, float damage){
+public void TakeDamage(float damage){
     health -= damage; 
-    if(health > 0)
-    {
-    StartCoroutine(KnockCo(myRigidbody, knockTime));
-    }else
-    {
-        enemyDeathSignal.Raise(); 
-        DeathEffect();
+    if(health <= 0)
+        {
+            DeathEffect();
+            MakeLoot();
+            if (enemyDeathSignal != null)
+            {
+                enemyDeathSignal.Raise();
+            }
+        
         this.gameObject.SetActive(false);
     }
     //TakeDamage(damage);
 }
 
+private void MakeLoot()
+{
+    if(thisLoot != null)
+    {
+        Resources current = thisLoot.LootResources(); 
+        if(current != null)
+        {
+            Instantiate(current.gameObject, transform.position, Quaternion.identity);
+        }
+    }
+}
 private void DeathEffect()
 {
     if(deathEffect != null) 
@@ -61,6 +75,12 @@ private void DeathEffect()
     }
 }
     // Start is called before the first frame update
+
+ public void Knock(Rigidbody2D myRigidbody, float knockTime, float damage)
+    {
+        StartCoroutine(KnockCo(myRigidbody, knockTime));
+        TakeDamage(damage);
+    }
 private IEnumerator KnockCo(Rigidbody2D myRigidbody, float knocktime){
 
     if(myRigidbody != null ){
