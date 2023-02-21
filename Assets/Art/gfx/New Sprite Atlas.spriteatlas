@@ -336,6 +336,8 @@ SpriteAtlas:
   - {fileID: -1452391462, guid: a6da4d58e96115f40862a416663e1656, type: 3}
   - {fileID: -1564079533, guid: a6da4d58e96115f40862a416663e1656, type: 3}
   - {fileID: 21300000, guid: 7164db6ae9bb0b7419099e8901fa254c, type: 3}
+  - {fileID: 21300000, guid: d8a11f8b92c89e54eb4f8610bb6fdb08, type: 3}
+  - {fileID: 21300000, guid: 7db2e29bbf56172478cbb8b038850166, type: 3}
   - {fileID: -588291079, guid: fc3abb3c5f4ddc343ba95e5909f6b41f, type: 3}
   - {fileID: 1235788174, guid: fc3abb3c5f4ddc343ba95e5909f6b41f, type: 3}
   - {fileID: 302285068, guid: fc3abb3c5f4ddc343ba95e5909f6b41f, type: 3}
@@ -1697,6 +1699,8 @@ SpriteAtlas:
   - objects_109
   - objects_108
   - NPC_test
+  - TitleScreen BackDrop
+  - 025
   - Overworld_827
   - Overworld_837
   - Overworld_847
