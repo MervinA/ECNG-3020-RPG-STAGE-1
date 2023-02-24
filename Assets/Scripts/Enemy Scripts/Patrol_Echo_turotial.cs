@@ -7,7 +7,7 @@ public class Patrol_Echo_turotial : Echo_tutorial
     public Transform[] path; 
     public int currentPoint; 
     public Transform currentGoal; 
-    public float roundingDistance; 
+    //public float roundingDistance; 
     // Update is called once per frame
     
 

@@ -8,8 +8,9 @@ public class Echo_tutorial : Enemy
     public Transform target; 
     public float chaseRadius; 
     public float attackRadius; 
-    //public Transform homePosition; 
+    public Transform homePosition; 
     public Animator anim; 
+   public float roundingDistance; 
     // Start is called before the first frame update
    public void Start()
     {
@@ -18,6 +19,7 @@ public class Echo_tutorial : Enemy
         myRigidbody = GetComponent<Rigidbody2D>(); 
         target = GameObject.FindWithTag("Player").transform; 
         
+      
         
     }
    
@@ -60,8 +62,24 @@ public class Echo_tutorial : Enemy
        }
 
        else if( (Vector3.Distance(target.position, transform.position) > chaseRadius)){
-        anim.SetBool("moving", false);
-        ChangeState(EnemyState.idle); 
+        /*anim.SetBool("moving", false);
+        ChangeState(EnemyState.idle); */
+        
+            if(Vector3.Distance(transform.position,homePosition.position) > roundingDistance)
+                {
+                    Vector3 temp = Vector3.MoveTowards(transform.position, homePosition.position, moveSpeed*Time.deltaTime);
+                    changeAnim(temp-transform.position);
+                    myRigidbody.MovePosition(temp);
+                    ChangeState(EnemyState.walk);
+                    anim.SetBool("moving",true);
+                }
+
+            else if(Vector3.Distance(transform.position,homePosition.position) <= roundingDistance)
+                {
+                    anim.SetBool("moving", false);
+                    SetAnimFloat(Vector2.down);
+                    ChangeState(EnemyState.idle);  
+                }
         
        }
 
@@ -116,4 +134,5 @@ public class Echo_tutorial : Enemy
         }
 
     }
+    
 }

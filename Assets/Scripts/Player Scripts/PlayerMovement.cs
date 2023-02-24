@@ -22,7 +22,7 @@ public class PlayerMovement : MonoBehaviour
     public Inventory playerInventory;
     public SpriteRenderer receivedItemSprite; 
     public static string spawnPointName; 
-
+    public GameObject projectile; 
 
     // Start is called before the first frame update
     void Start()
@@ -49,10 +49,13 @@ public class PlayerMovement : MonoBehaviour
         if(Input.GetButtonDown("attack") && currentState != PlayerState.attack && currentState != PlayerState.stagger && this.gameObject.CompareTag("Player")){
           StartCoroutine(AttackCo());
         }
-
-    else if(currentState == PlayerState.walk|| currentState == PlayerState.idle){
-          UpdateAnimationAndMove();
+        else if(Input.GetButtonDown("bowAttack") && currentState != PlayerState.attack && currentState != PlayerState.stagger && this.gameObject.CompareTag("Player")){
+          StartCoroutine(bowAttackCo());
         }
+
+        else if(currentState == PlayerState.walk|| currentState == PlayerState.idle){
+            UpdateAnimationAndMove();
+            }
     }
 
 
@@ -70,6 +73,34 @@ public class PlayerMovement : MonoBehaviour
         
     }
 
+     private IEnumerator bowAttackCo(){
+
+        //animator.SetBool("Attacking",true);
+        currentState = PlayerState.attack;
+        yield return null; 
+        MakeArrow();
+        //animator.SetBool("Attacking", false);
+        yield return new WaitForSeconds(.3f);
+        if(currentState != PlayerState.interact)
+        {
+          currentState = PlayerState.walk;   
+        }
+        
+    }
+
+    private void MakeArrow()
+    {
+        Vector2 temp = new Vector2(animator.GetFloat("MoveX"), animator.GetFloat("MoveY"));
+        Arrow arrow = Instantiate(projectile, transform.position, Quaternion.identity).GetComponent<Arrow>();
+        arrow.Setup(temp, ChooseArrorDirection());
+    }
+
+    Vector3 ChooseArrorDirection()
+    {
+        float temp = Mathf.Atan2(animator.GetFloat("MoveY"), animator.GetFloat("MoveX"))*Mathf.Rad2Deg;
+        return new Vector3(0,0,temp); 
+    
+    }
     public void RaisedItem()
     {
         if (playerInventory.currentItem != null)

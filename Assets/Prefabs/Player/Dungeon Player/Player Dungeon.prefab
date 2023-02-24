@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1910772179903569263}
   - component: {fileID: 1910772179903569257}
   - component: {fileID: 1910772179903569256}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: left hit box
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -121,7 +121,7 @@ GameObject:
   - component: {fileID: 1910772180167193191}
   - component: {fileID: 1910772180167193190}
   - component: {fileID: 1910772180167193185}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: 'down hit box '
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -221,7 +221,7 @@ GameObject:
   - component: {fileID: 1910772180236428855}
   - component: {fileID: 3957487854840396064}
   - component: {fileID: 3957487854840396066}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Player Dungeon
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -288,7 +288,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 174084183
-  m_SortingLayer: 2
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 993530011, guid: 3308b383386124b4880ec3ce4fbbb0fc, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -465,7 +465,7 @@ GameObject:
   - component: {fileID: 1910772180422660150}
   - component: {fileID: 1910772180422660145}
   - component: {fileID: 1910772180422660144}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: 'up hit box '
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -561,7 +561,7 @@ GameObject:
   - component: {fileID: 1910772181708090598}
   - component: {fileID: 1910772181708090593}
   - component: {fileID: 1910772181708090592}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: 'right hit box '
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -671,7 +671,7 @@ GameObject:
   - component: {fileID: 3957487854144863207}
   - component: {fileID: 3957487854144863201}
   - component: {fileID: 3957487854144863200}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Received Item
   m_TagString: Untagged
   m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
@@ -732,7 +732,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -2098238367
-  m_SortingLayer: 3
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -783,7 +783,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3957487854485730325}
   - component: {fileID: 3957487854485730326}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Context Clue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -844,7 +844,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -2098238367
-  m_SortingLayer: 3
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 514202987, guid: a6da4d58e96115f40862a416663e1656, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 102770777}
   - component: {fileID: 102770778}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Context Clue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -71,7 +71,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -2098238367
-  m_SortingLayer: 3
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 514202987, guid: a6da4d58e96115f40862a416663e1656, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 982607787}
   - component: {fileID: 982607789}
   - component: {fileID: 982607788}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Received Item
   m_TagString: Untagged
   m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
@@ -156,7 +156,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -2098238367
-  m_SortingLayer: 3
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -208,7 +208,7 @@ GameObject:
   - component: {fileID: 3201987938187735210}
   - component: {fileID: 3201987938187735213}
   - component: {fileID: 3201987938187735212}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: 'right hit box '
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -318,7 +318,7 @@ GameObject:
   - component: {fileID: 3201987938936278138}
   - component: {fileID: 3201987938936278141}
   - component: {fileID: 3201987938936278140}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: 'up hit box '
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -414,7 +414,7 @@ GameObject:
   - component: {fileID: 3201987939457466659}
   - component: {fileID: 3201987939457466661}
   - component: {fileID: 3201987939457466660}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: left hit box
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -530,7 +530,7 @@ GameObject:
   - component: {fileID: 3201987939653106299}
   - component: {fileID: 285500780}
   - component: {fileID: 285500782}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -597,7 +597,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 174084183
-  m_SortingLayer: 2
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 993530011, guid: 3308b383386124b4880ec3ce4fbbb0fc, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -673,7 +673,6 @@ MonoBehaviour:
   speed: 7
   currentHealth: {fileID: 11400000, guid: a3540b8a13ec3a04fbf004dcebcef426, type: 2}
   PlayerHealthSignal: {fileID: 11400000, guid: e43ba7f87279126409ca8c1db6d42ce0, type: 2}
-  startingPosition: {fileID: 11400000, guid: 69092ab3875e0954c9d7bb25ba621421, type: 2}
   playerInventory: {fileID: 11400000, guid: 81a005c450129524e90d00685adafa2d, type: 2}
   receivedItemSprite: {fileID: 982607789}
 --- !u!95 &3201987939653106296
@@ -775,7 +774,7 @@ GameObject:
   - component: {fileID: 3201987939722276395}
   - component: {fileID: 3201987939722276394}
   - component: {fileID: 3201987939722276397}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: 'down hit box '
   m_TagString: Player
   m_Icon: {fileID: 0}

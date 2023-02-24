@@ -20,7 +20,7 @@ public class Enemy : MonoBehaviour
     public int baseAttack; 
     public float moveSpeed; 
     public GameObject deathEffect; 
-    public Vector2 StartPosition; 
+    public Vector3 StartPosition; 
     public SignalSender enemyDeathSignal; 
     public LootTable thisLoot; 
 
