@@ -49,6 +49,7 @@ public class PlayerMovement : MonoBehaviour
         currentAttackState = PlayerAttackType.unhanded; 
         animator = GetComponent<Animator>(); 
         myRigidbody = GetComponent<Rigidbody2D>(); 
+        animator.SetInteger("WeaponState", 0); 
         animator.SetFloat("MoveX", 0);
         animator.SetFloat("MoveY", -1);
         Application.targetFrameRate = 60;
@@ -66,13 +67,21 @@ public class PlayerMovement : MonoBehaviour
         change.x = Input.GetAxisRaw("Horizontal"); 
         change.y = Input.GetAxisRaw("Vertical");
 
+        if(Input.GetButton("unhanded") && currentState != PlayerState.attack && currentState != PlayerState.stagger && this.gameObject.CompareTag("Player"))
+        {
+            currentAttackState = PlayerAttackType.sword; 
+            animator.SetInteger("WeaponState", 0); 
+        }
+
         if(Input.GetButton("sword") && currentState != PlayerState.attack && currentState != PlayerState.stagger && this.gameObject.CompareTag("Player"))
         {
             currentAttackState = PlayerAttackType.sword; 
+            animator.SetInteger("WeaponState", 1); 
         }
         else if (Input.GetButton("axe") && currentState != PlayerState.attack && currentState != PlayerState.stagger && this.gameObject.CompareTag("Player"))
         {
             currentAttackState = PlayerAttackType.axe;
+            animator.SetInteger("WeaponState", 2); 
         }
         else if (Input.GetButton("bow") && currentState != PlayerState.attack && currentState != PlayerState.stagger && this.gameObject.CompareTag("Player"))
         {
@@ -97,6 +106,13 @@ public class PlayerMovement : MonoBehaviour
         {
           StartCoroutine(bowAttackCo());
         }
+        if(Input.GetButtonDown("attack") && currentState != PlayerState.attack && 
+                currentState != PlayerState.stagger && currentAttackState == PlayerAttackType.axe && 
+                this.gameObject.CompareTag("Player"))
+        {
+          StartCoroutine(AxeAttackCo());
+        }
+
 
         else if(currentState == PlayerState.walk|| currentState == PlayerState.idle){
             UpdateAnimationAndMove();
@@ -111,6 +127,20 @@ public class PlayerMovement : MonoBehaviour
         yield return null; 
         animator.SetBool("Attacking", false);
         yield return new WaitForSeconds(.3f);
+        if(currentState != PlayerState.interact)
+        {
+          currentState = PlayerState.walk;   
+        }
+        
+    }
+
+   private IEnumerator AxeAttackCo(){
+
+        animator.SetBool("Attacking",true);
+        currentState = PlayerState.attack;
+        yield return null; 
+        animator.SetBool("Attacking", false);
+        yield return new WaitForSeconds(1f);
         if(currentState != PlayerState.interact)
         {
           currentState = PlayerState.walk;   
