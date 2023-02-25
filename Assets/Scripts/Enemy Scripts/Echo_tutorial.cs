@@ -8,7 +8,7 @@ public class Echo_tutorial : Enemy
     public Transform target; 
     public float chaseRadius; 
     public float attackRadius; 
-    public Transform homePosition; 
+    //public Transform homePosition; 
     public Animator anim; 
    public float roundingDistance; 
     // Start is called before the first frame update
@@ -18,6 +18,7 @@ public class Echo_tutorial : Enemy
         anim = GetComponent<Animator>(); 
         myRigidbody = GetComponent<Rigidbody2D>(); 
         target = GameObject.FindWithTag("Player").transform; 
+        
         
       
         
@@ -65,16 +66,16 @@ public class Echo_tutorial : Enemy
         /*anim.SetBool("moving", false);
         ChangeState(EnemyState.idle); */
         
-            if(Vector3.Distance(transform.position,homePosition.position) > roundingDistance)
+            if(Vector3.Distance(transform.position,StartPosition) > roundingDistance)
                 {
-                    Vector3 temp = Vector3.MoveTowards(transform.position, homePosition.position, moveSpeed*Time.deltaTime);
+                    Vector3 temp = Vector3.MoveTowards(transform.position, StartPosition, moveSpeed*Time.deltaTime);
                     changeAnim(temp-transform.position);
                     myRigidbody.MovePosition(temp);
                     ChangeState(EnemyState.walk);
                     anim.SetBool("moving",true);
                 }
 
-            else if(Vector3.Distance(transform.position,homePosition.position) <= roundingDistance)
+            else if(Vector3.Distance(transform.position,StartPosition) <= roundingDistance)
                 {
                     anim.SetBool("moving", false);
                     SetAnimFloat(Vector2.down);

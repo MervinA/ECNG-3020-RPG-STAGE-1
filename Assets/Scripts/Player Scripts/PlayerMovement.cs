@@ -10,24 +10,43 @@ public enum PlayerState {
         stagger
 }
 
+public enum PlayerAttackType{
+    unhanded, 
+    sword, 
+    axe, 
+    bow, 
+    spear
+}
 public class PlayerMovement : MonoBehaviour
 {
+    [Header("Player States")]
     public PlayerState currentState;
-    public float speed; 
+    public PlayerAttackType currentAttackState; 
+    
+    [Header("Player Physics Characteristics")]
+     public float speed; 
+    public static string spawnPointName; 
     private Rigidbody2D myRigidbody; 
+    private Animator animator;
     private Vector3 change; 
-    private Animator animator; 
+    
+    
+    [Header("Player Health Characteristics")]
     public FloatValue currentHealth; 
     public SignalSender PlayerHealthSignal; 
+
+    [Header("Player Inventory Characteristics")]
     public Inventory playerInventory;
     public SpriteRenderer receivedItemSprite; 
-    public static string spawnPointName; 
+    
+    [Header("Player Weapons Characteristics")]
     public GameObject projectile; 
 
     // Start is called before the first frame update
     void Start()
     {
         currentState = PlayerState.walk;
+        currentAttackState = PlayerAttackType.unhanded; 
         animator = GetComponent<Animator>(); 
         myRigidbody = GetComponent<Rigidbody2D>(); 
         animator.SetFloat("MoveX", 0);
@@ -46,10 +65,36 @@ public class PlayerMovement : MonoBehaviour
         change = Vector3.zero; 
         change.x = Input.GetAxisRaw("Horizontal"); 
         change.y = Input.GetAxisRaw("Vertical");
-        if(Input.GetButtonDown("attack") && currentState != PlayerState.attack && currentState != PlayerState.stagger && this.gameObject.CompareTag("Player")){
-          StartCoroutine(AttackCo());
+
+        if(Input.GetButton("sword") && currentState != PlayerState.attack && currentState != PlayerState.stagger && this.gameObject.CompareTag("Player"))
+        {
+            currentAttackState = PlayerAttackType.sword; 
         }
-        else if(Input.GetButtonDown("bowAttack") && currentState != PlayerState.attack && currentState != PlayerState.stagger && this.gameObject.CompareTag("Player")){
+        else if (Input.GetButton("axe") && currentState != PlayerState.attack && currentState != PlayerState.stagger && this.gameObject.CompareTag("Player"))
+        {
+            currentAttackState = PlayerAttackType.axe;
+        }
+        else if (Input.GetButton("bow") && currentState != PlayerState.attack && currentState != PlayerState.stagger && this.gameObject.CompareTag("Player"))
+        {
+            currentAttackState = PlayerAttackType.bow;
+        }
+        else if (Input.GetButton("spear") && currentState != PlayerState.attack && currentState != PlayerState.stagger && this.gameObject.CompareTag("Player"))
+        {
+            currentAttackState = PlayerAttackType.spear;
+        }
+
+
+
+        if(Input.GetButtonDown("attack") && currentState != PlayerState.attack && 
+                currentState != PlayerState.stagger && currentAttackState == PlayerAttackType.sword && 
+                this.gameObject.CompareTag("Player"))
+        {
+          StartCoroutine(SwordAttackCo());
+        }
+        else if(Input.GetButtonDown("attack") && currentState != PlayerState.attack && 
+                currentState != PlayerState.stagger && currentAttackState == PlayerAttackType.bow && 
+                this.gameObject.CompareTag("Player"))
+        {
           StartCoroutine(bowAttackCo());
         }
 
@@ -59,7 +104,7 @@ public class PlayerMovement : MonoBehaviour
     }
 
 
-    private IEnumerator AttackCo(){
+    private IEnumerator SwordAttackCo(){
 
         animator.SetBool("Attacking",true);
         currentState = PlayerState.attack;
