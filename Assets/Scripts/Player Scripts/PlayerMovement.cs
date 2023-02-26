@@ -67,33 +67,41 @@ public class PlayerMovement : MonoBehaviour
         change.x = Input.GetAxisRaw("Horizontal"); 
         change.y = Input.GetAxisRaw("Vertical");
 
-        if(Input.GetButton("unhanded") && currentState != PlayerState.attack && currentState != PlayerState.stagger && this.gameObject.CompareTag("Player"))
+    #region WeaponState
+
+        if(Input.GetButton("unhanded") && currentState != PlayerState.attack && 
+        currentState != PlayerState.stagger && this.gameObject.CompareTag("Player"))
         {
             currentAttackState = PlayerAttackType.sword; 
             animator.SetInteger("WeaponState", 0); 
         }
 
-        if(Input.GetButton("sword") && currentState != PlayerState.attack && currentState != PlayerState.stagger && this.gameObject.CompareTag("Player"))
+        if(Input.GetButton("sword") && currentState != PlayerState.attack && 
+        currentState != PlayerState.stagger && this.gameObject.CompareTag("Player"))
         {
             currentAttackState = PlayerAttackType.sword; 
             animator.SetInteger("WeaponState", 1); 
         }
-        else if (Input.GetButton("axe") && currentState != PlayerState.attack && currentState != PlayerState.stagger && this.gameObject.CompareTag("Player"))
+        else if (Input.GetButton("axe") && currentState != PlayerState.attack && 
+        currentState != PlayerState.stagger && this.gameObject.CompareTag("Player"))
         {
             currentAttackState = PlayerAttackType.axe;
             animator.SetInteger("WeaponState", 2); 
         }
-        else if (Input.GetButton("bow") && currentState != PlayerState.attack && currentState != PlayerState.stagger && this.gameObject.CompareTag("Player"))
+        else if (Input.GetButton("bow") && currentState != PlayerState.attack && 
+        currentState != PlayerState.stagger && this.gameObject.CompareTag("Player"))
         {
             currentAttackState = PlayerAttackType.bow;
         }
-        else if (Input.GetButton("spear") && currentState != PlayerState.attack && currentState != PlayerState.stagger && this.gameObject.CompareTag("Player"))
+        else if (Input.GetButton("spear") && currentState != PlayerState.attack && 
+        currentState != PlayerState.stagger && this.gameObject.CompareTag("Player"))
         {
             currentAttackState = PlayerAttackType.spear;
+             animator.SetInteger("WeaponState", 4); 
         }
+    #endregion
 
-
-
+    #region AttackingState
         if(Input.GetButtonDown("attack") && currentState != PlayerState.attack && 
                 currentState != PlayerState.stagger && currentAttackState == PlayerAttackType.sword && 
                 this.gameObject.CompareTag("Player"))
@@ -113,44 +121,78 @@ public class PlayerMovement : MonoBehaviour
           StartCoroutine(AxeAttackCo());
         }
 
+         if(Input.GetButtonDown("attack") && currentState != PlayerState.attack && 
+                currentState != PlayerState.stagger && currentAttackState == PlayerAttackType.spear && 
+                this.gameObject.CompareTag("Player"))
+        {
+          StartCoroutine(SpearThrustAttackCo());
+        }
+
+        if(Input.GetButtonDown("attack2") && currentState != PlayerState.attack && 
+                currentState != PlayerState.stagger && currentAttackState == PlayerAttackType.spear && 
+                this.gameObject.CompareTag("Player"))
+        {
+          StartCoroutine(SpearSlashAttackCo());
+        }
+
 
         else if(currentState == PlayerState.walk|| currentState == PlayerState.idle){
             UpdateAnimationAndMove();
             }
+
+    #endregion
     }
-
-
     private IEnumerator SwordAttackCo(){
 
-        animator.SetBool("Attacking",true);
+        animator.SetInteger("attacking",1);
         currentState = PlayerState.attack;
         yield return null; 
-        animator.SetBool("Attacking", false);
+        animator.SetInteger("attacking",0);
         yield return new WaitForSeconds(.3f);
         if(currentState != PlayerState.interact)
         {
-          currentState = PlayerState.walk;   
-        }
-        
+          currentState = PlayerState.idle;   
+        }   
     }
-
-   private IEnumerator AxeAttackCo(){
-
-        animator.SetBool("Attacking",true);
+   private IEnumerator AxeAttackCo()
+   {
+        animator.SetInteger("attacking",1);
         currentState = PlayerState.attack;
         yield return null; 
-        animator.SetBool("Attacking", false);
+        animator.SetInteger("attacking",0);
         yield return new WaitForSeconds(1f);
         if(currentState != PlayerState.interact)
         {
-          currentState = PlayerState.walk;   
-        }
-        
+          currentState = PlayerState.idle;   
+        } 
     }
-
-     private IEnumerator bowAttackCo(){
-
-        //animator.SetBool("Attacking",true);
+    private IEnumerator SpearThrustAttackCo()
+    {
+        animator.SetInteger("attacking",1);
+        currentState = PlayerState.attack;
+        yield return null; 
+        animator.SetInteger("attacking", 0);
+        yield return new WaitForSeconds(.3f);
+        if(currentState != PlayerState.interact)
+        {
+          currentState = PlayerState.idle;   
+        }   
+    }
+    private IEnumerator SpearSlashAttackCo()
+    {
+        animator.SetInteger("attacking",2);
+        currentState = PlayerState.attack;
+        yield return null; 
+        animator.SetInteger("attacking", 0);
+        yield return new WaitForSeconds(.42f);
+        if(currentState != PlayerState.interact)
+        {
+          currentState = PlayerState.idle;   
+        }    
+    }
+     private IEnumerator bowAttackCo()
+     {
+       //animator.SetBool("Attacking",true);
         currentState = PlayerState.attack;
         yield return null; 
         MakeArrow();
@@ -158,23 +200,20 @@ public class PlayerMovement : MonoBehaviour
         yield return new WaitForSeconds(.3f);
         if(currentState != PlayerState.interact)
         {
-          currentState = PlayerState.walk;   
+          currentState = PlayerState.idle;  
         }
         
     }
-
     private void MakeArrow()
     {
         Vector2 temp = new Vector2(animator.GetFloat("MoveX"), animator.GetFloat("MoveY"));
         Arrow arrow = Instantiate(projectile, transform.position, Quaternion.identity).GetComponent<Arrow>();
         arrow.Setup(temp, ChooseArrorDirection());
     }
-
     Vector3 ChooseArrorDirection()
     {
         float temp = Mathf.Atan2(animator.GetFloat("MoveY"), animator.GetFloat("MoveX"))*Mathf.Rad2Deg;
         return new Vector3(0,0,temp); 
-    
     }
     public void RaisedItem()
     {
@@ -195,8 +234,6 @@ public class PlayerMovement : MonoBehaviour
 
         }
     }
-
-
     void UpdateAnimationAndMove(){
         if(change != Vector3.zero){
             MoveCharacter();
@@ -204,8 +241,10 @@ public class PlayerMovement : MonoBehaviour
             change.y = Mathf.Round(change.y);
             animator.SetFloat("MoveX", change.x);
             animator.SetFloat("MoveY", change.y);
+            currentState = PlayerState.walk;
             animator.SetBool("Moving", true);
         }else{
+            currentState = PlayerState.idle;  
             animator.SetBool("Moving", false);
         }
     } 
@@ -216,7 +255,6 @@ public class PlayerMovement : MonoBehaviour
             transform.position + change * speed * Time.fixedDeltaTime  //can be changed to deltaTime
             );
     }
-
     public void Knock(float knockTime, float damage)
     {
         currentHealth.RuntimeValue -= damage;
@@ -230,8 +268,6 @@ public class PlayerMovement : MonoBehaviour
         }
         
     }
-
-    
     private IEnumerator KnockCo( float knockTime){
 
     if(myRigidbody != null){
