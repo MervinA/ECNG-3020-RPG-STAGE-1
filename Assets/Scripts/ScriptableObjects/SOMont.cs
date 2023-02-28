@@ -7,5 +7,6 @@ public class SOMont : ScriptableObject
 {
 	public string monthName;
 	public int dayAmmount;
+	public int monthPos;
 
 }

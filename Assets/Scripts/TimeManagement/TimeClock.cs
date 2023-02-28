@@ -6,15 +6,18 @@ using UnityEngine;
 
 public class TimeClock : MonoBehaviour
 {
-	public SOMont[] scriptableMonths =  new SOMont[12];
+	//public SOMont[] scriptableMonths =  new SOMont[12];
+	public SOMont[] scriptableMonths;
+
 	public SOMont month;
 
 	//TimeClock Properties
 	public int yy;
-	public int days;
+	public int date;
 	public int actualMonth;
 	public int hh;
 	public int mm;
+	private Coroutine repeatcoroutine; 
 
 
 	public float secondSpeed;
@@ -28,16 +31,38 @@ public class TimeClock : MonoBehaviour
 	void Start()
 	{
 		//month = scriptableMonths[8];
-		InvokeRepeating("TimePasses", secondSpeed, secondSpeed);
+		//InvokeRepeating("TimePasses", secondSpeed, secondSpeed);
 		yy = 2022; 
-		
+		actualMonth = month.monthPos - 1; 
+		//month = scriptableMonths[actualMonth];
+	repeatcoroutine = StartCoroutine(RepeatMethod(secondSpeed));
 	}
 	// Update is called once per frame
 	
 	void FixedUpdate()
 	{
-		
+		if(actualMonth <= 11)
+		{
+			month = scriptableMonths[actualMonth];
+		}
 	}
+	 private void StopRepeating()
+    {
+        if (repeatcoroutine != null)
+        {
+            StopCoroutine(repeatcoroutine);
+            repeatcoroutine = null;
+        }
+    }
+
+	private IEnumerator RepeatMethod(float secondSpeed)
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(secondSpeed);
+            TimePasses();
+        }
+    }
 	public void TimePasses() //Sets the IngameTime passing
 	{
 		mm++;
@@ -50,25 +75,35 @@ public class TimeClock : MonoBehaviour
 			
 		}
 	}
-	private void CheckClock() //Checks whether the clock has arrived to time 24 and resets it to00;
+	private void CheckClock() 
 	{
 		if (hh > 23)
 		{
 			hh = 0;
-			days++;
-			if (days > month.dayAmmount)
+			date++;
+		//	Debug.Log("date has incremented");
+			//Debug.Log("" + actualMonth);
+			if (date > month.dayAmmount)
 			{
-				days = 1;
-				actualMonth++;				
-				month = scriptableMonths[actualMonth];				
-				if (actualMonth >= 12)
+				if(actualMonth <11)
 				{
+					date = 1;
+					actualMonth++;	
+					//Debug.Log("month has incremented, month is now: " + actualMonth);			
+					month = scriptableMonths[actualMonth];	
+				}			
+				else 
+				{
+					date = 1;
 					actualMonth = 0;
+					month = scriptableMonths[actualMonth];	
 					yy++;
+					//Debug.Log("year has incremented"); 
 				}
+				
 			}
 		}
 	}
-	
 
 }
+

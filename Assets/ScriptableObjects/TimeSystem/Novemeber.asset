@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   monthName: November
   dayAmmount: 30
+  monthPos: 11

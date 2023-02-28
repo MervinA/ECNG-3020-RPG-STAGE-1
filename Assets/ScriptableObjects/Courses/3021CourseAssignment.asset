@@ -9,9 +9,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2440f194eb178fb43a62fd4936f62070, type: 3}
-  m_Name: July
+  m_Script: {fileID: 11500000, guid: e5999be892b4d2f4e95417c46b25bae5, type: 3}
+  m_Name: 3021CourseAssignment
   m_EditorClassIdentifier: 
-  monthName: July
-  dayAmmount: 31
-  monthPos: 7
+  CourseCode: 3021
+  CourseAssignment: Midterm
+  CourseAssignmentCode: 0
+  hours: 12
+  minutes: 0
+  month: 12
+  date: 3

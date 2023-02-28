@@ -19,7 +19,8 @@ public class ClockUpdater : MonoBehaviour
 	// Start is called before the first frame update
 	void Start()
 	{
-		InvokeRepeating("UpdateClock", 1f, clock.secondSpeed);
+		InvokeRepeating("UpdateClock", clock.secondSpeed, clock.secondSpeed);
+		
 	}
 
 	// Update is called once per frame
@@ -31,7 +32,7 @@ public class ClockUpdater : MonoBehaviour
 	{
 		curryearText.text = clock.yy.ToString();
 		currmonthText.text = clock.month.monthName;
-		currdayText.text = clock.days.ToString();		
+		currdayText.text = clock.date.ToString();		
 
 		string hours = clock.hh.ToString();
 		string minutes = clock.mm.ToString();

@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   monthName: August
   dayAmmount: 31
+  monthPos: 8
