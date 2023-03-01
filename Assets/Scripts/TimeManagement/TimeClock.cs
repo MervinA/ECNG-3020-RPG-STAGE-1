@@ -1,8 +1,8 @@
-
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 
 public class TimeClock : MonoBehaviour
 {
@@ -62,6 +62,21 @@ public class TimeClock : MonoBehaviour
             yield return new WaitForSeconds(secondSpeed);
             TimePasses();
         }
+    }
+	int GetDays(DayOfWeek day)
+    {
+        switch (day)
+        {
+            case DayOfWeek.Monday: return 1;
+            case DayOfWeek.Tuesday: return 2;
+            case DayOfWeek.Wednesday: return 3;
+            case DayOfWeek.Thursday: return 4;
+            case DayOfWeek.Friday: return 5;
+            case DayOfWeek.Saturday: return 6;
+            case DayOfWeek.Sunday: return 0;
+        }
+
+        return 0;
     }
 	public void TimePasses() //Sets the IngameTime passing
 	{

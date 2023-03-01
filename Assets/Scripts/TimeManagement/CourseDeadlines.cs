@@ -49,7 +49,7 @@ public class CourseDeadlines : MonoBehaviour
             {
                 deadline = false; 
             }
-            Debug.Log("" + deadline);
+//            Debug.Log("" + deadline);
         }
     }
 }
