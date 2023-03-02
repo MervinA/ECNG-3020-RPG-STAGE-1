@@ -7,19 +7,20 @@ using TMPro;
 public class ClockUpdater : MonoBehaviour
 {
 	//Referenced Scripts
-	public TimeClock clock;
+	public TimeClockTest clock;
 
 	//Text labels
 	public TextMeshProUGUI timeText;
 
 	public TextMeshProUGUI curryearText;
 	public TextMeshProUGUI currmonthText;
-	public TextMeshProUGUI currdayText;
+	public TextMeshProUGUI currdateText;
+	public TextMeshProUGUI currtdayText; 
 
 	// Start is called before the first frame update
 	void Start()
 	{
-		InvokeRepeating("UpdateClock", clock.secondSpeed, clock.secondSpeed);
+		InvokeRepeating("UpdateClock", 0, clock.secondSpeed);
 		
 	}
 
@@ -32,7 +33,8 @@ public class ClockUpdater : MonoBehaviour
 	{
 		curryearText.text = clock.yy.ToString();
 		currmonthText.text = clock.month.monthName;
-		currdayText.text = clock.date.ToString();		
+		currdateText.text = clock.date.ToString();		
+		currtdayText.text = clock.daysOfWeek[clock.dayOfWeek];
 
 		string hours = clock.hh.ToString();
 		string minutes = clock.mm.ToString();

@@ -15,6 +15,7 @@ public class TimeClockTest : MonoBehaviour
    // private int monthReference; 
     private int monthRef;
     private int daysPassed;
+    public int dayOfWeek;
     public int hh;
     public int mm;
     private int[] daysInMonth = new int[] { 0, 31, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334 };
@@ -24,21 +25,24 @@ public class TimeClockTest : MonoBehaviour
 
     public float secondSpeed;
 
-   private string[] daysOfWeek = new string[] { "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday" };
+   public string[] daysOfWeek = new string[] { "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday" };
   
     private int startingDay; // starting day of the year (0 = Sunday, 1 = Monday, etc.)
 
     void Start()
     {
+         
         // Set starting day of the year (January 1st)
         DateTime startingDate = new DateTime(2022, 1, 1);
         startingDay = (int)startingDate.DayOfWeek;
-        Debug.Log("starting day in array = " + startingDay);
+       
        
 
         yy = 2022;
         actualMonth = month.monthPos - 1;
         // monthReference = actualMonth; 
+        daysPassed = DaysPassed(yy, actualMonth +1, date); 
+        dayOfWeek = ((daysPassed) + (startingDay)) % 7;
         repeatcoroutine = StartCoroutine(RepeatMethod(secondSpeed));
     }
 
@@ -55,6 +59,7 @@ public class TimeClockTest : MonoBehaviour
     {
         while (true)
         {
+          //  Debug.Log("days passed: " + daysPassed);
             yield return new WaitForSeconds(secondSpeed);
             TimePasses();
         }
@@ -79,6 +84,8 @@ public class TimeClockTest : MonoBehaviour
             hh = 0;
             date++;
 
+          
+
             if (date > month.dayAmmount)
             {
                 //monthReference++;
@@ -98,37 +105,54 @@ public class TimeClockTest : MonoBehaviour
             }
         }
 
-        // Calculate day of the week
-        //Debug.Log("the month reference is: " + monthReference);
+
         daysPassed = DaysPassed(yy, actualMonth +1, date); 
-        Debug.Log("days passed: " + daysPassed);
-        int dayOfWeek = ((daysPassed) + (startingDay)) % 7;
-        Debug.Log("Today is " + daysOfWeek[dayOfWeek]);
+      //  Debug.Log("days passed: " + daysPassed);
+        dayOfWeek = ((daysPassed) + (startingDay)) % 7;
+       // Debug.Log("Today is " + daysOfWeek[dayOfWeek]);
     }
 
-public static int DaysPassed(int year, int month, int day)
+private int GetWeekNumber(int day)
 {
-    DateTime startDate = new DateTime(2022, 1, 1);
-    DateTime endDate = new DateTime(year, month, day);
-    TimeSpan daysPassed = endDate - startDate;
-    return daysPassed.Days;
+    // Calculate the week number by dividing the number of days passed by 7 and rounding up to the nearest integer
+    int week = (int)Math.Ceiling((double)(day + startingDay) / 7);
+    
+    // If the week is greater than 4, reset it to 1 and increment the actual month
+    if (week > 4)
+    {
+        week = 1;
+        actualMonth++;
+
+        // If the actual month is greater than 11 (December), reset it to 0 (January) and increment the year
+        if (actualMonth > 11)
+        {
+            actualMonth = 0;
+            yy++;
+        }
+
+        // Set the month variable to the new actual month
+        month = scriptableMonths[actualMonth];
+    }
+
+    return week;
 }
+
+    public static int DaysPassed(int year, int month, int day)
+    {
+        DateTime startDate = new DateTime(2022, 1, 1);
+        DateTime endDate = new DateTime(year, month, day);
+        TimeSpan daysPassed = endDate - startDate;
+        return daysPassed.Days;
+    }
     private int DayOfYear(int year, int month, int day)
     {
-       
-        
         if(month > 12)
         {
             monthRef = month - 12; 
         }
-        
-       //  Debug.Log("is it a leap year?  " + IsLeapYear(year));
         int dayOfYear = daysInMonth[monthRef - 1] + day;
-       // if (month > 2 && IsLeapYear(year))
-          //  dayOfYear++;
-      //  Debug.Log("day of the year is: " + dayOfYear);
+      
         return dayOfYear;
-        
     }
 
     private bool IsLeapYear(int year)
