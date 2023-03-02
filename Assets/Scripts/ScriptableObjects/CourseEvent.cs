@@ -12,6 +12,8 @@ public class CourseEvent : ScriptableObject
    public int minutes; 
    public int month; 
    public int date; 
+   public int year; 
+   public int reminderDate; 
 
  
 }

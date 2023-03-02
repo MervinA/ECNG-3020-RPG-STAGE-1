@@ -14,10 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentItem: {fileID: 0}
   items: []
-  CopperKeys: 0
+  CopperKeys: 101
   SilverKeys: 0
   GoldKeys: 0
-  CompSysCoins: 0
+  CompSysCoins: 4
   CommSysCoins: 0
   ControlSysCoins: 0
   ElecPowerCoins: 0

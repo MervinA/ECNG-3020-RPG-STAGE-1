@@ -17,5 +17,7 @@ MonoBehaviour:
   CourseAssignmentCode: 0
   hours: 2
   minutes: 0
-  month: 12
+  month: 1
   date: 1
+  year: 2023
+  reminderDate: 0

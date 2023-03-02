@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu]
+[System.Serializable]
 public class Item : ScriptableObject
 {
     // Start is called before the first frame update

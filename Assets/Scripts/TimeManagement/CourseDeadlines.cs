@@ -1,19 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 using TMPro;
 public class CourseDeadlines : MonoBehaviour
 {
     public TimeClockTest clockinfo; 
     //private SOMont currMonth; 
-    public int hour; 
-    public int month; 
-    public int date;
-    private int deadline; 
-    private int deadlinemonth; 
     public CourseEvent[] courseinfo;
     public TextMeshProUGUI[] courseDeadlines; 
-    
     private Coroutine repeatcoroutine;
 
     void Start()
@@ -22,85 +17,45 @@ public class CourseDeadlines : MonoBehaviour
      repeatcoroutine = StartCoroutine(RepeatMethod(clockinfo.secondSpeed));
     }
 
-    // Update is called once per frame
-
-    void update()
-    {
-       
-    }
     private IEnumerator RepeatMethod(float secondSpeed)
     {
         while (true)
         {
-            Deadlinecheck();
+           //StartCoroutine(Deadlinecheck());
+           WarningCheck();
             yield return new WaitForSeconds(secondSpeed);
-            
         }
-    }
-    private void Deadlinecheck()
+    
+    } 
+    private void WarningCheck()
     {
         for(int i = 0; i <courseinfo.Length; i++)
         {
-         //  Debug.Log("the course is: " + courseinfo[i].CourseCode) ; 
-           // if((clockinfo.actualMonth == DeadlineMonth(DeadlinedateBool(courseinfo[i].date), clockinfo.actualMonth ,courseinfo[i].month)) && 
-           // (clockinfo.date == Deadliedate(courseinfo[i].date, clockinfo.scriptableMonths[clockinfo.actualMonth].dayAmmount)))
-            // (clockinfo.date == Deadliedate(courseinfo[i].date, 30)))
-             int deadline_month = DeadlineMonth(DeadlinedateBool(courseinfo[i].date), clockinfo.actualMonth ,courseinfo[i].month);
-             int deadline_Date= Deadliedate(courseinfo[i].date, clockinfo.scriptableMonths[clockinfo.actualMonth].dayAmmount);
-             if(clockinfo.actualMonth == deadline_month &&
-                clockinfo.date == deadline_Date){
-               // while(clockinfo.date != courseinfo[i].date){
-                    Debug.Log("The Course that is due" + courseinfo[i].CourseCode);
-                    // Debug.Log("the deadline month is: "+ deadline_month); 
-               //     // Debug.Log("the deadline date is: "+ deadline_Date);
-               // }
-             }
-        }
-    }
-    private int DeadlineMonth(bool deadlineBool,int currentmonth, int deadlineMonth)
-    {
-        if(deadlineBool == false)
-        {
-            deadlinemonth = currentmonth;
-        }
-        else if (deadlineBool == true)
-        {
-            if(deadlineMonth == 0)
-            {
-                deadlinemonth = 11;
-            }
-            else
-            {
-                deadlinemonth = deadlineMonth - 1; 
-            }
-        }
-        int deadlineMonthPos = deadlinemonth; 
-        return deadlineMonthPos; 
-    }
-    private int Deadliedate(int deadline_Date, int monthDayAmount)
-    {
-      
+            int warningDatePassed = WarningDateCheck(clockinfo.yy, clockinfo.actualMonth +1, clockinfo.date);
+            int deadlineDatePassed = DeadlineDateCheck(courseinfo[i].year, courseinfo[i].month +1, courseinfo[i].date);
 
-        if( deadline_Date > 7)
-        {
-            deadline  = deadline_Date - 7; 
+            if(warningDatePassed >= (deadlineDatePassed - 7) && warningDatePassed < deadlineDatePassed)
+            {
+                Debug.Log("Deadline Approaching, Course: " + courseinfo[i].CourseCode); 
+            }       
         }
-        else if (deadline_Date <= 7)
-        {
-            deadline =monthDayAmount-(7-deadline_Date);
-        }
-        int deadlinedate = deadline; 
-       return deadlinedate;
     }
-    private bool DeadlinedateBool(int deadlinedate)
+    private int WarningDateCheck(int year, int month, int date)
     {
-        
-        if (deadlinedate <= 7)
-        {
-            return true; 
-        }
-        return false; 
+        int warningDaysPassed = DaysPassed(year, month, date);
+        return warningDaysPassed; 
     }
-    
+    private int DeadlineDateCheck(int year, int month, int date)
+    {
+        int deadlineDaysPassed = DaysPassed(year, month, date);
+        return deadlineDaysPassed; 
+    }
+    private static int DaysPassed(int year, int month, int day)
+    {
+        DateTime startDate = new DateTime(2022, 1, 1);
+        DateTime endDate = new DateTime(year, month, day);
+        TimeSpan daysPassed = endDate - startDate;
+        return daysPassed.Days;
+    }
     
 }

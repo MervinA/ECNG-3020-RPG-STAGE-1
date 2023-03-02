@@ -19,3 +19,5 @@ MonoBehaviour:
   minutes: 0
   month: 0
   date: 6
+  year: 2023
+  reminderDate: 0
