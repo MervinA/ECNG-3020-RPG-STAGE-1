@@ -13,11 +13,12 @@ MonoBehaviour:
   m_Name: 3006CourseAssignment
   m_EditorClassIdentifier: 
   CourseCode: 3006
+  CourseType: ECNG
   CourseAssignment: 
   CourseAssignmentCode: 0
-  hours: 2
+  hours: 12
   minutes: 0
-  month: 1
-  date: 1
+  month: 0
+  date: 4
   year: 2023
   reminderDate: 0

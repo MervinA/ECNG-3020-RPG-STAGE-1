@@ -15,3 +15,4 @@ MonoBehaviour:
   monthName: September
   dayAmmount: 30
   monthPos: 9
+  StartingDay: 

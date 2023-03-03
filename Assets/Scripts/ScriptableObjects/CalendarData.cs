@@ -6,15 +6,13 @@ using UnityEngine;
 [System.Serializable]
 public class CalendarData : ScriptableObject
 {
+    public int mm;
     public int hh;
     public int date;
     public int actualMonth;
     public int yy;
-    public int mm;
     public int daysPassed;
     public int dayOfWeek;
-
-
     public int maxMonthDays; 
     
     // Add any other necessary calendar properties here

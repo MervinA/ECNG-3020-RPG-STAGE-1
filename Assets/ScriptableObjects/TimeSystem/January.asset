@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2440f194eb178fb43a62fd4936f62070, type: 3}
   m_Name: January
   m_EditorClassIdentifier: 
-  monthName: 'January '
+  monthName: January
   dayAmmount: 31
   monthPos: 1
   StartingDay: Saturday

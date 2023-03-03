@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 using TMPro;
+using UnityEngine.UI;
 public class CourseDeadlines : MonoBehaviour
 {
     public TimeClockTest clockinfo; 
@@ -37,6 +38,7 @@ public class CourseDeadlines : MonoBehaviour
             if(warningDatePassed >= (deadlineDatePassed - 7) && warningDatePassed < deadlineDatePassed)
             {
                 Debug.Log("Deadline Approaching, Course: " + courseinfo[i].CourseCode); 
+                courseDeadlines[i].text = courseinfo[i].CourseType + courseinfo[i].CourseCode.ToString() + "\n" + courseinfo[i].date + "," + clockinfo.scriptableMonths[courseinfo[i].month].monthName.ToString();
             }       
         }
     }

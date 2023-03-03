@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: 3021CourseAssignment
   m_EditorClassIdentifier: 
   CourseCode: 3021
+  CourseType: ECNG
   CourseAssignment: Midterm
   CourseAssignmentCode: 0
   hours: 12

@@ -15,3 +15,4 @@ MonoBehaviour:
   monthName: November
   dayAmmount: 30
   monthPos: 11
+  StartingDay: 

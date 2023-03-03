@@ -31,9 +31,10 @@ public class TimeClockTest : MonoBehaviour
        
        
 
-        calendarData.yy = 2022;
-        calendarData.actualMonth = month.monthPos - 1;
+       // calendarData.yy = 2022;
+       // calendarData.actualMonth = month.monthPos - 1;
         // monthReference = actualMonth; 
+         month = scriptableMonths[calendarData.actualMonth];
         calendarData.daysPassed = DaysPassed(calendarData.yy, calendarData.actualMonth +1, calendarData.date); 
         calendarData.dayOfWeek = ((calendarData.daysPassed) + (startingDay)) % 7;
         repeatcoroutine = StartCoroutine(RepeatMethod(secondSpeed));
@@ -87,16 +88,17 @@ public class TimeClockTest : MonoBehaviour
                 {
                     calendarData.date = 1;
                     calendarData.actualMonth++;
-                    month = scriptableMonths[calendarData.actualMonth];
+                 //   month = scriptableMonths[calendarData.actualMonth];
                     
                 }
                 else
                 {
                     calendarData.date = 1;
                     calendarData.actualMonth = 0;
-                    month = scriptableMonths[calendarData.actualMonth];
+                   // month = scriptableMonths[calendarData.actualMonth];
                     calendarData.yy++;
                 }
+                 month = scriptableMonths[calendarData.actualMonth];
             }
         }
 
