@@ -31,7 +31,7 @@ public class CourseDeadlines : MonoBehaviour
     {
         for(int i = 0; i <courseinfo.Length; i++)
         {
-            int warningDatePassed = WarningDateCheck(clockinfo.yy, clockinfo.actualMonth +1, clockinfo.date);
+            int warningDatePassed = WarningDateCheck(clockinfo.calendarData.yy, clockinfo.calendarData.actualMonth +1, clockinfo.calendarData.date);
             int deadlineDatePassed = DeadlineDateCheck(courseinfo[i].year, courseinfo[i].month +1, courseinfo[i].date);
 
             if(warningDatePassed >= (deadlineDatePassed - 7) && warningDatePassed < deadlineDatePassed)

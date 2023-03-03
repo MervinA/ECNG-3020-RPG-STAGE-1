@@ -18,11 +18,14 @@ public class Object_scene_shift : Interactable
     public string exitspawnName; 
    
     // Start is called before the first frame update
-    void Start()
+     private void Awake()
     {
-          Player = FindObjectOfType<PlayerMovement>(); 
+        if(fadeInPanel != null)
+        {
+            GameObject panel = Instantiate(fadeInPanel, Vector3.zero, Quaternion.identity) as GameObject;
+            Destroy(panel, 1);
+        }
     }
-
     // Update is called once per frame
     void Update()
     {

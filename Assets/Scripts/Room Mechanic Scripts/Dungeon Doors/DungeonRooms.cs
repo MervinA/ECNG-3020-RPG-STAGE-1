@@ -10,7 +10,7 @@ public class DungeonRooms : MonoBehaviour
 
   public virtual void OnTriggerEnter2D(Collider2D other)
   {
-    if(other.CompareTag("Player") && !other.isTrigger)
+    if((other.CompareTag("Player") || other.CompareTag("Player_Passive")) && !other.isTrigger)
     {
         for (int i = 0; i < enemies.Length; i++)
         {
@@ -26,7 +26,7 @@ public class DungeonRooms : MonoBehaviour
 
   public virtual void OnTriggerExit2D(Collider2D other)
   {
-     if(other.CompareTag("Player") && !other.isTrigger)
+     if((other.CompareTag("Player") || other.CompareTag("Player_Passive")) && !other.isTrigger)
     {
          for (int i = 0; i < enemies.Length; i++)
         {

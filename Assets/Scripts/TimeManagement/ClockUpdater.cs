@@ -31,20 +31,20 @@ public class ClockUpdater : MonoBehaviour
 	}
 	private void UpdateClock()
 	{
-		curryearText.text = clock.yy.ToString();
+		curryearText.text = clock.calendarData.yy.ToString();
 		currmonthText.text = clock.month.monthName;
-		currdateText.text = clock.date.ToString();		
-		currtdayText.text = clock.daysOfWeek[clock.dayOfWeek];
+		currdateText.text = clock.calendarData.date.ToString();		
+		currtdayText.text = clock.daysOfWeek[clock.calendarData.dayOfWeek];
 
-		string hours = clock.hh.ToString();
-		string minutes = clock.mm.ToString();
+		string hours = clock.calendarData.hh.ToString();
+		string minutes = clock.calendarData.mm.ToString();
 		if (hours.Length <1 )
 		{
-			hours = "0"+ clock.hh.ToString();
+			hours = "0"+ clock.calendarData.hh.ToString();
 		}
 		if (minutes.Length <= 1)
 		{
-			minutes = "0" + clock.mm.ToString();
+			minutes = "0" + clock.calendarData.mm.ToString();
 		}
 		timeText.text = hours + ":" + minutes;
 

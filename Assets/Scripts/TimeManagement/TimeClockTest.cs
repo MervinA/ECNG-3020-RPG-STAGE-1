@@ -7,17 +7,10 @@ public class TimeClockTest : MonoBehaviour
 {
     public SOMont[] scriptableMonths;
     public SOMont month;
+    public CalendarData calendarData; 
 
     // TimeClock Properties
-    public int yy;
-    public int date;
-    public int actualMonth;
-   // private int monthReference; 
-    private int monthRef;
-    private int daysPassed;
-    public int dayOfWeek;
-    public int hh;
-    public int mm;
+  
     private int[] daysInMonth = new int[] { 0, 31, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334 };
     
     int hoursPassed;
@@ -38,11 +31,11 @@ public class TimeClockTest : MonoBehaviour
        
        
 
-        yy = 2022;
-        actualMonth = month.monthPos - 1;
+        calendarData.yy = 2022;
+        calendarData.actualMonth = month.monthPos - 1;
         // monthReference = actualMonth; 
-        daysPassed = DaysPassed(yy, actualMonth +1, date); 
-        dayOfWeek = ((daysPassed) + (startingDay)) % 7;
+        calendarData.daysPassed = DaysPassed(calendarData.yy, calendarData.actualMonth +1, calendarData.date); 
+        calendarData.dayOfWeek = ((calendarData.daysPassed) + (startingDay)) % 7;
         repeatcoroutine = StartCoroutine(RepeatMethod(secondSpeed));
     }
 
@@ -67,11 +60,12 @@ public class TimeClockTest : MonoBehaviour
 
     public void TimePasses() //Sets the IngameTime passing
     {
-        mm++;
-        if (mm > 59)
+       calendarData.mm++;
+       calendarData.maxMonthDays = month.dayAmmount; 
+        if (calendarData.mm > 59)
         {
-            mm = 0;
-            hh++;
+            calendarData.mm = 0;
+            calendarData.hh++;
             hoursPassed++;
             CheckClock();
         }
@@ -79,36 +73,37 @@ public class TimeClockTest : MonoBehaviour
 
     private void CheckClock()
     {
-        if (hh > 23)
+        if (calendarData.hh > 23)
         {
-            hh = 0;
-            date++;
-
+            calendarData.hh = 0;
+            calendarData.date++;
+            
           
 
-            if (date > month.dayAmmount)
+            if (calendarData.date > month.dayAmmount)
             {
                 //monthReference++;
-                if (actualMonth < 11)
+                if (calendarData.actualMonth < 11)
                 {
-                    date = 1;
-                    actualMonth++;
-                    month = scriptableMonths[actualMonth];
+                    calendarData.date = 1;
+                    calendarData.actualMonth++;
+                    month = scriptableMonths[calendarData.actualMonth];
+                    
                 }
                 else
                 {
-                    date = 1;
-                    actualMonth = 0;
-                    month = scriptableMonths[actualMonth];
-                    yy++;
+                    calendarData.date = 1;
+                    calendarData.actualMonth = 0;
+                    month = scriptableMonths[calendarData.actualMonth];
+                    calendarData.yy++;
                 }
             }
         }
 
 
-        daysPassed = DaysPassed(yy, actualMonth +1, date); 
+        calendarData.daysPassed = DaysPassed(calendarData.yy, calendarData.actualMonth +1, calendarData.date); 
       //  Debug.Log("days passed: " + daysPassed);
-        dayOfWeek = ((daysPassed) + (startingDay)) % 7;
+        calendarData.dayOfWeek = ((calendarData.daysPassed) + (startingDay)) % 7;
        // Debug.Log("Today is " + daysOfWeek[dayOfWeek]);
     }
 
@@ -121,17 +116,17 @@ private int GetWeekNumber(int day)
     if (week > 4)
     {
         week = 1;
-        actualMonth++;
+        calendarData.actualMonth++;
 
         // If the actual month is greater than 11 (December), reset it to 0 (January) and increment the year
-        if (actualMonth > 11)
+        if (calendarData.actualMonth > 11)
         {
-            actualMonth = 0;
-            yy++;
+            calendarData.actualMonth = 0;
+            calendarData.yy++;
         }
 
         // Set the month variable to the new actual month
-        month = scriptableMonths[actualMonth];
+        month = scriptableMonths[calendarData.actualMonth];
     }
 
     return week;
@@ -143,27 +138,5 @@ private int GetWeekNumber(int day)
         DateTime endDate = new DateTime(year, month, day);
         TimeSpan daysPassed = endDate - startDate;
         return daysPassed.Days;
-    }
-    private int DayOfYear(int year, int month, int day)
-    {
-        if(month > 12)
-        {
-            monthRef = month - 12; 
-        }
-        int dayOfYear = daysInMonth[monthRef - 1] + day;
-      
-        return dayOfYear;
-    }
-
-    private bool IsLeapYear(int year)
-    {
-        if (year % 4 != 0)
-            return false;
-        if (year % 100 != 0)
-            return true;
-        if (year % 400 == 0)
-            return true;
-
-        return false;
     }
 }

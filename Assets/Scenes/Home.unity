@@ -400,6 +400,75 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1001 &149262996
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1327091560046766121, guid: b4bd674942250ff4e9eca32398a01761, type: 3}
+      propertyPath: m_Name
+      value: Room Template
+      objectReference: {fileID: 0}
+    - target: {fileID: 3918476537427869843, guid: b4bd674942250ff4e9eca32398a01761, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 24.69
+      objectReference: {fileID: 0}
+    - target: {fileID: 3918476537427869843, guid: b4bd674942250ff4e9eca32398a01761, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 39.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 5196614273008311400, guid: b4bd674942250ff4e9eca32398a01761, type: 3}
+      propertyPath: m_RootOrder
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 5196614273008311400, guid: b4bd674942250ff4e9eca32398a01761, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5196614273008311400, guid: b4bd674942250ff4e9eca32398a01761, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5196614273008311400, guid: b4bd674942250ff4e9eca32398a01761, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5196614273008311400, guid: b4bd674942250ff4e9eca32398a01761, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5196614273008311400, guid: b4bd674942250ff4e9eca32398a01761, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5196614273008311400, guid: b4bd674942250ff4e9eca32398a01761, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5196614273008311400, guid: b4bd674942250ff4e9eca32398a01761, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5196614273008311400, guid: b4bd674942250ff4e9eca32398a01761, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5196614273008311400, guid: b4bd674942250ff4e9eca32398a01761, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5196614273008311400, guid: b4bd674942250ff4e9eca32398a01761, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6212336090770223738, guid: b4bd674942250ff4e9eca32398a01761, type: 3}
+      propertyPath: m_Follow
+      value: 
+      objectReference: {fileID: 3201987938296576330}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b4bd674942250ff4e9eca32398a01761, type: 3}
 --- !u!114 &283207044 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7705270409268842242, guid: efb0d2c23d1be4342aba91ffd21a855d, type: 3}
@@ -424,7 +493,7 @@ GameObject:
   m_Layer: 0
   m_Name: Door in
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -735,6 +804,45 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &624570129 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4694395203182369310, guid: f09dbbe65d7e49e47b950814d46ba665, type: 3}
+  m_PrefabInstance: {fileID: 4694395204047136537}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &624570130
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 624570129}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72ece51f2901e7445ab60da3685d6b5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ShowDebugText: 0
+  m_ShowCameraFrustum: 1
+  m_IgnoreTimeScale: 0
+  m_WorldUpOverride: {fileID: 0}
+  m_UpdateMethod: 2
+  m_BlendUpdateMethod: 1
+  m_DefaultBlend:
+    m_Style: 1
+    m_Time: 2
+    m_CustomCurve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+  m_CustomBlends: {fileID: 0}
+  m_CameraCutEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_CameraActivatedEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &763832420 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7705270408947827426, guid: efb0d2c23d1be4342aba91ffd21a855d, type: 3}
@@ -790,7 +898,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &981525775 stripped
+--- !u!114 &827255949 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 211304460818690528, guid: 18463d3426ed391468d897e54be5d1cb, type: 3}
   m_PrefabInstance: {fileID: 13657485}
@@ -38044,7 +38152,7 @@ GameObject:
   - component: {fileID: 2016558123}
   - component: {fileID: 2016558122}
   - component: {fileID: 2016558121}
-  - component: {fileID: 2016558120}
+  - component: {fileID: 2016558125}
   m_Layer: 0
   m_Name: Bed
   m_TagString: Untagged
@@ -38052,28 +38160,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &2016558120
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2016558119}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 03623e2f3a839cd47a6b785b8e9ac7e3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  context: {fileID: 11400000, guid: 87dcfc7209208e440af83fccb17d0962, type: 2}
-  playerInRange: 0
-  sceneToLoad: Dungeon Hub
-  fadeInPanel: {fileID: 7770201179040915610, guid: 1ac0344d478082b4e97be900755a92a9, type: 3}
-  fadeoutPanel: {fileID: 5445169717137078238, guid: 392230d584003d84e8ac1c63a5b0ff5d, type: 3}
-  fade_wait: 1
-  dialogText: {fileID: 981525775}
-  dialogBox: {fileID: 1966065308}
-  dialog: 'Do you wish to go to bed? '
-  exitspawnName: Dungeon Hub spawn
 --- !u!61 &2016558121
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -38193,6 +38279,28 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2016558125
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2016558119}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5050f71a5d05991409d6a7c26ecba3d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  context: {fileID: 11400000, guid: 87dcfc7209208e440af83fccb17d0962, type: 2}
+  playerInRange: 0
+  calendarData: {fileID: 11400000, guid: daa2e61e6cbde5048af01dfdfcacbfc9, type: 2}
+  sceneToLoad: Dungeon Hub
+  fadeInPanel: {fileID: 7770201179040915610, guid: 1ac0344d478082b4e97be900755a92a9, type: 3}
+  fadeoutPanel: {fileID: 5445169717137078238, guid: 392230d584003d84e8ac1c63a5b0ff5d, type: 3}
+  fade_wait: 2
+  dialogText: {fileID: 827255949}
+  dialogBox: {fileID: 1966065308}
+  exitspawnName: Dungeon Hub spawn
 --- !u!114 &603608777295949934
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -38206,8 +38314,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneToLoad: Alenore Gardens
-  playerPosition: {x: 33.5, y: 16.85}
-  playerStorage: {fileID: 11400000, guid: 69092ab3875e0954c9d7bb25ba621421, type: 2}
   fadeInPanel: {fileID: 7770201179040915610, guid: 1ac0344d478082b4e97be900755a92a9, type: 3}
   fadeOutPanel: {fileID: 5445169717137078238, guid: 392230d584003d84e8ac1c63a5b0ff5d, type: 3}
   fadeWait: 0.33
@@ -38849,15 +38955,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4694395203182369299, guid: f09dbbe65d7e49e47b950814d46ba665, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 23.3
+      value: 24.69
       objectReference: {fileID: 0}
     - target: {fileID: 4694395203182369299, guid: f09dbbe65d7e49e47b950814d46ba665, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 18.1
+      value: 39.15
       objectReference: {fileID: 0}
     - target: {fileID: 4694395203182369299, guid: f09dbbe65d7e49e47b950814d46ba665, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -10
+      value: -20
       objectReference: {fileID: 0}
     - target: {fileID: 4694395203182369299, guid: f09dbbe65d7e49e47b950814d46ba665, type: 3}
       propertyPath: m_LocalRotation.w
@@ -38968,6 +39074,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Calendar
       objectReference: {fileID: 0}
+    - target: {fileID: 6233905831425746955, guid: b51e91113a86c49479afcd68b13dcb25, type: 3}
+      propertyPath: calendarData
+      value: 
+      objectReference: {fileID: 11400000, guid: daa2e61e6cbde5048af01dfdfcacbfc9, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b51e91113a86c49479afcd68b13dcb25, type: 3}
 --- !u!1001 &6681528227077571767
@@ -39082,6 +39192,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2200834157601497121, guid: 229bdf2803d25e6439c80c0ab461186e, type: 3}
+      propertyPath: Objects.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2200834157601497121, guid: 229bdf2803d25e6439c80c0ab461186e, type: 3}
+      propertyPath: Objects.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: daa2e61e6cbde5048af01dfdfcacbfc9, type: 2}
     - target: {fileID: 2624661407273514934, guid: 229bdf2803d25e6439c80c0ab461186e, type: 3}
       propertyPath: m_Name
       value: GameSaver
