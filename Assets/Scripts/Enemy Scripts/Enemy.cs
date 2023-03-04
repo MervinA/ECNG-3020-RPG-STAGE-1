@@ -26,13 +26,13 @@ public class Enemy : MonoBehaviour
 
 private void Awake()
 {
-        health = maxHealth.initialValue; 
+        health = maxHealth.RuntimeValue; 
         StartPosition = transform.position; 
 }
 
     public void OnEnable()
 {
-    health = maxHealth.initialValue; 
+    health = maxHealth.RuntimeValue; 
     transform.position = StartPosition; 
     currentState = EnemyState.idle; 
     //anim.SetBool("moving", true);

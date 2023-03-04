@@ -621,7 +621,6 @@ TextureImporter:
     nameFileIdTable:
       Computer_mobs_attack_23: -378833448
       Computer_mobs_attack_3: -320991371
-      Computer_mobs_attack_20: -974108249
       Computer_mobs_attack_9: -1811037544
       Computer_mobs_attack_14: 1125624006
       Computer_mobs_attack_2: 1417931783
@@ -639,6 +638,7 @@ TextureImporter:
       Computer_mobs_attack_19: -2041120989
       Computer_mobs_attack_7: 1378234327
       Computer_mobs_attack_21: -560505889
+      Computer_mobs_attack_20: -974108249
       Computer_mobs_attack_18: -253476881
       Computer_mobs_attack_13: 2075130503
       Computer_mobs_attack_17: 2146626502
