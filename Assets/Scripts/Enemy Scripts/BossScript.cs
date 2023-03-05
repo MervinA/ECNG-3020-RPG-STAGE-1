@@ -65,7 +65,7 @@ public class BossScript : Enemy
                 if((currentState == EnemyState.idle || 
                     currentState == EnemyState.walk) 
                     && currentState != EnemyState.stagger){
-                        StartCoroutine(Phase1AttackCo());
+                        StartCoroutine(BossAttackBehaviour());
                 }
         }
 

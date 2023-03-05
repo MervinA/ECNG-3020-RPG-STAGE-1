@@ -10,13 +10,11 @@ public class knockback : MonoBehaviour
 
 private void OnTriggerEnter2D (Collider2D other){
 
-    if(other.gameObject.CompareTag("breakable") && this.gameObject.CompareTag("Player"))
-    { // 
+ if(other.gameObject.CompareTag("breakable") && this.gameObject.CompareTag("Player")){ // 
 
             other.GetComponent<pot>().Smash();
-    }
-    if(other.gameObject.CompareTag("enemy") || other.gameObject.CompareTag("Player") || other.gameObject.CompareTag("Boss"))
-    {
+        }
+    if(other.gameObject.CompareTag("enemy") || other.gameObject.CompareTag("Player")){
       //
        //  if (other.gameObject.CompareTag("enemy") && gameObject.CompareTag("enemy")) return;
         Rigidbody2D hit = other.GetComponent<Rigidbody2D>();
@@ -34,17 +32,13 @@ private void OnTriggerEnter2D (Collider2D other){
             other.GetComponent<Enemy>().Knock(hit,knockTime, damage);
            
             }
-            if(other.gameObject.CompareTag("Boss"))
-            {
-
-            }
             
             if(other.gameObject.CompareTag("Player"))
             {
                 if (other.GetComponent<PlayerMovement>().currentState!=PlayerState.stagger)
                 {
-                    hit.GetComponent<PlayerMovement>().currentState = PlayerState.stagger;
-                    other.GetComponent<PlayerMovement>().Knock(knockTime, damage);
+                hit.GetComponent<PlayerMovement>().currentState = PlayerState.stagger;
+                other.GetComponent<PlayerMovement>().Knock(knockTime, damage);
                 }
                 
             }

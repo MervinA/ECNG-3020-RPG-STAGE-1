@@ -14,18 +14,17 @@ public class DungeonRoomsEnemyControl : DungeonRooms
             }
       
     }*/
- public int EnemiesActive()
+public int EnemiesActive()
     {
-        int activeEnemies = 0; 
-        for(int i = 0; i< enemies.Length; i++)
+        int activeEnemies = 0;
+        for (int i = 0; i < enemies.Length; i++)
         {
-            if(enemies[i].gameObject.activeInHierarchy)
+            if (enemies[i].gameObject.activeInHierarchy)
             {
-                activeEnemies++; 
+                activeEnemies++;
             }
         }
-        Debug.Log(+activeEnemies); 
-        return activeEnemies; 
+        return activeEnemies;
     }
 
  public void CheckEnemies()
@@ -38,7 +37,8 @@ public class DungeonRoomsEnemyControl : DungeonRooms
                 ChangeActivation(doors[i], false); 
             }
         }
-    }
+    } 
+    
    
     public override void OnTriggerEnter2D(Collider2D other)
   {

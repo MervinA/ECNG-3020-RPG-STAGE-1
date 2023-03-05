@@ -25,6 +25,7 @@ public class HeartManager : MonoBehaviour
             {
                 hearts[i].gameObject.SetActive(true);
                 hearts[i].sprite = fullHeart;
+              //  UpdateHearts();
             }
         }
 

@@ -8,6 +8,7 @@ TagManager:
   - enemy
   - Player_Passive
   - Home
+  - Boss
   layers:
   - Default
   - TransparentFX
