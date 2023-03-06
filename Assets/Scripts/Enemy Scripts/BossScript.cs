@@ -5,7 +5,7 @@ public enum BossState{
     Phase1, 
     Phase2
 }
-public class BossScript : Enemy
+public class BossScript : Boss
 {
     [Header("Enemy States")]
     public BossState currPhase; 
@@ -24,7 +24,7 @@ public class BossScript : Enemy
 
         void Start()
         {
-            currentState = EnemyState.idle; 
+            currentState = BossStateMachine.idle; 
             currPhase = BossState.Phase1;
             anim = GetComponent<Animator>(); 
             myRigidbody = GetComponent<Rigidbody2D>(); 
@@ -44,9 +44,9 @@ public class BossScript : Enemy
                                 && Vector3.Distance(target.position, 
                                 transform.position)>attackRadius)
         {
-                    if((currentState == EnemyState.idle || 
-                        currentState == EnemyState.walk) 
-                    && currentState != EnemyState.stagger){
+                    if((currentState == BossStateMachine.idle || 
+                        currentState == BossStateMachine.walk))
+                    {
 
                 //if (currentState != EnemyState.stagger){
                 Vector3 temp = Vector3.MoveTowards(transform.position, target.position, 
@@ -54,16 +54,16 @@ public class BossScript : Enemy
             
                 changeAnim(temp-transform.position);
                 myRigidbody.MovePosition(temp);
-                ChangeState(EnemyState.walk);
+                ChangeState(BossStateMachine.walk);
                 anim.SetBool("moving", true);
                     }
         }
         else if ((Vector3.Distance(target.position, transform.position) <= chaseRadius) &&
             (Vector3.Distance(target.position, transform.position) <= attackRadius)){
             // anim.SetBool("moving",false);
-                if((currentState == EnemyState.idle || 
-                    currentState == EnemyState.walk) 
-                    && currentState != EnemyState.stagger){
+                if((currentState == BossStateMachine.idle || 
+                    currentState == BossStateMachine.walk) )
+                    {
                         //BossAttackBehaviour();
                         StartCoroutine(Phase1AttackCo());
                 }
@@ -76,7 +76,7 @@ public class BossScript : Enemy
                         Vector3 temp = Vector3.MoveTowards(transform.position, StartPosition, moveSpeed*Time.deltaTime);
                         changeAnim(temp-transform.position);
                         myRigidbody.MovePosition(temp);
-                        ChangeState(EnemyState.walk);
+                        ChangeState(BossStateMachine.walk);
                         anim.SetBool("moving",true);
                     }
 
@@ -84,7 +84,7 @@ public class BossScript : Enemy
                     {
                         anim.SetBool("moving", false);
                         SetAnimFloat(Vector2.down);
-                        ChangeState(EnemyState.idle);  
+                        ChangeState(BossStateMachine.idle);  
                     }
             
         }
@@ -117,25 +117,25 @@ public class BossScript : Enemy
     private IEnumerator Phase1AttackCo(){
 
             anim.SetBool("moving", false);
-            currentState = EnemyState.attack;
+            currentState = BossStateMachine.attack;
             anim.SetBool("attacking", true);
             yield return new WaitForSeconds(1.5f);
            // yield return null;
             anim.SetBool("attacking", false);
             yield return new WaitForSeconds(1.5f);
-            currentState = EnemyState.walk;
+            currentState = BossStateMachine.walk;
             
         }
 
     private IEnumerator Phase2AttackCo(){
 
             anim.SetBool("moving", false);
-            currentState = EnemyState.attack;
+            currentState = BossStateMachine.attack;
             anim.SetBool("attacking", true);
             yield return null;
             anim.SetBool("attacking", false);
             yield return new WaitForSeconds(1.5f);
-            currentState = EnemyState.walk;
+            currentState = BossStateMachine.walk;
             
         } 
         
@@ -168,16 +168,11 @@ public class BossScript : Enemy
             }
         }
 
-        public void ChangeState(EnemyState newState)
+        public void ChangeState(BossStateMachine newState)
         {
             if(currentState != newState){
                 currentState = newState;
             }
-        }
-
-        public override void Knock(Rigidbody2D myRigidbody, float knockTime, float damage)
-        {
-            TakeDamage(damage); 
         }
 
        
