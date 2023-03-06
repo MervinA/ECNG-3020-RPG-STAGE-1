@@ -76,7 +76,7 @@ private void DeathEffect()
 }
     // Start is called before the first frame update
 
- public void Knock(Rigidbody2D myRigidbody, float knockTime, float damage)
+ public virtual void Knock(Rigidbody2D myRigidbody, float knockTime, float damage)
     {
         StartCoroutine(KnockCo(myRigidbody, knockTime));
         TakeDamage(damage);

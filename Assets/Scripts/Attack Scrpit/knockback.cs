@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public class knockback : MonoBehaviour
 {
@@ -14,7 +15,7 @@ private void OnTriggerEnter2D (Collider2D other){
 
             other.GetComponent<pot>().Smash();
         }
-    if(other.gameObject.CompareTag("enemy") || other.gameObject.CompareTag("Player")){
+    if(other.gameObject.CompareTag("enemy") || other.gameObject.CompareTag("Boss")||other.gameObject.CompareTag("Player")){
       //
        //  if (other.gameObject.CompareTag("enemy") && gameObject.CompareTag("enemy")) return;
         Rigidbody2D hit = other.GetComponent<Rigidbody2D>();
@@ -22,9 +23,10 @@ private void OnTriggerEnter2D (Collider2D other){
         if(hit != null)
         {
             
-            Vector2 difference = hit.transform.position - transform.position;
+            Vector3 difference = hit.transform.position - transform.position;
             difference = difference.normalized * thrust; 
-            hit.AddForce(difference, ForceMode2D.Impulse);
+            //hit.AddForce(difference, ForceMode2D.Impulse);
+             hit.DOMove(hit.transform.position + difference, knockTime);
 
             if (other.gameObject.CompareTag("enemy") && other.isTrigger)
             {
@@ -32,7 +34,11 @@ private void OnTriggerEnter2D (Collider2D other){
             other.GetComponent<Enemy>().Knock(hit,knockTime, damage);
            
             }
-            
+            if(other.gameObject.CompareTag("Boss")&& other.isTrigger)
+            {
+            hit.GetComponent<Enemy>().currentState = EnemyState.stagger;
+            other.GetComponent<Enemy>().Knock(hit,0, damage);
+            }
             if(other.gameObject.CompareTag("Player"))
             {
                 if (other.GetComponent<PlayerMovement>().currentState!=PlayerState.stagger)

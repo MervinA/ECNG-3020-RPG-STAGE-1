@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public enum BossState{
@@ -34,7 +33,7 @@ public class BossScript : Enemy
         }
         public void FixedUpdate()
         {
-
+         CheckDistance();
         }
 
 
@@ -65,13 +64,12 @@ public class BossScript : Enemy
                 if((currentState == EnemyState.idle || 
                     currentState == EnemyState.walk) 
                     && currentState != EnemyState.stagger){
-                        StartCoroutine(BossAttackBehaviour());
+                        //BossAttackBehaviour();
+                        StartCoroutine(Phase1AttackCo());
                 }
         }
 
         else if( (Vector3.Distance(target.position, transform.position) > chaseRadius)){
-            /*anim.SetBool("moving", false);
-            ChangeState(EnemyState.idle); */
             
                 if(Vector3.Distance(transform.position,StartPosition) > roundingDistance)
                     {
@@ -91,7 +89,7 @@ public class BossScript : Enemy
             
         }
     }
-    private IEnumerator BossAttackBehaviour()
+    private void BossAttackBehaviour()
     {
         if(PhaseStates() == BossState.Phase1)
         {
@@ -101,7 +99,6 @@ public class BossScript : Enemy
         {
             StartCoroutine(Phase1AttackCo());
         }
-        yield return null;
     }   
  private BossState PhaseStates()
         {
@@ -122,9 +119,10 @@ public class BossScript : Enemy
             anim.SetBool("moving", false);
             currentState = EnemyState.attack;
             anim.SetBool("attacking", true);
-            yield return null;
+            yield return new WaitForSeconds(1.5f);
+           // yield return null;
             anim.SetBool("attacking", false);
-            yield return new WaitForSeconds(1f);
+            yield return new WaitForSeconds(1.5f);
             currentState = EnemyState.walk;
             
         }
@@ -136,7 +134,7 @@ public class BossScript : Enemy
             anim.SetBool("attacking", true);
             yield return null;
             anim.SetBool("attacking", false);
-            yield return new WaitForSeconds(1f);
+            yield return new WaitForSeconds(1.5f);
             currentState = EnemyState.walk;
             
         } 
@@ -175,6 +173,11 @@ public class BossScript : Enemy
             if(currentState != newState){
                 currentState = newState;
             }
+        }
+
+        public override void Knock(Rigidbody2D myRigidbody, float knockTime, float damage)
+        {
+            TakeDamage(damage); 
         }
 
        

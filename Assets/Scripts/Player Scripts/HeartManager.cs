@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -19,17 +17,33 @@ public class HeartManager : MonoBehaviour
 
     public void InitHearts()
     {
+        float tempHealth = playerCurrentHealth.RuntimeValue/2;
         for (int i = 0; i<heartContainers.RuntimeValue; i++)
         {
             if(i <hearts.Length)
             {
                 hearts[i].gameObject.SetActive(true);
                 hearts[i].sprite = fullHeart;
-              //  UpdateHearts();
             }
+            initialHeartCont(tempHealth, i);
         }
+    }
 
-
+    public void initialHeartCont(float health, int i)
+    {
+        if(i <= health-1)
+            {
+                //full heart
+                hearts[i].sprite = fullHeart; 
+            }else if (i >= health)
+            {
+                //empty heart
+                hearts[i].sprite = emptyHeart; 
+            }else
+            {
+               //half full heart
+               hearts[i].sprite = halfFullHeart;
+            }
     }
 
     public void UpdateHearts()
@@ -54,4 +68,10 @@ public class HeartManager : MonoBehaviour
         }
     }
 
+    public void HeartActives(float currheartContainers)
+    {
+        int containerNum = (int)currheartContainers; 
+        hearts[containerNum].gameObject.SetActive(false);
+        
+    }
 }

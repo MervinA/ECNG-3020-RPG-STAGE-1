@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7822079397522988886}
   m_Layer: 8
   m_Name: Axe Hitboxes
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -251,9 +251,9 @@ GameObject:
   - component: {fileID: 1910772180236428859}
   - component: {fileID: 1910772180236428856}
   - component: {fileID: 1910772180236428857}
+  - component: {fileID: 3598770851075902030}
   - component: {fileID: 1910772180236428853}
   - component: {fileID: 1910772180236428852}
-  - component: {fileID: 1910772180236428855}
   - component: {fileID: 3957487854840396064}
   - component: {fileID: 3957487854840396066}
   m_Layer: 8
@@ -382,47 +382,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.5077362, y: 0.4366293}
   m_EdgeRadius: 0
---- !u!114 &1910772180236428853
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1910772180236428862}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3d2c51dda4fe0e245b15f49dbae30e9f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currentState: 0
-  currentAttackState: 0
-  speed: 7
-  currentHealth: {fileID: 11400000, guid: a3540b8a13ec3a04fbf004dcebcef426, type: 2}
-  PlayerHealthSignal: {fileID: 11400000, guid: e43ba7f87279126409ca8c1db6d42ce0, type: 2}
-  playerInventory: {fileID: 11400000, guid: 81a005c450129524e90d00685adafa2d, type: 2}
-  receivedItemSprite: {fileID: 3957487854144863201}
-  projectile: {fileID: 4107795424747388939, guid: 54017c5b209e666449fd7e23890b97eb, type: 3}
---- !u!95 &1910772180236428852
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1910772180236428862}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: b049aa93418b8064eb2a0107bbd0be67, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
---- !u!61 &1910772180236428855
+--- !u!61 &3598770851075902030
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -448,6 +408,46 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.1628304, y: 2.2987576}
   m_EdgeRadius: 0
+--- !u!114 &1910772180236428853
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1910772180236428862}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d2c51dda4fe0e245b15f49dbae30e9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentState: 0
+  currentAttackState: 0
+  speed: 7
+  currentHealth: {fileID: 0}
+  PlayerHealthSignal: {fileID: 0}
+  playerInventory: {fileID: 11400000, guid: 81a005c450129524e90d00685adafa2d, type: 2}
+  receivedItemSprite: {fileID: 3957487854144863201}
+  projectile: {fileID: 4107795424747388939, guid: 54017c5b209e666449fd7e23890b97eb, type: 3}
+--- !u!95 &1910772180236428852
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1910772180236428862}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b049aa93418b8064eb2a0107bbd0be67, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!114 &3957487854840396064
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -771,8 +771,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7562490b2e4b20479c3930358def450, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  thrust: 7
-  knockTime: 0.3
+  thrust: 5
+  knockTime: 0.2
   damage: 2
 --- !u!1 &2410160306399937950
 GameObject:
@@ -851,7 +851,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thrust: 3
   knockTime: 0.2
-  damage: 1
+  damage: 1.5
 --- !u!1 &2898774507648068750
 GameObject:
   m_ObjectHideFlags: 0
@@ -863,7 +863,7 @@ GameObject:
   - component: {fileID: 7773035584076276564}
   m_Layer: 8
   m_Name: Sword Hitboxes
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1040,7 +1040,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thrust: 3
   knockTime: 0.2
-  damage: 1
+  damage: 1.5
 --- !u!1 &3678713821083549741
 GameObject:
   m_ObjectHideFlags: 0
@@ -1325,7 +1325,7 @@ GameObject:
   - component: {fileID: 4707828459034090232}
   m_Layer: 8
   m_Name: 'Spear Hitboxes '
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1430,7 +1430,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thrust: 3
   knockTime: 0.2
-  damage: 1
+  damage: 1.5
 --- !u!1 &6115863883656617129
 GameObject:
   m_ObjectHideFlags: 0
@@ -1506,8 +1506,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7562490b2e4b20479c3930358def450, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  thrust: 7
-  knockTime: 0.3
+  thrust: 5
+  knockTime: 0.2
   damage: 2
 --- !u!1 &6677962394987666526
 GameObject:
@@ -1585,8 +1585,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7562490b2e4b20479c3930358def450, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  thrust: 7
-  knockTime: 0.3
+  thrust: 5
+  knockTime: 0.2
   damage: 2
 --- !u!1 &7077427345676429478
 GameObject:
@@ -1665,7 +1665,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thrust: 3
   knockTime: 0.2
-  damage: 1
+  damage: 1.5
 --- !u!1 &7140483464194092815
 GameObject:
   m_ObjectHideFlags: 0
@@ -1818,8 +1818,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7562490b2e4b20479c3930358def450, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  thrust: 7
-  knockTime: 0.3
+  thrust: 5
+  knockTime: 0.2
   damage: 2
 --- !u!1 &7668677764688978230
 GameObject:

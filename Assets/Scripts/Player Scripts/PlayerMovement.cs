@@ -34,6 +34,7 @@ public class PlayerMovement : MonoBehaviour
     [Header("Player Health Characteristics")]
     public FloatValue currentHealth; 
     public SignalSender PlayerHealthSignal; 
+    public SignalSender playerDeathSignal; 
 
     [Header("Player Inventory Characteristics")]
     public Inventory playerInventory;
@@ -55,6 +56,16 @@ public class PlayerMovement : MonoBehaviour
         Application.targetFrameRate = 60;
     }
 
+   private void OnEnable()
+    {
+        currentState = PlayerState.idle;
+        currentAttackState = PlayerAttackType.unhanded;  
+        animator = GetComponent<Animator>(); 
+        myRigidbody = GetComponent<Rigidbody2D>(); 
+        animator.SetInteger("WeaponState", 0); 
+        animator.SetFloat("MoveX", 0);
+        animator.SetFloat("MoveY", -1);
+    }
     // Update is called once per frame
     void Update() // can be changed to Update()
     {
@@ -264,7 +275,9 @@ public class PlayerMovement : MonoBehaviour
           //  PlayerHealthSignal.Raise(); // take off to show zero hearts
              StartCoroutine(KnockCo(knockTime));
         }else{
+            
             this.gameObject.SetActive(false);
+            playerDeathSignal.Raise();
         }
         
     }
