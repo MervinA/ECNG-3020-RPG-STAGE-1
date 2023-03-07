@@ -17,7 +17,7 @@ public class Sign : Interactable
     }
 
     // Update is called once per frame
-    void Update()
+    public virtual void Update()
     {
             if(Input.GetKeyDown(KeyCode.Space) && playerInRange)
             {
@@ -32,15 +32,6 @@ public class Sign : Interactable
                 }
              }
      }
-
-/* for making dialog appear when player is in range of sign
-if(playerInRange){
-
-                
-                    dialogBox.SetActive(true);
-                    dialogText.text = dialog; 
-                
-            } */
 
                     
         

@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 134384088055720557}
   - component: {fileID: 134384088055720556}
   - component: {fileID: 134384088055720555}
+  - component: {fileID: 2636262400408913056}
   m_Layer: 0
   m_Name: Door1
   m_TagString: Untagged
@@ -26,7 +27,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 134384088055720553}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 23.45, y: 48.5, z: 0}
   m_LocalScale: {x: 3, y: 3, z: 1}
   m_ConstrainProportionsScale: 0
@@ -138,3 +139,25 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1.388262}
   m_EdgeRadius: 0
+--- !u!114 &2636262400408913056
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 134384088055720553}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9bf295e0d1a833e48b8819c3d97dc8eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  context: {fileID: 11400000, guid: 87dcfc7209208e440af83fccb17d0962, type: 2}
+  playerInRange: 0
+  DoorHasOpened: {fileID: 11400000, guid: b85b906f3fa035045b3e62d6e213a98e, type: 2}
+  playerInventory: {fileID: 11400000, guid: 81a005c450129524e90d00685adafa2d, type: 2}
+  dialogText: {fileID: 0}
+  dialogBox: {fileID: 0}
+  dialog: This Door is locked..I need a Key
+  thisDoorType: 0
+  open: 0
+  DoorIsOpen: {fileID: 11400000, guid: f8b0e4b83b9e3a74da941dec10d63a0f, type: 2}

@@ -9,6 +9,8 @@ TagManager:
   - Player_Passive
   - Home
   - Boss
+  - PlayerCollisionBlocker
+  - EnemyCollisionBlocker
   layers:
   - Default
   - TransparentFX
@@ -19,7 +21,7 @@ TagManager:
   - Enemy
   - Player Projectile
   - Player
-  - 
+  - PlayerCollisionBlocker
   - 
   - 
   - 
@@ -57,4 +59,7 @@ TagManager:
     locked: 0
   - name: Player
     uniqueID: 174084183
+    locked: 0
+  - name: Characters
+    uniqueID: 4267923793
     locked: 0

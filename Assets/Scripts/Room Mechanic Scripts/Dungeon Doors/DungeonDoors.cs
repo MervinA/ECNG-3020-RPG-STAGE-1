@@ -25,11 +25,19 @@ public class DungeonDoors : Interactable
     private BoxCollider2D physicsCollider;
     public DoorType2 thisDoorType;
     public bool open = false;  
-   
+    public BoolValue DoorIsOpen; 
+
     private void Start() 
     {
+
         doorSprite = GetComponent<SpriteRenderer>();
         physicsCollider = GetComponent<BoxCollider2D>();
+
+        open = DoorIsOpen.RuntimeValue;
+        if(open)
+        {
+            this.gameObject.SetActive(false);
+        }
     }
 
     // Update is called once per frame
@@ -37,16 +45,16 @@ public class DungeonDoors : Interactable
     {
         if(Input.GetKeyDown(KeyCode.Space)&& playerInRange && (thisDoorType == DoorType2.key))
         {
-            if(open == false && playerInventory.CopperKeys > 0)
-            {
-                playerInventory.CopperKeys--; 
-                //&& (playerInventory.numberofkeys > 0)
-               //OpenDooDungeonr();
-               DoorHasOpened.Raise(); 
-            }
-
-            
-           
+                if(open == false && playerInventory.CopperKeys > 0)
+                {
+                    playerInventory.CopperKeys--; 
+                    //&& (playerInventory.numberofkeys > 0)
+                //OpenDooDungeonr();
+                DoorHasOpened.Raise(); 
+                open = true; 
+                DoorIsOpen.RuntimeValue = open; 
+                }
+        
         } 
     }
 
@@ -59,6 +67,7 @@ public void OpenDooDungeonr()
         doorSprite.enabled = false;
         //turn off the door's box collider
         physicsCollider.enabled = false;
+        DoorIsOpen.RuntimeValue = open; 
 }
 
 
