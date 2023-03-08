@@ -20,6 +20,9 @@ public class HeartContainerUp : Resources
             resourceSignal.Raise(); 
             Destroy(this.gameObject);  
             }
+            else{
+                Destroy(this.gameObject);
+            }
         }
     }
 }

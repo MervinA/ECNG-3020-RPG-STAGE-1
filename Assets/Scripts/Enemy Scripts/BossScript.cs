@@ -39,27 +39,28 @@ public class BossScript : Boss
 
     public virtual void CheckDistance(){
 
-            if (Vector3.Distance(target.position,
-                                transform.position)<=chaseRadius
-                                && Vector3.Distance(target.position, 
-                                transform.position)>attackRadius)
+        if (Vector3.Distance(target.position,
+                            transform.position)<=chaseRadius
+                            && Vector3.Distance(target.position, 
+                            transform.position)>attackRadius)
         {
                     if((currentState == BossStateMachine.idle || 
                         currentState == BossStateMachine.walk))
                     {
 
-                //if (currentState != EnemyState.stagger){
-                Vector3 temp = Vector3.MoveTowards(transform.position, target.position, 
-                            moveSpeed*Time.deltaTime);
-            
-                changeAnim(temp-transform.position);
-                myRigidbody.MovePosition(temp);
-                ChangeState(BossStateMachine.walk);
-                anim.SetBool("moving", true);
+                        //if (currentState != EnemyState.stagger){
+                        Vector3 temp = Vector3.MoveTowards(transform.position, target.position, 
+                                    moveSpeed*Time.deltaTime);
+                    
+                        changeAnim(temp-transform.position);
+                        myRigidbody.MovePosition(temp);
+                        ChangeState(BossStateMachine.walk);
+                        anim.SetBool("moving", true);
                     }
         }
         else if ((Vector3.Distance(target.position, transform.position) <= chaseRadius) &&
-            (Vector3.Distance(target.position, transform.position) <= attackRadius)){
+            (Vector3.Distance(target.position, transform.position) <= attackRadius))
+        {
             // anim.SetBool("moving",false);
                 if((currentState == BossStateMachine.idle || 
                     currentState == BossStateMachine.walk) )

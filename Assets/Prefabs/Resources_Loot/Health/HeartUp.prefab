@@ -136,5 +136,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   resourceSignal: {fileID: 11400000, guid: e43ba7f87279126409ca8c1db6d42ce0, type: 2}
+  heartinfo: {fileID: 5356085444919769081, guid: b35b112a090aa2847ab51a61e34e2257, type: 3}
   heartContainers: {fileID: 11400000, guid: f8d2c724cdaa3894f82f321f4fc38d17, type: 2}
   playerHealth: {fileID: 11400000, guid: a3540b8a13ec3a04fbf004dcebcef426, type: 2}

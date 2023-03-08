@@ -10,6 +10,63 @@ public class GameSaveManager : MonoBehaviour
 
     public List<ScriptableObject> Objects = new List<ScriptableObject>(); 
 
+    public void ResetScriptables()
+    {
+        Debug.Log("Resetting Scriptables");
+        for (int i = 0; i < Objects.Count; i++)
+        {
+          
+            switch (Objects[i].GetType().FullName)
+            {
+                case "FloatValue":
+                    FloatValue ftmp = (FloatValue)Objects[i];
+                    ftmp.RuntimeValue = ftmp.initialValue;
+                    Debug.Log("resetting FloatValue");
+                    break;
+
+                case "BoolValue":
+                    BoolValue btmp = (BoolValue)Objects[i];
+                    btmp.RuntimeValue = btmp.initialValue;
+                    Debug.Log("resetting BoolValue");
+                    break;
+
+                case "Inventory":
+                    Inventory itmp = (Inventory)Objects[i];
+                    itmp.CopperKeys = 0;
+                    itmp.SilverKeys = 0;
+                    itmp.GoldKeys = 0;
+                    itmp.CompSysCoins = 0;
+                    itmp.CommSysCoins = 0;
+                    itmp.ControlSysCoins = 0;
+                    itmp.ElecPowerCoins = 0;
+                    itmp.AccSysCoins = 0;
+                    Debug.Log("Inventory Reset");
+                    break;
+
+                case "CalendarData":
+                    CalendarData clmp = (CalendarData)Objects[i];
+
+                    clmp.mm = clmp.initial_mm;
+                    clmp.hh = clmp.initial_hh;
+                    clmp.date = clmp.initial_date;
+                    clmp.actualMonth = clmp.initial_actualMonth;
+                    clmp.yy = clmp.initial_yy;
+                    Debug.Log("resetting CalendarData");
+                    break;
+                  
+
+                default:
+                    break;
+            }
+            if(File.Exists(Application.persistentDataPath +
+                string.Format($"/{i}.dat")))
+            {
+                File.Delete(Application.persistentDataPath +
+                string.Format($"/{i}.dat"));
+            }
+        }
+        
+    }
     private void OnEnable()
     {
         LoadScriptables();
@@ -18,46 +75,53 @@ public class GameSaveManager : MonoBehaviour
     {
         SaveScriptables();
     }
+    
+   public void SaveScriptables()
+    {
+        Debug.Log("Saving to: " + Application.persistentDataPath);
 
-   /* private void Awake()
-    {
-        if(gameSave == null)
+        for (int i = 0; i < Objects.Count; i++)
         {
-            gameSave = this; 
-        }
-        else
-        {
-            Destroy(this.gameObject); 
-        }
-        DontDestroyOnLoad(this);
-    }
-    */
-    public void SaveScriptables()
-    {
-        for(int i = Objects.Count; i <Objects.Count; i ++)
-        {
-            FileStream file = File.Create(Application.persistentDataPath + 
-                string.Format("/{0}.dat", i));
+            //open a file
+            FileStream file = File.Create(Application.persistentDataPath +
+                string.Format($"/{i}.dat"));
+
+            //create a binary formatter
             BinaryFormatter binary = new BinaryFormatter();
+
+            //format the object as json
             var json = JsonUtility.ToJson(Objects[i]);
+
+            //write to the file
             binary.Serialize(file, json);
-            file.Close(); 
+
+            //close the file
+            file.Close();
         }
     }
     public void LoadScriptables()
     {
-        for(int i = 0; i < Objects.Count; i++)
+        
+        for (int i = 0; i < Objects.Count; i++)
         {
-            if(File.Exists(Application.persistentDataPath + 
-                string.Format("/{0}.dat", i)))
+
+            if (File.Exists(Application.persistentDataPath +
+                string.Format($"/{i}.dat")))
             {
-                FileStream file = File.Open(Application.persistentDataPath + 
-                    string.Format("/{0}.dat", i), FileMode.Open);
-                BinaryFormatter binary = new BinaryFormatter(); 
+                FileStream file = File.Open(Application.persistentDataPath +
+                string.Format($"/{i}.dat"), FileMode.Open);
+
+                BinaryFormatter binary = new BinaryFormatter();
+
                 JsonUtility.FromJsonOverwrite((string)binary.Deserialize(file),
-                   Objects[i]);
-                   file.Close();
+                    Objects[i]);
+
+                file.Close();
+
             }
+
+
         }
+
     }
 }
