@@ -17,6 +17,7 @@ public class BoundedNPC : Sign
     public float minWaitTime;
     public float maxWaitTime;
     private float waitTimeSeconds;
+    public GameObject player; 
 
     // Start is called before the first frame update
     void Start()
@@ -39,24 +40,76 @@ public class BoundedNPC : Sign
             moveTimeSeconds -= Time.deltaTime;
             if(moveTimeSeconds<= 0)
             {
+                anim.SetBool("paused", true);
                 moveTimeSeconds = Random.Range(minMoveTime, maxMoveTime);
                 isMoving = false;
+                
             }
             if (!playerInRange)
             {
+                anim.SetBool("paused", false);
                 Move();
             }
         }
         else
         {
-            waitTimeSeconds -= Time.deltaTime;
-            if(waitTimeSeconds <= 0)
+            if(playerInRange==false)
             {
-                ChooseDifferentDirection();
-                isMoving = true;
+                waitTimeSeconds -= Time.deltaTime;
+                if(waitTimeSeconds <= 0)
+                {
+                    ChooseDifferentDirection();
+                    isMoving = true;
+                    waitTimeSeconds = Random.Range(minMoveTime, maxMoveTime);
+                }
+            }
+            if(playerInRange==true)
+            {
+                
+                playerDirection();  
+                isMoving = false; 
+                anim.SetBool("paused", true); 
                 waitTimeSeconds = Random.Range(minMoveTime, maxMoveTime);
+            
             }
         }
+    }
+
+    private void playerDirection()
+    {
+        Vector3 playerDirection = player.transform.position - myTransform.position;
+         Vector3 roundedDirection = new Vector3(
+            Mathf.Round(playerDirection.x),
+            Mathf.Round(playerDirection.y),
+            Mathf.Round(playerDirection.z));
+        if (roundedDirection.x > 0)
+        {
+            // Player is to the right of this GameObject
+             roundedDirection = Vector3.right;
+             Debug.Log("changing to right"); 
+        }
+        else if (roundedDirection.x < 0)
+        {
+            // Player is to the left of this GameObject
+            roundedDirection = Vector3.left;
+             Debug.Log("changing to Left"); 
+        }
+
+        if (roundedDirection.y > 0)
+        {
+            // Player is above this GameObject
+            roundedDirection = Vector3.up;
+            
+             Debug.Log("changing to up"); 
+        }
+        else if (roundedDirection.y < 0)
+        {
+            // Player is below this GameObject
+            roundedDirection = Vector3.down;
+            
+             Debug.Log("changing to down"); 
+        }
+        UpdateAnim(roundedDirection);
     }
 
     private void ChooseDifferentDirection()
@@ -115,6 +168,12 @@ public class BoundedNPC : Sign
     {
         anim.SetFloat("moveX", directionVector.x);
         anim.SetFloat("moveY", directionVector.y);
+    }
+
+    void UpdateAnim(Vector3 directionvector)
+    {
+        anim.SetFloat("moveX", directionvector.x);
+        anim.SetFloat("moveY", directionvector.y);
     }
 
     private void OnCollisionEnter2D(Collision2D other)
