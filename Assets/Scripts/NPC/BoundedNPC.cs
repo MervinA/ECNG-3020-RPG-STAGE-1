@@ -21,6 +21,7 @@ public class BoundedNPC : Sign
     // Start is called before the first frame update
     void Start()
     {
+       
         moveTimeSeconds = Random.Range(minMoveTime, maxMoveTime);
         waitTimeSeconds = Random.Range(minMoveTime, maxMoveTime);
         anim = GetComponent<Animator>();
@@ -112,8 +113,8 @@ public class BoundedNPC : Sign
 
     void UpdateAnimation()
     {
-        anim.SetFloat("MoveX", directionVector.x);
-        anim.SetFloat("MoveY", directionVector.y);
+        anim.SetFloat("moveX", directionVector.x);
+        anim.SetFloat("moveY", directionVector.y);
     }
 
     private void OnCollisionEnter2D(Collision2D other)

@@ -54,7 +54,6 @@ public class DungeonDoors : Interactable
                 open = true; 
                 DoorIsOpen.RuntimeValue = open; 
                 }
-        
         } 
     }
 
