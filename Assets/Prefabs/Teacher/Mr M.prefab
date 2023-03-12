@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5431858394810339353}
   - component: {fileID: 322453557410384750}
   - component: {fileID: 5431858394810339354}
-  - component: {fileID: 5431858394810339355}
+  - component: {fileID: 6532214008788793619}
   m_Layer: 0
   m_Name: Mr M
   m_TagString: Untagged
@@ -140,7 +140,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
---- !u!114 &5431858394810339355
+--- !u!114 &6532214008788793619
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -149,17 +149,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 5431858394810339358}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a4a2119662c199247bbf8cf304a61cbb, type: 3}
+  m_Script: {fileID: 11500000, guid: 141610de39d86724eb923b43128befa0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   context: {fileID: 11400000, guid: 87dcfc7209208e440af83fccb17d0962, type: 2}
   playerInRange: 0
-  dialogBox: {fileID: 0}
-  dialogText: {fileID: 0}
-  dialog: 
-  speed: 3
+  dialogValue: {fileID: 11400000, guid: 00782cf24b670904ab8aed95e29b5008, type: 2}
+  myDialog: {fileID: 0}
+  branchingDialogSignal: {fileID: 11400000, guid: 6b20cafc31912024b93a5b5232f9b925, type: 2}
+  speed: 0
   bounds: {fileID: 0}
   minMoveTime: 0
   maxMoveTime: 0
   minWaitTime: 0
   maxWaitTime: 0
+  player: {fileID: 0}
