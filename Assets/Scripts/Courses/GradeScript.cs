@@ -9,10 +9,11 @@ public class GradeScript : MonoBehaviour
 {
      public CalendarData clockinfo; 
     //private SOMont currMonth; 
-    public CourseEvent[] courseinfo;
+    
     public TextMeshProUGUI[] courseGrades; 
     [SerializeField] private BoolValue[] BossKills; 
-    [SerializeField] private BoolValue[] ExamCompletion; 
+    [SerializeField] private ExamBoolValue[] ExamCompletion; 
+    [SerializeField] private CourseEvent[] courseinfo;
     [SerializeField] private Inventory playerinventory; 
 
 
@@ -46,11 +47,11 @@ public class GradeScript : MonoBehaviour
 
             
             
-            if(ExamCompletion[i].RuntimeValue == true)
+            if(ExamCompletion[i].RuntimeValue == true) 
             {
                 if(BossKills[i].RuntimeValue == true)
                 {
-                    if(courseinfo[i].ThematicType == 01)
+                    if((ExamCompletion[i].assignmentCode == courseinfo[i].CourseAssignmentCode))
                     {
                         if(playerinventory.CompSysCoins >35)
                         {
@@ -60,23 +61,15 @@ public class GradeScript : MonoBehaviour
                         {
                             course_grade = "B";
                         }
-                    }
-                    else if (courseinfo[i].CourseCode == 02)
+                    }  
+                    else 
                     {
-                        if(playerinventory.ElecPowerCoins >35)
-                        {
-                            course_grade = "A"; 
-                        }
-                        else
-                        {
-                            course_grade = "B";
-                        }
+                        Debug.Log ("Codes do not match");
                     }
-                    
                 }
                 else 
                 {
-                    if(courseinfo[i].CourseCode == 01)
+                    if((ExamCompletion[i].assignmentCode == courseinfo[i].CourseAssignmentCode))
                     {
                         if(playerinventory.CompSysCoins >35)
                         {
@@ -87,17 +80,10 @@ public class GradeScript : MonoBehaviour
                             course_grade = "C";
                         }
                     }
-                    else if (courseinfo[i].CourseCode == 02)
+                    else 
                     {
-                        if(playerinventory.ElecPowerCoins >35)
-                        {
-                            course_grade = "B"; 
-                        }
-                        else
-                        {
-                            course_grade = "C";
-                        }
-                    }  
+                        Debug.Log ("Codes do not match");
+                    } 
                 }
             } 
         }

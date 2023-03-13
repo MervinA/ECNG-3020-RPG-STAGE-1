@@ -16,6 +16,7 @@ public class CourseEvent : ScriptableObject
    public int date; 
    public int year; 
    public int reminderDate; 
+   public int[] daysOfWeek;
 
  
 }

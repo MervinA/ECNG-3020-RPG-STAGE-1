@@ -32,9 +32,9 @@ public class ClockUpdater : MonoBehaviour
 	private void UpdateClock()
 	{
 		curryearText.text = clock.calendarData.yy.ToString();
-		currmonthText.text = clock.month.monthName+",";
+		currmonthText.text = clock.month.monthName;
 		currdateText.text = clock.calendarData.date.ToString();		
-		currtdayText.text = clock.daysOfWeek[clock.calendarData.dayOfWeek]+",";
+		currtdayText.text = clock.daysOfWeek[clock.calendarData.dayOfWeek];
 
 		string hours = clock.calendarData.hh.ToString();
 		string minutes = clock.calendarData.mm.ToString();

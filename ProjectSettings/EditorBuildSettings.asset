@@ -6,24 +6,33 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/TitleScreen.unity
+    path: Assets/Scenes/Menu and End Scene/TitleScreen.unity
     guid: 403596250d32cc74aa8d54f3e2685c7f
   - enabled: 1
-    path: Assets/Scenes/Home.unity
+    path: Assets/Scenes/Home/Home.unity
     guid: d9c784065f495de4893547566182cb4a
   - enabled: 1
-    path: Assets/Scenes/Alenore Gardens.unity
+    path: Assets/Scenes/Class Room Scenes/Orientation.unity
+    guid: cec4410170aa6db45a6469e288ed4370
+  - enabled: 1
+    path: Assets/Scenes/Home/Alenore Gardens.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
-    path: Assets/Scenes/Dungeon Hub.unity
+    path: Assets/Scenes/Dungeon/Dungeon Hub.unity
     guid: 0a0da378ad37096408a0d81eca936dc0
   - enabled: 1
-    path: Assets/Scenes/Comp Sys Dungeon.unity
+    path: Assets/Scenes/Dungeon/Comp Sys Dungeon.unity
     guid: 864f3979ed4e7da489f04806e369a747
   - enabled: 1
-    path: Assets/Scenes/Tutorial.unity
+    path: Assets/Scenes/Tutorial/Tutorial.unity
     guid: 7a3f218b6f67fc7458daffc3ffb7bae5
   - enabled: 1
-    path: Assets/Scenes/GameEnd.unity
+    path: Assets/Scenes/Menu and End Scene/GameEnd.unity
     guid: add9816d8fde912438d11c0b1a0142e9
+  - enabled: 1
+    path: Assets/Scenes/Class Room Scenes/ExamRoom.unity
+    guid: 93d1fccdc09edd941bbf39e442235f31
+  - enabled: 1
+    path: Assets/Scenes/Class Room Scenes/Class.unity
+    guid: d87877f56e5f6bb4c9468a168c384591
   m_configObjects: {}

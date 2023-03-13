@@ -14,8 +14,7 @@ public class EventDoor : Interactable
     private SpriteRenderer doorSprite;
     private BoxCollider2D physicsCollider;
     public bool open = false;  
-    public BoolValue DoorIsOpen; 
-    public CourseEvent courseinfo; 
+    public CourseEvent[] courseinfo; 
     public CalendarData currtime; 
     // Start is called before the first frame update
     private void Start() 
@@ -24,31 +23,29 @@ public class EventDoor : Interactable
         doorSprite = GetComponent<SpriteRenderer>();
         physicsCollider = GetComponent<BoxCollider2D>();
 
-        open = DoorIsOpen.RuntimeValue;
-        if(open)
-        {
-            this.gameObject.SetActive(false);
-        }
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        int warningDatePassed = WarningDateCheck(currtime.yy, currtime.actualMonth +1, currtime.date);
-        int deadlineDatePassed = DeadlineDateCheck(courseinfo.year, courseinfo.month +1, courseinfo.date);
-
-        if(Input.GetKeyDown(KeyCode.Space)&& playerInRange )
+         for(int i =  0; i < courseinfo.Length; i++)
         {
+            int warningDatePassed = WarningDateCheck(currtime.yy, currtime.actualMonth +1, currtime.date);
+            int deadlineDatePassed = DeadlineDateCheck(courseinfo[i].year, courseinfo[i].month +1, courseinfo[i].date);
 
-                if((warningDatePassed == deadlineDatePassed) && ((currtime.hh >= courseinfo.hours) && (currtime.hh <= courseinfo.hours +1)))
-                {
-                DoorHasOpened.Raise(); 
-                open = true; 
-                DoorIsOpen.RuntimeValue = open; 
-                }
-               
-        
-        } 
+            if(Input.GetKeyDown(KeyCode.Space)&& playerInRange )
+            {
+
+                    if((warningDatePassed == deadlineDatePassed) && (currtime.hh == courseinfo[i].hours))
+                    {
+                    DoorHasOpened.Raise(); 
+                    open = true;  
+                    }
+                
+            
+            } 
+        }
     }
     public void OpenDooDungeonr() 
 {
@@ -59,21 +56,24 @@ public class EventDoor : Interactable
 
     public override void OnTriggerEnter2D(Collider2D other)
     {
-        int warningDatePassed = WarningDateCheck(currtime.yy, currtime.actualMonth +1, currtime.date);
-        int deadlineDatePassed = DeadlineDateCheck(courseinfo.year, courseinfo.month +1, courseinfo.date);
-        if(other.CompareTag("Player_Passive") && !other.isTrigger)
+         for(int i =  0; i < courseinfo.Length; i++)
         {
-            context.Raise();
-            playerInRange = true;  
-            dialogBox.SetActive(true);
-            if((warningDatePassed == deadlineDatePassed) && ((currtime.hh >= courseinfo.hours) && (currtime.hh <= courseinfo.hours +1)))
+            int warningDatePassed = WarningDateCheck(currtime.yy, currtime.actualMonth +1, currtime.date);
+            int deadlineDatePassed = DeadlineDateCheck(courseinfo[i].year, courseinfo[i].month +1, courseinfo[i].date);
+            if(other.CompareTag("Player_Passive") && !other.isTrigger)
             {
-                 dialogText.text = "Its Time to go..."; 
-            }
-            else if((warningDatePassed != deadlineDatePassed) ||(warningDatePassed == deadlineDatePassed && ((currtime.hh < courseinfo.hours) || (currtime.hh >courseinfo.hours +1))))
+                context.Raise();
+                playerInRange = true;  
+                dialogBox.SetActive(true);
+                if((warningDatePassed == deadlineDatePassed) &&(currtime.hh == courseinfo[i].hours))
                 {
-                dialogText.text = "It isn't my time yet...i'll wait it out...i'm so nervous........"; 
+                    dialogText.text = "Its Time to go..."; 
                 }
+                else if((warningDatePassed != deadlineDatePassed) ||(warningDatePassed == deadlineDatePassed && (currtime.hh != courseinfo[i].hours)))
+                    {
+                    dialogText.text = "It isn't my time yet...i'll wait it out...i'm so nervous........"; 
+                    }
+            }
         }
     
     }

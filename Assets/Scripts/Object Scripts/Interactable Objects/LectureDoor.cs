@@ -4,8 +4,7 @@ using UnityEngine;
 using System;
 using UnityEngine.UI;
 
-
-public class ExamDoor : Interactable
+public class LectureDoor : Interactable
 {
    public SignalSender DoorHasOpened;
     public Text dialogText; 
@@ -33,22 +32,24 @@ public class ExamDoor : Interactable
         for(int i =  0; i < courseinfo.Length; i++)
         {
 
-        
-            int warningDatePassed = WarningDateCheck(currtime.yy, currtime.actualMonth +1, currtime.date);
-            int deadlineDatePassed = DeadlineDateCheck(courseinfo[i].year, courseinfo[i].month +1, courseinfo[i].date);
-
-            if(Input.GetKeyDown(KeyCode.Space)&& playerInRange )
+            for(int x = 0; x <courseinfo[i].daysOfWeek.Length; x++)
             {
+                int currDay = currtime.dayOfWeek;
+                int lectureDay = courseinfo[i].daysOfWeek[x]; 
 
-                    if((warningDatePassed == deadlineDatePassed) && (currtime.hh == courseinfo[i].hours))
-                    {
-                    DoorHasOpened.Raise(); 
-                    open = true; 
+                if(Input.GetKeyDown(KeyCode.Space)&& playerInRange )
+                {
+
+                        if((currDay == lectureDay) && (currtime.hh == courseinfo[i].hours))
+                        {
+                        DoorHasOpened.Raise(); 
+                        open = true; 
+                        
+                        }
                     
-                    }
                 
-            
-            } 
+                } 
+            }
         }
     }
     public void OpenDooDungeonr() 
@@ -62,21 +63,30 @@ public class ExamDoor : Interactable
     {
         for(int i =  0; i < courseinfo.Length; i++)
         {
-            int warningDatePassed = WarningDateCheck(currtime.yy, currtime.actualMonth +1, currtime.date);
-            int deadlineDatePassed = DeadlineDateCheck(courseinfo[i].year, courseinfo[i].month +1, courseinfo[i].date);
-            if(other.CompareTag("Player_Passive") && !other.isTrigger)
-            {
-                context.Raise();
-                playerInRange = true;  
-                dialogBox.SetActive(true);
-              if((warningDatePassed == deadlineDatePassed) &&(currtime.hh == courseinfo[i].hours))
+            for(int x = 0; x <courseinfo[i].daysOfWeek.Length; x++){
+
+            
+                int currDay = currtime.dayOfWeek;
+                int lectureDay = courseinfo[i].daysOfWeek[x]; 
+                if(other.CompareTag("Player_Passive") && !other.isTrigger)
                 {
-                    dialogText.text = "Its Time to go..."; 
-                }
-                else if((warningDatePassed != deadlineDatePassed) ||(warningDatePassed == deadlineDatePassed && (currtime.hh != courseinfo[i].hours)))
+                    context.Raise();
+                    playerInRange = true;  
+                    dialogBox.SetActive(true);
+
+                    if((currDay == lectureDay) && (currtime.hh == courseinfo[i].hours))
                     {
-                    dialogText.text = "It isn't time yet...i'll wait it out...i'm so nervous........"; 
+                        dialogText.text = "Its Time to go..."; 
                     }
+                    if((currDay == lectureDay) && (currtime.hh != courseinfo[i].hours))
+                        {
+                        dialogText.text = "It isn't time for class yet...i'll wait it out....."; 
+                        }
+                    if(currDay != lectureDay)
+                    {
+                        dialogText.text = "I don't have class right now...why am i here again?.."; 
+                    }
+                }
             }
         }
     

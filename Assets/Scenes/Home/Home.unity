@@ -38532,6 +38532,10 @@ PrefabInstance:
       propertyPath: clock
       value: 
       objectReference: {fileID: 996562389}
+    - target: {fileID: 1769550122997832444, guid: 99b62a7d6d4526847885dff2e3605df8, type: 3}
+      propertyPath: ExamCompletion.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: cb4dfd4f324416047b465b46b6e4a042, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 99b62a7d6d4526847885dff2e3605df8, type: 3}
 --- !u!114 &603608777295949934
