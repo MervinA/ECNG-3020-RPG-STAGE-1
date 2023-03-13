@@ -206,6 +206,7 @@ SpriteAtlas:
   - {fileID: 337788663, guid: fe365c445413d3f4994d92c5af89c4a8, type: 3}
   - {fileID: 75748846, guid: fe365c445413d3f4994d92c5af89c4a8, type: 3}
   - {fileID: 59555991, guid: fe365c445413d3f4994d92c5af89c4a8, type: 3}
+  - {fileID: 21300000, guid: 71e35fe528fe6ea409893f424866e17a, type: 3}
   - {fileID: 21300000, guid: 90cd8017d953a614ea22cc00a4daefa2, type: 3}
   - {fileID: 21300000, guid: 20f1093779135014288ae505b59abad5, type: 3}
   - {fileID: -2062547617, guid: a6da4d58e96115f40862a416663e1656, type: 3}
@@ -1412,6 +1413,7 @@ SpriteAtlas:
   - {fileID: -295616109, guid: fc3abb3c5f4ddc343ba95e5909f6b41f, type: 3}
   - {fileID: 1994370148, guid: fc3abb3c5f4ddc343ba95e5909f6b41f, type: 3}
   - {fileID: 21300000, guid: d201ac6c897499f44812277221fd280a, type: 3}
+  - {fileID: 21300000, guid: 9ae49b7f9ffb7dc47b3f0e119de928d3, type: 3}
   m_PackedSpriteNamesToIndex:
   - dungeonworld_8
   - dungeonworld_9
@@ -1569,6 +1571,7 @@ SpriteAtlas:
   - cave_110
   - cave_108
   - cave_109
+  - 019
   - log
   - character
   - objects_71
@@ -2775,6 +2778,7 @@ SpriteAtlas:
   - Overworld_673
   - Overworld_129
   - font
+  - 005
   m_RenderDataMap: {}
   m_Tag: New Sprite Atlas
   m_IsVariant: 0

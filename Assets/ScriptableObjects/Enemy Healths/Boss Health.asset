@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Boss Health
   m_EditorClassIdentifier: 
   initialValue: 10
-  RuntimeValue: 10
+  RuntimeValue: 12

@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 5790870806731160857}
   - component: {fileID: 5790870806731160862}
   - component: {fileID: 5790870806731160863}
+  - component: {fileID: 1419394669}
   m_Layer: 6
   m_Name: Echo Tutorial
   m_TagString: enemy
@@ -211,6 +212,17 @@ MonoBehaviour:
   attackRadius: 3
   anim: {fileID: 0}
   roundingDistance: 0.1
+--- !u!210 &1419394669
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5790870806731160869}
+  m_Enabled: 1
+  m_SortingLayerID: -27043503
+  m_SortingLayer: 5
+  m_SortingOrder: 0
 --- !u!1 &7466475902883834795
 GameObject:
   m_ObjectHideFlags: 0

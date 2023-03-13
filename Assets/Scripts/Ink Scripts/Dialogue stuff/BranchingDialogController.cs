@@ -7,6 +7,8 @@ using UnityEngine.UI;
 public class BranchingDialogController : MonoBehaviour
 {
     [SerializeField] private GameObject branchingCanvas; 
+    public bool dialogBool = false; 
+    public SignalSender DialogEnd; 
     [SerializeField] private GameObject dialogPrefab; 
     [SerializeField] private GameObject choicePrefab; 
     [SerializeField] private TextAssetValue dialogValue; 
@@ -28,9 +30,13 @@ public class BranchingDialogController : MonoBehaviour
 
     public void EnableCanvas()
     {
-        branchingCanvas.SetActive(true);
-        SetStory();
-        RefreshView();
+            branchingCanvas.SetActive(true);
+            SetStory();
+             RefreshView();
+    }
+    public void DisableCanvas()
+    {
+         branchingCanvas.SetActive(false);
     }
     public void SetStory()
     {
@@ -54,6 +60,7 @@ public class BranchingDialogController : MonoBehaviour
     }
     public void RefreshView()
     {
+       
         while(mystory.canContinue)
         {
             makeNewDialog(mystory.Continue());
@@ -61,10 +68,13 @@ public class BranchingDialogController : MonoBehaviour
         if(mystory.currentChoices.Count>0)
         {
             makeNewChoices(); 
+            Debug.Log(" " + mystory.currentChoices.Count);
+            
         }
-        else 
+        else
         {
             branchingCanvas.SetActive(false);
+            DialogEnd.Raise();
         }
     StartCoroutine(ScrollCo());
     }
@@ -95,7 +105,7 @@ public class BranchingDialogController : MonoBehaviour
     }
     void makeNewChoices()
     {
-        for(int i = 0; i < choiceHolder.transform.childCount; i++)
+        for(int i = 0; i <choiceHolder.transform.childCount; i++)
         {
             Destroy(choiceHolder.transform.GetChild(i).gameObject);
         }

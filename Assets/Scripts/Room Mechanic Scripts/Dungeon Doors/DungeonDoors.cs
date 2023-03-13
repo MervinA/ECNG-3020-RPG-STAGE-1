@@ -20,7 +20,6 @@ public class DungeonDoors : Interactable
     public Text dialogText; 
      public GameObject dialogBox; 
     public string dialog; 
-    private  PlayerMovement Player; 
     private SpriteRenderer doorSprite;
     private BoxCollider2D physicsCollider;
     public DoorType2 thisDoorType;

@@ -4,10 +4,8 @@ using UnityEngine;
 
 public class DialogNPC : Interactable
 {
-    [SerializeField] private TextAssetValue dialogValue; 
-    [SerializeField] private TextAsset myDialog; 
     [SerializeField] private SignalSender branchingDialogSignal; 
-
+    [SerializeField] private SignalSender branchingDialogSignalExit; 
    
     private Vector3 directionVector;
     private Transform myTransform;
@@ -43,10 +41,14 @@ public class DialogNPC : Interactable
         {
             if(Input.GetKeyDown(KeyCode.Space))
             {
-                dialogValue.value = myDialog; 
                 branchingDialogSignal.Raise();
             }
+            
         }
+       /* else if (!playerInRange)
+        {
+            branchingDialogSignal.Raise();
+        }*/
         
         if(isMoving)
         {
@@ -88,6 +90,16 @@ public class DialogNPC : Interactable
         }
     }
 
+ public override void OnTriggerExit2D(Collider2D  other)
+    {
+
+         if((other.CompareTag("Player") ||other.CompareTag("Player_Passive")) && !other.isTrigger)
+        {
+            context.Raise();
+            playerInRange = false; 
+            branchingDialogSignalExit.Raise();
+        }
+    }
     private void playerDirection()
     {
         Vector3 playerDirection = player.transform.position - myTransform.position;
@@ -99,13 +111,13 @@ public class DialogNPC : Interactable
         {
             // Player is to the right of this GameObject
              roundedDirection = Vector3.right;
-             Debug.Log("changing to right"); 
+             
         }
         else if (roundedDirection.x < 0)
         {
             // Player is to the left of this GameObject
             roundedDirection = Vector3.left;
-             Debug.Log("changing to Left"); 
+              
         }
 
         if (roundedDirection.y > 0)
@@ -113,14 +125,14 @@ public class DialogNPC : Interactable
             // Player is above this GameObject
             roundedDirection = Vector3.up;
             
-             Debug.Log("changing to up"); 
+            
         }
         else if (roundedDirection.y < 0)
         {
             // Player is below this GameObject
             roundedDirection = Vector3.down;
             
-             Debug.Log("changing to down"); 
+             
         }
         UpdateAnim(roundedDirection);
     }

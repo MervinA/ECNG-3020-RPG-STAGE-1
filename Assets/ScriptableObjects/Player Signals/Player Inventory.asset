@@ -16,9 +16,9 @@ MonoBehaviour:
   items: []
   CopperKeys: 101
   SilverKeys: 0
-  GoldKeys: 0
-  CompSysCoins: 4
+  GoldKeys: 98
+  CompSysCoins: 60
   CommSysCoins: 0
   ControlSysCoins: 0
-  ElecPowerCoins: 0
+  ElecPowerCoins: 65
   AccSysCoins: 0

@@ -24,6 +24,7 @@ public class BossScript : Boss
 
         void Start()
         {
+           
             currentState = BossStateMachine.idle; 
             currPhase = BossState.Phase1;
             anim = GetComponent<Animator>(); 
@@ -34,6 +35,18 @@ public class BossScript : Boss
         public void FixedUpdate()
         {
          CheckDistance();
+
+            if(health <= maxHealth.RuntimeValue/2)
+            {
+               // Debug.Log("hald health");
+            //}
+               currPhase =BossState.Phase2;
+                anim.SetBool("phase2", true); 
+            }
+            else 
+            {
+                currPhase = BossState.Phase1; 
+            }
         }
 
 
@@ -65,8 +78,13 @@ public class BossScript : Boss
                 if((currentState == BossStateMachine.idle || 
                     currentState == BossStateMachine.walk) )
                     {
-                        //BossAttackBehaviour();
+                        if(currPhase == BossState.Phase1)
                         StartCoroutine(Phase1AttackCo());
+
+                        else if(currPhase == BossState.Phase2)
+                        StartCoroutine(Phase2AttackCo());
+                        //BossAttackBehaviour();
+                        //StartCoroutine(Phase1AttackCo());
                 }
         }
 
@@ -96,17 +114,19 @@ public class BossScript : Boss
         {
             StartCoroutine(Phase1AttackCo());
         }
-        else if(PhaseStates() == BossState.Phase1)
+        else if(PhaseStates() == BossState.Phase2)
         {
-            StartCoroutine(Phase1AttackCo());
+           
+            StartCoroutine(Phase2AttackCo());
         }
     }   
  private BossState PhaseStates()
         {
             BossState NowPhase = currPhase; 
-            if(health > (health/1.5))
+            if(health == (maxHealth.RuntimeValue/2))
             {
-                NowPhase = BossState.Phase2; 
+                NowPhase = BossState.Phase2;
+                anim.SetBool("phase2",true); 
             }
             else 
             {

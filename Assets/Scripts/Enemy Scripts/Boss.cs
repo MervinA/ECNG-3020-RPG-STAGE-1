@@ -14,6 +14,7 @@ public class Boss : MonoBehaviour
 {
 
     public BossStateMachine currentState; 
+    [SerializeField] private BoolValue bosscheck; 
     public FloatValue maxHealth;
     public float health; 
     public string BossName; 
@@ -45,9 +46,11 @@ public void TakeDamage(float damage){
         {
             DeathEffect();
             MakeLoot();
+            bosscheck.RuntimeValue = true; 
             if (BossDeathSignal != null)
             {
                 BossDeathSignal.Raise();
+                
             }
         
         this.gameObject.SetActive(false);
