@@ -11,12 +11,16 @@ public class GameEnd : MonoBehaviour
     [SerializeField] private GameObject fadeoutPanel; 
     [SerializeField] private float fade_wait; 
     [SerializeField] private string sceneToLoad; 
+    private  PlayerMovement Player; 
+    public string exitspawnName;
 
 
 
     public void EndGameScene()
     {
+        PlayerMovement.spawnPointName = exitspawnName;
         StartCoroutine(FadeCo());
+        
         
     }
 
