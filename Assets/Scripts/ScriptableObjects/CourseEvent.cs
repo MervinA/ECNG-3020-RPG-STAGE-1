@@ -6,6 +6,7 @@ using UnityEngine;
 public class CourseEvent : ScriptableObject
 {
    public int CourseCode; 
+   public int ThematicType; 
    public string CourseType; 
    public string CourseAssignment; 
    public int CourseAssignmentCode; 

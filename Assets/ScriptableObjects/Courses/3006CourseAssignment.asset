@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: 3006CourseAssignment
   m_EditorClassIdentifier: 
   CourseCode: 3006
+  ThematicType: 1
   CourseType: ECNG
   CourseAssignment: Finals
   CourseAssignmentCode: 0

@@ -6,6 +6,7 @@ public class DialogNPC : Interactable
 {
     [SerializeField] private SignalSender branchingDialogSignal; 
     [SerializeField] private SignalSender branchingDialogSignalExit; 
+    [SerializeField] private BoolValue examComplted; 
    
     private Vector3 directionVector;
     private Transform myTransform;
