@@ -13,17 +13,9 @@ public class SceneTransition : MonoBehaviour
     public float fadeWait;
     public string exitspawnName; 
 
-    private void Awake()
-    {
-        if (fadeInPanel != null)
-        {
-            GameObject panel = Instantiate(fadeInPanel, Vector3.zero, Quaternion.identity) as GameObject;
-            Destroy(panel, 1);
-        }
-    }
+  
 
-
-    public void OnTriggerEnter2D(Collider2D other)
+    public virtual void OnTriggerEnter2D(Collider2D other)
     {
         if((other.CompareTag("Player") ||other.CompareTag("Player_Passive") )&& !other.isTrigger)
         {

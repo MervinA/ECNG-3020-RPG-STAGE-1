@@ -18,7 +18,6 @@ public class ExamDoor : Interactable
     public CourseEvent[] courseinfo; 
     public CalendarData currtime; 
 
-    [SerializeField] private BoolValue examComplted; 
     // Start is called before the first frame update
     private void Start() 
     {

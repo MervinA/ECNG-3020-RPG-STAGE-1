@@ -17,6 +17,7 @@ MonoBehaviour:
   CourseType: ECNG
   CourseAssignment: Finals
   CourseAssignmentCode: 300601
+  EventType: 1
   hours: 11
   minutes: 0
   month: 11

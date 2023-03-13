@@ -13,12 +13,15 @@ MonoBehaviour:
   m_Name: Progress Presentation
   m_EditorClassIdentifier: 
   CourseCode: 3020
+  ThematicType: 0
   CourseType: ECNG
   CourseAssignment: Progress Presentation
   CourseAssignmentCode: 0
+  EventType: 4
   hours: 11
-  minutes: 30
+  minutes: 0
   month: 0
   date: 4
   year: 2023
   reminderDate: 0
+  daysOfWeek: 

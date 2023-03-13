@@ -17,9 +17,11 @@ MonoBehaviour:
   CourseType: 
   CourseAssignment: 
   CourseAssignmentCode: 0
+  EventType: 3
   hours: 14
   minutes: 0
   month: 8
   date: 5
   year: 2022
   reminderDate: 0
+  daysOfWeek: 

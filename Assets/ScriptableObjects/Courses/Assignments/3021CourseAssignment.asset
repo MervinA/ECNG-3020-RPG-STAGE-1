@@ -17,6 +17,7 @@ MonoBehaviour:
   CourseType: ECNG
   CourseAssignment: Midterm
   CourseAssignmentCode: 1
+  EventType: 1
   hours: 12
   minutes: 0
   month: 0

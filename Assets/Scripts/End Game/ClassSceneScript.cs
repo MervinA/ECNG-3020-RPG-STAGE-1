@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-
-public class GameEnd : MonoBehaviour
+public class ClassSceneScript : MonoBehaviour
 {
     [SerializeField] private GameObject fadeInPanel;
     [SerializeField] private GameObject fadeoutPanel; 
@@ -16,12 +15,12 @@ public class GameEnd : MonoBehaviour
 
 
 
-    public void EndGameScene()
+    public void ChangeScene()
     {
 
         
         PlayerMovement.spawnPointName = exitspawnName;
-        currTime.hh += 4; 
+        currTime.hh += 3; 
         StartCoroutine(FadeCo());
         
         
@@ -34,11 +33,12 @@ public class GameEnd : MonoBehaviour
         Instantiate(fadeoutPanel, Vector3.zero, Quaternion.identity); 
         }
         yield return new WaitForSeconds(fade_wait);
-        AsyncOperation asyncOperation = SceneManager.LoadSceneAsync(sceneToLoad);
+        AsyncOperation asyncOperation = SceneManager.LoadSceneAsync("Class");
         while(!asyncOperation.isDone)
         {
             yield return null; 
         }
     }
 }
+
 

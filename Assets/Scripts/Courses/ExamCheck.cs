@@ -4,15 +4,22 @@ using UnityEngine;
 
 public class ExamCheck : MonoBehaviour
 {
+    [SerializeField] private ExamDoor DoorInfo; 
+    [SerializeField] private ExamBoolValue[] ExamSlip; 
     // Start is called before the first frame update
-    void Start()
+    
+    public void HandingExamPaper()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        for(int i = 0; i < DoorInfo.courseinfo.Length; i++)
+        {
+            if(ExamSlip[i].assignmentCode == DoorInfo.courseinfo[i].CourseAssignmentCode)
+            {
+                ExamSlip[i].RuntimeValue = true; 
+            }
+            else
+            {
+                Debug.Log("Slips do not match the examination");
+            }
+        }
     }
 }

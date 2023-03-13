@@ -17,6 +17,7 @@ MonoBehaviour:
   CourseType: ECNG
   CourseAssignment: 
   CourseAssignmentCode: 0
+  EventType: 2
   hours: 14
   minutes: 0
   month: 0

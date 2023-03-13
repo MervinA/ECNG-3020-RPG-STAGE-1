@@ -63,11 +63,12 @@ public class LectureDoor : Interactable
     {
         for(int i =  0; i < courseinfo.Length; i++)
         {
-            for(int x = 0; x <courseinfo[i].daysOfWeek.Length; x++){
+            for(int x = 0; x <courseinfo[i].daysOfWeek.Length; x++)
+            {
 
             
                 int currDay = currtime.dayOfWeek;
-                int lectureDay = courseinfo[i].daysOfWeek[x]; 
+                int lectureDay = courseinfo[i].daysOfWeek[x];  
                 if(other.CompareTag("Player_Passive") && !other.isTrigger)
                 {
                     context.Raise();
@@ -75,16 +76,24 @@ public class LectureDoor : Interactable
                     dialogBox.SetActive(true);
 
                     if((currDay == lectureDay) && (currtime.hh == courseinfo[i].hours))
-                    {
+                    {                       
                         dialogText.text = "Its Time to go..."; 
+                        break;
                     }
-                    if((currDay == lectureDay) && (currtime.hh != courseinfo[i].hours))
-                        {
+                    if((currDay == lectureDay) && (currtime.hh < courseinfo[i].hours))
+                        {                    
                         dialogText.text = "It isn't time for class yet...i'll wait it out....."; 
+                        break;
+                        }
+                    if((currDay == lectureDay) && (currtime.hh > courseinfo[i].hours))
+                        {
+                        dialogText.text = "Oh crap..i missed my class...."; 
+                        break;
                         }
                     if(currDay != lectureDay)
                     {
                         dialogText.text = "I don't have class right now...why am i here again?.."; 
+                        break;
                     }
                 }
             }

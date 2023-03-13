@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 public class BranchingDialogControllerExam : MonoBehaviour
 {
-    [SerializeField] private BoolValue examComplted; 
+    
       [SerializeField] private GameObject branchingCanvas; 
     public bool dialogBool = false; 
     public SignalSender DialogEnd; 
@@ -77,7 +77,7 @@ public class BranchingDialogControllerExam : MonoBehaviour
         {
             branchingCanvas.SetActive(false);
             DialogEnd.Raise();
-            examComplted.RuntimeValue = true; 
+            
         }
     StartCoroutine(ScrollCo());
     }

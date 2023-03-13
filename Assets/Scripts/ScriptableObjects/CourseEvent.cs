@@ -10,6 +10,7 @@ public class CourseEvent : ScriptableObject
    public string CourseType; 
    public string CourseAssignment; 
    public int CourseAssignmentCode; 
+   public int EventType; 
    public int hours; 
    public int minutes; 
    public int month; 
