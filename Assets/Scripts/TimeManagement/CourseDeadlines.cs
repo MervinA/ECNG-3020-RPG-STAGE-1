@@ -10,7 +10,7 @@ public class CourseDeadlines : MonoBehaviour
     //private SOMont currMonth; 
     public CourseEvent[] courseinfo;
     public TextMeshProUGUI[] courseDeadlines; 
-    private Coroutine repeatcoroutine;
+    protected Coroutine repeatcoroutine;
 
     void Start()
     {
@@ -18,7 +18,7 @@ public class CourseDeadlines : MonoBehaviour
      repeatcoroutine = StartCoroutine(RepeatMethod(clockinfo.secondSpeed));
     }
 
-    private IEnumerator RepeatMethod(float secondSpeed)
+    protected IEnumerator RepeatMethod(float secondSpeed)
     {
         while (true)
         {
@@ -28,7 +28,7 @@ public class CourseDeadlines : MonoBehaviour
         }
     
     } 
-    private void WarningCheck()
+    public virtual void WarningCheck()
     {
         for(int i = 0; i <courseinfo.Length; i++)
         {
@@ -37,22 +37,21 @@ public class CourseDeadlines : MonoBehaviour
 
             if(warningDatePassed >= (deadlineDatePassed - 7) && warningDatePassed < deadlineDatePassed)
             {
-                Debug.Log("Deadline Approaching, Course: " + courseinfo[i].CourseCode); 
                 courseDeadlines[i].text = courseinfo[i].CourseType + courseinfo[i].CourseCode.ToString() + "\n" + courseinfo[i].date + "," + clockinfo.scriptableMonths[courseinfo[i].month].monthName.ToString();
             }       
         }
     }
-    private int WarningDateCheck(int year, int month, int date)
+    protected int WarningDateCheck(int year, int month, int date)
     {
         int warningDaysPassed = DaysPassed(year, month, date);
         return warningDaysPassed; 
     }
-    private int DeadlineDateCheck(int year, int month, int date)
+    protected int DeadlineDateCheck(int year, int month, int date)
     {
         int deadlineDaysPassed = DaysPassed(year, month, date);
         return deadlineDaysPassed; 
     }
-    private static int DaysPassed(int year, int month, int day)
+    protected static int DaysPassed(int year, int month, int day)
     {
         DateTime startDate = new DateTime(2022, 1, 1);
         DateTime endDate = new DateTime(year, month, day);

@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class DeadlineMenu : MonoBehaviour
 {
-    private bool isPaused;
+    protected bool isPaused;
     public GameObject deadlinePanel; 
     public TimeClockTest clock; 
     // Start is called before the first frame update
@@ -15,7 +15,7 @@ public class DeadlineMenu : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    protected virtual void Update()
     {
         if(Input.GetButtonDown("deadlines"))
         {

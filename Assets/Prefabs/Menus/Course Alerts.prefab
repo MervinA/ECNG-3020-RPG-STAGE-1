@@ -417,12 +417,12 @@ GameObject:
   - component: {fileID: 1344465325272294394}
   - component: {fileID: 1344465325272294397}
   m_Layer: 5
-  m_Name: 'Deadline Panel '
+  m_Name: 'Alert Panel '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1344465325272294396
 RectTransform:
   m_ObjectHideFlags: 0
@@ -765,8 +765,9 @@ GameObject:
   - component: {fileID: 1344465326829532127}
   - component: {fileID: 1344465326829532126}
   - component: {fileID: 3216125700954896153}
+  - component: {fileID: 4860017942204303536}
   m_Layer: 5
-  m_Name: Course Deadline Lists
+  m_Name: Course Alerts
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -867,6 +868,32 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   deadlinePanel: {fileID: 1344465326829532115}
+  clock: {fileID: 0}
+--- !u!114 &4860017942204303536
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1344465326829532115}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18d31be042cbfbd4ab196f65da42fe38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clockinfo: {fileID: 0}
+  courseinfo:
+  - {fileID: 11400000, guid: 794e5d47acd18364d9f23299d87ce392, type: 2}
+  - {fileID: 11400000, guid: a40c692e4353f914299c0989fa245035, type: 2}
+  - {fileID: 11400000, guid: 90966490c1c974248899da391e919565, type: 2}
+  - {fileID: 11400000, guid: 5b395339dd9a9f54b8a6bd77fd2ddb75, type: 2}
+  courseDeadlines:
+  - {fileID: 1344465326344230342}
+  - {fileID: 1344465325203566465}
+  - {fileID: 1344465325300531704}
+  - {fileID: 3892977278419748711}
+  - {fileID: 5076096070822025366}
+  - {fileID: 5865437407048719272}
 --- !u!1 &1344465326991871890
 GameObject:
   m_ObjectHideFlags: 0

@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5999be892b4d2f4e95417c46b25bae5, type: 3}
   m_Name: Progress Presentation
   m_EditorClassIdentifier: 
-  CourseCode: 3020
+  CourseCode: 0
   ThematicType: 0
-  CourseType: ECNG
+  CourseType: ECNG 3020 Progress Presentation
   CourseAssignment: Progress Presentation
   CourseAssignmentCode: 0
   EventType: 4

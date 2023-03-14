@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CourseCode: 0
   ThematicType: 0
-  CourseType: 
+  CourseType: Orientation
   CourseAssignment: 
   CourseAssignmentCode: 0
   EventType: 3
