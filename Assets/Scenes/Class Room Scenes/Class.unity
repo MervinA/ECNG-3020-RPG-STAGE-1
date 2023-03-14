@@ -541,7 +541,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 485889755734458617}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 29.17, y: 7.25, z: 0}
+  m_LocalPosition: {x: 10.8, y: 11.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3214,7 +3214,7 @@ MonoBehaviour:
   DialogEnd: {fileID: 11400000, guid: fd9c3b83eb297114a9bb439b1da68467, type: 2}
   dialogPrefab: {fileID: 8021514762854998852, guid: 6b53ece8d3f7c0a4293a025e9019a480, type: 3}
   choicePrefab: {fileID: 7126719733733115791, guid: c743198fae5e3244981758237ad6bb2b, type: 3}
-  dialogValue: {fileID: 11400000, guid: b28a835328d7b894dbd6f367bc0de870, type: 2}
+  dialogValue: {fileID: 11400000, guid: 29c7fba7eb8377b4cb7159696dd69c7d, type: 2}
   dialogHolder: {fileID: 3085393696692092692}
   choiceHolder: {fileID: 3085393697236405725}
   dialogScroll: {fileID: 3085393695650127701}

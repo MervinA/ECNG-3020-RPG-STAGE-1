@@ -1335,7 +1335,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1284738197313558063}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 28.83, y: 9.41, z: 0}
+  m_LocalPosition: {x: 31.4, y: 4.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3844,7 +3844,7 @@ MonoBehaviour:
   DialogEnd: {fileID: 11400000, guid: fd9c3b83eb297114a9bb439b1da68467, type: 2}
   dialogPrefab: {fileID: 8021514762854998852, guid: 6b53ece8d3f7c0a4293a025e9019a480, type: 3}
   choicePrefab: {fileID: 7126719733733115791, guid: c743198fae5e3244981758237ad6bb2b, type: 3}
-  dialogValue: {fileID: 11400000, guid: b28a835328d7b894dbd6f367bc0de870, type: 2}
+  dialogValue: {fileID: 11400000, guid: caea13f7ceea5b24f9edde0ad3ef3177, type: 2}
   dialogHolder: {fileID: 4448414613331143106}
   choiceHolder: {fileID: 4448414612887214859}
   dialogScroll: {fileID: 4448414614513338755}
@@ -5695,7 +5695,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fadeInPanel: {fileID: 7770201179040915610, guid: 1ac0344d478082b4e97be900755a92a9, type: 3}
   fadeoutPanel: {fileID: 5445169717137078238, guid: 392230d584003d84e8ac1c63a5b0ff5d, type: 3}
-  currTime: {fileID: 0}
+  currTime: {fileID: 11400000, guid: daa2e61e6cbde5048af01dfdfcacbfc9, type: 2}
   fade_wait: 2
   sceneToLoad: Home
   exitspawnName: Home Door In
