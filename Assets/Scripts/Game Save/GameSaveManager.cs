@@ -53,6 +53,13 @@ public class GameSaveManager : MonoBehaviour
                     clmp.yy = clmp.initial_yy;
                     Debug.Log("resetting CalendarData");
                     break;
+                    
+                case "Grades":
+                    Grades grmp = (Grades)Objects[i]; 
+                        grmp.RuntimeValue = grmp.initialValue; 
+                        Debug.Log("Grades Reset");
+                        break; 
+                
                   
 
                 default:

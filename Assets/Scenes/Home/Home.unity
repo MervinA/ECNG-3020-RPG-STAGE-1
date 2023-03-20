@@ -144,7 +144,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3949277348318987150, guid: 18463d3426ed391468d897e54be5d1cb, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3949277348318987150, guid: 18463d3426ed391468d897e54be5d1cb, type: 3}
       propertyPath: m_AnchorMax.x
@@ -317,7 +317,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1344465326829532112, guid: 2dac273e4f4da3348999817f94740c3e, type: 3}
       propertyPath: m_RootOrder
-      value: 11
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 1344465326829532112, guid: 2dac273e4f4da3348999817f94740c3e, type: 3}
       propertyPath: m_AnchorMax.x
@@ -423,6 +423,18 @@ PrefabInstance:
       propertyPath: m_fontSizeBase
       value: 34
       objectReference: {fileID: 0}
+    - target: {fileID: 4860017942204303536, guid: 2dac273e4f4da3348999817f94740c3e, type: 3}
+      propertyPath: clockinfo
+      value: 
+      objectReference: {fileID: 996562389}
+    - target: {fileID: 4860017942204303536, guid: 2dac273e4f4da3348999817f94740c3e, type: 3}
+      propertyPath: courseinfo.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4860017942204303536, guid: 2dac273e4f4da3348999817f94740c3e, type: 3}
+      propertyPath: courseinfo.Array.data[2]
+      value: 
+      objectReference: {fileID: 11400000, guid: 5b395339dd9a9f54b8a6bd77fd2ddb75, type: 2}
     - target: {fileID: 5076096070822025366, guid: 2dac273e4f4da3348999817f94740c3e, type: 3}
       propertyPath: m_fontSize
       value: 34
@@ -557,7 +569,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5196614273008311400, guid: b4bd674942250ff4e9eca32398a01761, type: 3}
       propertyPath: m_RootOrder
-      value: 12
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5196614273008311400, guid: b4bd674942250ff4e9eca32398a01761, type: 3}
       propertyPath: m_LocalPosition.x
@@ -927,7 +939,7 @@ Transform:
   - {fileID: 1277463408}
   - {fileID: 479285381}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &624570129 stripped
 GameObject:
@@ -999,7 +1011,7 @@ Transform:
   - {fileID: 1294532383}
   - {fileID: 309214138}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &827255949 stripped
 MonoBehaviour:
@@ -1049,7 +1061,6 @@ MonoBehaviour:
   clockinfo: {fileID: 996562389}
   courseinfo:
   - {fileID: 11400000, guid: a40c692e4353f914299c0989fa245035, type: 2}
-  - {fileID: 11400000, guid: 90966490c1c974248899da391e919565, type: 2}
   courseDeadlines:
   - {fileID: 52459086}
   - {fileID: 52459085}
@@ -1156,7 +1167,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1175710825
 PrefabInstance:
@@ -1175,7 +1186,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3516076467395058207, guid: 4fa290687e7bee34a94bad9eb097709a, type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 3516076467395058207, guid: 4fa290687e7bee34a94bad9eb097709a, type: 3}
       propertyPath: m_AnchorMax.x
@@ -38288,7 +38299,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5699131823904340153, guid: e587291430cf92448818878b8ed20219, type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 5699131823904340153, guid: e587291430cf92448818878b8ed20219, type: 3}
       propertyPath: m_AnchorMax.x
@@ -38510,7 +38521,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2016558125
 MonoBehaviour:
@@ -38645,9 +38656,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 996562389}
     - target: {fileID: 1769550122997832444, guid: 99b62a7d6d4526847885dff2e3605df8, type: 3}
+      propertyPath: courseGradesSO.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1769550122997832444, guid: 99b62a7d6d4526847885dff2e3605df8, type: 3}
       propertyPath: ExamCompletion.Array.data[0]
       value: 
       objectReference: {fileID: 11400000, guid: cb4dfd4f324416047b465b46b6e4a042, type: 2}
+    - target: {fileID: 1769550122997832444, guid: 99b62a7d6d4526847885dff2e3605df8, type: 3}
+      propertyPath: courseGradesSO.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: cf6564c1b8b0c994eaea8fe8c5df9a0d, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 99b62a7d6d4526847885dff2e3605df8, type: 3}
 --- !u!114 &603608777295949934
@@ -39049,7 +39068,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6233905831425746952, guid: b51e91113a86c49479afcd68b13dcb25, type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 6233905831425746952, guid: b51e91113a86c49479afcd68b13dcb25, type: 3}
       propertyPath: m_LocalPosition.x
@@ -39130,7 +39149,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6681528227793671522, guid: fe447163c06a93343a4d990df8c10e69, type: 3}
       propertyPath: m_RootOrder
-      value: 10
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 6681528227793671522, guid: fe447163c06a93343a4d990df8c10e69, type: 3}
       propertyPath: m_LocalPosition.x

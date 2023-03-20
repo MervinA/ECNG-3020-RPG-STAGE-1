@@ -5,6 +5,7 @@ using System;
 using TMPro;
 using UnityEngine.UI;
 
+
 public class GradeScript : MonoBehaviour
 {
      public CalendarData clockinfo; 
@@ -15,6 +16,7 @@ public class GradeScript : MonoBehaviour
     [SerializeField] private ExamBoolValue[] ExamCompletion; 
     [SerializeField] private CourseEvent[] courseinfo;
     [SerializeField] private Inventory playerinventory; 
+    [SerializeField] private Grades[] courseGradesSO;
 
 
     
@@ -35,6 +37,7 @@ public class GradeScript : MonoBehaviour
             {
                 courseGrades[i].text = "Course: " + courseinfo[i].CourseType + courseinfo[i].CourseCode + "\nGrade :" + CourseGrade();
                 //courseGrades[i].text = "the grade is"; 
+               courseGradesSO[i].RuntimeValue = CourseGrade() ;
             }       
         }
     }
@@ -86,6 +89,10 @@ public class GradeScript : MonoBehaviour
                     } 
                 }
             } 
+            else 
+            {
+                course_grade = "Incomplete: " + courseinfo[i].CourseAssignmentCode;
+            }
         }
         return course_grade; 
     }
