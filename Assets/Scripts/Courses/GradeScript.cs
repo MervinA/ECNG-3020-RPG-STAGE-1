@@ -109,7 +109,7 @@ public class GradeScript : MonoBehaviour
         if (courseinfo[i].CourseCode == courseCode)
         {
             courseGradesSO[i].RuntimeValue = grade;
-            courseGrades[i].text = grade;
+           courseGrades[i].text = "Course: " + courseinfo[i].CourseType + courseinfo[i].CourseCode + "\nGrade :" + grade;
             break;
         }
     }
