@@ -47,7 +47,7 @@ public class EventDoor : Interactable
             } 
         }
     }
-    public void OpenDooDungeonr() 
+    public void OpenDoor() 
 {
 //Turn off the door's sprite renderer
         

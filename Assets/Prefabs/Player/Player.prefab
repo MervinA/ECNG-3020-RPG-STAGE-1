@@ -523,14 +523,14 @@ GameObject:
   m_Component:
   - component: {fileID: 3201987939653106294}
   - component: {fileID: 3201987939653106295}
+  - component: {fileID: 8532671319493142655}
   - component: {fileID: 3201987939653106292}
   - component: {fileID: 3201987939653106293}
-  - component: {fileID: 3201987939653106297}
   - component: {fileID: 3201987939653106296}
   - component: {fileID: 3201987939653106299}
+  - component: {fileID: 3201987939653106297}
   - component: {fileID: 285500780}
   - component: {fileID: 285500782}
-  - component: {fileID: 8532671319493142655}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -611,6 +611,17 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!210 &8532671319493142655
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3201987939653106290}
+  m_Enabled: 1
+  m_SortingLayerID: -27043503
+  m_SortingLayer: 5
+  m_SortingOrder: 0
 --- !u!50 &3201987939653106292
 Rigidbody2D:
   serializedVersion: 4
@@ -658,27 +669,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.5077362, y: 0.4366293}
   m_EdgeRadius: 0
---- !u!114 &3201987939653106297
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3201987939653106290}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3d2c51dda4fe0e245b15f49dbae30e9f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currentState: 0
-  currentAttackState: 0
-  speed: 7
-  currentHealth: {fileID: 11400000, guid: a3540b8a13ec3a04fbf004dcebcef426, type: 2}
-  PlayerHealthSignal: {fileID: 11400000, guid: e43ba7f87279126409ca8c1db6d42ce0, type: 2}
-  playerDeathSignal: {fileID: 0}
-  playerInventory: {fileID: 11400000, guid: 81a005c450129524e90d00685adafa2d, type: 2}
-  receivedItemSprite: {fileID: 982607789}
-  projectile: {fileID: 0}
 --- !u!95 &3201987939653106296
 Animator:
   serializedVersion: 5
@@ -725,6 +715,27 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.5196228, y: 2.5095873}
   m_EdgeRadius: 0
+--- !u!114 &3201987939653106297
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3201987939653106290}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d2c51dda4fe0e245b15f49dbae30e9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentState: 0
+  currentAttackState: 0
+  speed: 7
+  currentHealth: {fileID: 11400000, guid: a3540b8a13ec3a04fbf004dcebcef426, type: 2}
+  PlayerHealthSignal: {fileID: 11400000, guid: e43ba7f87279126409ca8c1db6d42ce0, type: 2}
+  playerDeathSignal: {fileID: 0}
+  playerInventory: {fileID: 11400000, guid: 81a005c450129524e90d00685adafa2d, type: 2}
+  receivedItemSprite: {fileID: 982607789}
+  projectile: {fileID: 0}
 --- !u!114 &285500780
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -767,17 +778,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   contextClue: {fileID: 102770776}
   contextActive: 0
---- !u!210 &8532671319493142655
-SortingGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3201987939653106290}
-  m_Enabled: 1
-  m_SortingLayerID: -27043503
-  m_SortingLayer: 5
-  m_SortingOrder: 0
 --- !u!1 &3201987939722276392
 GameObject:
   m_ObjectHideFlags: 0

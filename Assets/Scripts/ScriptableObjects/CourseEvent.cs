@@ -10,6 +10,7 @@ public class CourseEvent : ScriptableObject
    public string CourseType; 
    public string CourseAssignment; 
    public int CourseAssignmentCode; 
+   public bool Finals; 
    public int EventType; 
    public int hours; 
    public int minutes; 
@@ -18,6 +19,7 @@ public class CourseEvent : ScriptableObject
    public int year; 
    public int reminderDate; 
    public int[] daysOfWeek;
+
 
  
 }

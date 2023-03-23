@@ -12,6 +12,7 @@ public class ExamBoolValue : ScriptableObject
    public bool RuntimeValue;
 
    public int assignmentCode;
+   public int courseCode; 
   
 }
 
