@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class DungeonRoomsEnemyControl : DungeonRooms
 {
+    public float waittime; 
     public DoorObject[] doors; 
 
     /*public override void Start()
@@ -55,6 +56,7 @@ public int EnemiesActive()
             ChangeActivation(pots[i], true); 
         }
         virtualCamera.SetActive(true); 
+        if(enemies.Length > 0)
         StartCoroutine(DoorCloseWaitCo());
       
     }
@@ -79,7 +81,7 @@ public int EnemiesActive()
     private  IEnumerator DoorCloseWaitCo()
     {
         
-        yield return new WaitForSecondsRealtime(0.5f);
+        yield return new WaitForSecondsRealtime(waittime);
           for(int i = 0; i < doors.Length; i++)
         {
             ChangeActivation(doors[i], true); 

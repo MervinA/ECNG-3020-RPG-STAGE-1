@@ -24,7 +24,7 @@ public class PlayerMovement : MonoBehaviour
     public PlayerAttackType currentAttackState; 
     
     [Header("Player Physics Characteristics")]
-     public float speed; 
+     private float speed = 7; 
     public static string spawnPointName; 
     private Rigidbody2D myRigidbody; 
     private Animator animator;
@@ -85,6 +85,7 @@ public class PlayerMovement : MonoBehaviour
         {
             currentAttackState = PlayerAttackType.sword; 
             animator.SetInteger("WeaponState", 0); 
+            speed = 11;
         }
 
         if(Input.GetButton("sword") && currentState != PlayerState.attack && 
