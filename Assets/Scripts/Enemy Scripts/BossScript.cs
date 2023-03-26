@@ -15,6 +15,7 @@ public class BossScript : Boss
     public float chaseRadius; 
     public float attackRadius; 
     public float roundingDistance; 
+    public int courseAssignmentCode; 
 
     [Header("")]
     public Animator anim; 

@@ -348,8 +348,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clockinfo: {fileID: 11400000, guid: daa2e61e6cbde5048af01dfdfcacbfc9, type: 2}
-  courseinfo:
-  - {fileID: 11400000, guid: a40c692e4353f914299c0989fa245035, type: 2}
   courseGrades:
   - {fileID: 1769550123485625575}
   - {fileID: 1769550124626642592}
@@ -358,10 +356,24 @@ MonoBehaviour:
   - {fileID: 5501109673577836983}
   - {fileID: 6575269061283115657}
   BossKills:
+  - {fileID: 11400000, guid: b072ee9b1ed6f8349afde221a18e7618, type: 2}
+  - {fileID: 11400000, guid: d1210d73075bc054e9eecade28fd1634, type: 2}
+  - {fileID: 11400000, guid: 3aee8d24477478d46abe523e9a669eb9, type: 2}
   - {fileID: 11400000, guid: 1aa9c361187c6f04aa7690e93aa5028b, type: 2}
   ExamCompletion:
-  - {fileID: 11400000, guid: 12f7489ccfb7d4d42a6a1e428b63bd9c, type: 2}
+  - {fileID: 11400000, guid: 78bfba6a8f9a60143843463b7ce268c4, type: 2}
+  - {fileID: 11400000, guid: d03254f9e1b778e4f93cc0c6c87d4214, type: 2}
+  - {fileID: 11400000, guid: 62db3fff270a94d46940a12c09f0ad80, type: 2}
+  - {fileID: 11400000, guid: cb4dfd4f324416047b465b46b6e4a042, type: 2}
+  courseinfo:
+  - {fileID: 11400000, guid: f80e1be272cfb48469f7e8e985f43de5, type: 2}
+  - {fileID: 11400000, guid: d056731c226172d4cbad3e82a3d2b82f, type: 2}
+  - {fileID: 11400000, guid: 90966490c1c974248899da391e919565, type: 2}
+  - {fileID: 11400000, guid: a40c692e4353f914299c0989fa245035, type: 2}
   playerinventory: {fileID: 11400000, guid: 81a005c450129524e90d00685adafa2d, type: 2}
+  courseGradesSO:
+  - {fileID: 11400000, guid: cf6564c1b8b0c994eaea8fe8c5df9a0d, type: 2}
+  - {fileID: 11400000, guid: 591629ade73823f4d912c2560a0de0ad, type: 2}
 --- !u!1 &1769550123485625593
 GameObject:
   m_ObjectHideFlags: 0

@@ -83,9 +83,9 @@ public class PlayerMovement : MonoBehaviour
         if(Input.GetButton("unhanded") && currentState != PlayerState.attack && 
         currentState != PlayerState.stagger && this.gameObject.CompareTag("Player"))
         {
-            currentAttackState = PlayerAttackType.sword; 
+            currentAttackState = PlayerAttackType.unhanded; 
             animator.SetInteger("WeaponState", 0); 
-            speed = 11;
+            speed = 13;
         }
 
         if(Input.GetButton("sword") && currentState != PlayerState.attack && 
@@ -93,23 +93,27 @@ public class PlayerMovement : MonoBehaviour
         {
             currentAttackState = PlayerAttackType.sword; 
             animator.SetInteger("WeaponState", 1); 
+             speed = 10;
         }
         else if (Input.GetButton("axe") && currentState != PlayerState.attack && 
         currentState != PlayerState.stagger && this.gameObject.CompareTag("Player"))
         {
             currentAttackState = PlayerAttackType.axe;
             animator.SetInteger("WeaponState", 2); 
+             speed = 7;
         }
         else if (Input.GetButton("bow") && currentState != PlayerState.attack && 
         currentState != PlayerState.stagger && this.gameObject.CompareTag("Player"))
         {
             currentAttackState = PlayerAttackType.bow;
+             speed = 11;
         }
         else if (Input.GetButton("spear") && currentState != PlayerState.attack && 
         currentState != PlayerState.stagger && this.gameObject.CompareTag("Player"))
         {
             currentAttackState = PlayerAttackType.spear;
-             animator.SetInteger("WeaponState", 4); 
+             animator.SetInteger("WeaponState", 4);
+              speed = 8; 
         }
     #endregion
 

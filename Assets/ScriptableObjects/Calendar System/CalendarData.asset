@@ -12,14 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4586cd83f07f4464f867077c819ea6ac, type: 3}
   m_Name: CalendarData
   m_EditorClassIdentifier: 
-  mm: 3
-  hh: 5
-  date: 22
-  actualMonth: 11
-  yy: 2022
-  daysPassed: 355
-  dayOfWeek: 4
-  maxMonthDays: 31
+  mm: 29
+  hh: 8
+  date: 1
+  actualMonth: 1
+  yy: 2023
+  daysPassed: 396
+  dayOfWeek: 3
+  maxMonthDays: 28
   initial_mm: 0
   initial_hh: 8
   initial_date: 4

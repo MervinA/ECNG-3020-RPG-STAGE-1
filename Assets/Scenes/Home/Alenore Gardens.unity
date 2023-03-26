@@ -80659,54 +80659,6 @@ PrefabInstance:
       propertyPath: clock
       value: 
       objectReference: {fileID: 1597121099}
-    - target: {fileID: 1769550122997832444, guid: 99b62a7d6d4526847885dff2e3605df8, type: 3}
-      propertyPath: BossKills.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1769550122997832444, guid: 99b62a7d6d4526847885dff2e3605df8, type: 3}
-      propertyPath: courseinfo.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1769550122997832444, guid: 99b62a7d6d4526847885dff2e3605df8, type: 3}
-      propertyPath: BossKills.Array.data[0]
-      value: 
-      objectReference: {fileID: 11400000, guid: d1210d73075bc054e9eecade28fd1634, type: 2}
-    - target: {fileID: 1769550122997832444, guid: 99b62a7d6d4526847885dff2e3605df8, type: 3}
-      propertyPath: BossKills.Array.data[1]
-      value: 
-      objectReference: {fileID: 11400000, guid: 1aa9c361187c6f04aa7690e93aa5028b, type: 2}
-    - target: {fileID: 1769550122997832444, guid: 99b62a7d6d4526847885dff2e3605df8, type: 3}
-      propertyPath: courseinfo.Array.data[0]
-      value: 
-      objectReference: {fileID: 11400000, guid: d056731c226172d4cbad3e82a3d2b82f, type: 2}
-    - target: {fileID: 1769550122997832444, guid: 99b62a7d6d4526847885dff2e3605df8, type: 3}
-      propertyPath: courseinfo.Array.data[1]
-      value: 
-      objectReference: {fileID: 11400000, guid: a40c692e4353f914299c0989fa245035, type: 2}
-    - target: {fileID: 1769550122997832444, guid: 99b62a7d6d4526847885dff2e3605df8, type: 3}
-      propertyPath: ExamCompletion.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1769550122997832444, guid: 99b62a7d6d4526847885dff2e3605df8, type: 3}
-      propertyPath: courseGradesSO.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1769550122997832444, guid: 99b62a7d6d4526847885dff2e3605df8, type: 3}
-      propertyPath: ExamCompletion.Array.data[0]
-      value: 
-      objectReference: {fileID: 11400000, guid: d03254f9e1b778e4f93cc0c6c87d4214, type: 2}
-    - target: {fileID: 1769550122997832444, guid: 99b62a7d6d4526847885dff2e3605df8, type: 3}
-      propertyPath: ExamCompletion.Array.data[1]
-      value: 
-      objectReference: {fileID: 11400000, guid: cb4dfd4f324416047b465b46b6e4a042, type: 2}
-    - target: {fileID: 1769550122997832444, guid: 99b62a7d6d4526847885dff2e3605df8, type: 3}
-      propertyPath: courseGradesSO.Array.data[0]
-      value: 
-      objectReference: {fileID: 11400000, guid: cf6564c1b8b0c994eaea8fe8c5df9a0d, type: 2}
-    - target: {fileID: 1769550122997832444, guid: 99b62a7d6d4526847885dff2e3605df8, type: 3}
-      propertyPath: courseGradesSO.Array.data[1]
-      value: 
-      objectReference: {fileID: 11400000, guid: cf6564c1b8b0c994eaea8fe8c5df9a0d, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 99b62a7d6d4526847885dff2e3605df8, type: 3}
 --- !u!1 &950924983 stripped

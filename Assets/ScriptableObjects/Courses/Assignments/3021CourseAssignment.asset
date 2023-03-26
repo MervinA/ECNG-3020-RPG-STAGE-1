@@ -15,13 +15,14 @@ MonoBehaviour:
   CourseCode: 3021
   ThematicType: 2
   CourseType: ECNG
-  CourseAssignment: Midterm
-  CourseAssignmentCode: 1
+  CourseAssignment: Finals
+  CourseAssignmentCode: 302101
+  Finals: 1
   EventType: 1
   hours: 12
   minutes: 0
-  month: 0
-  date: 6
-  year: 2023
+  month: 11
+  date: 1
+  year: 2022
   reminderDate: 0
   daysOfWeek: 

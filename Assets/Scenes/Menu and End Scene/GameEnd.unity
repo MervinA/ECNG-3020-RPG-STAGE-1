@@ -822,6 +822,7 @@ MonoBehaviour:
   EndText: {fileID: 1595957655}
   courseGradesSO:
   - {fileID: 11400000, guid: cf6564c1b8b0c994eaea8fe8c5df9a0d, type: 2}
+  - {fileID: 11400000, guid: 591629ade73823f4d912c2560a0de0ad, type: 2}
 --- !u!114 &1634470158
 MonoBehaviour:
   m_ObjectHideFlags: 0

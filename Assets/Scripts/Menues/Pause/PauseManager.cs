@@ -43,6 +43,7 @@ public class PauseManager : MonoBehaviour
 public void Controls()
     {
         controlsender.Raise();
+        
     }
 
 
