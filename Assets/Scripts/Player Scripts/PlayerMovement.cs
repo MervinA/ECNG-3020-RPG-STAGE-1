@@ -66,10 +66,10 @@ public class PlayerMovement : MonoBehaviour
         animator.SetFloat("MoveX", 0);
         animator.SetFloat("MoveY", -1);
     }
-    // Update is called once per frame
-    void Update() // can be changed to Update()
+   
+    void Update() 
     {
-        //is the player in an interaction
+       
         if(currentState == PlayerState.interact)
         {
           return;   
@@ -268,7 +268,7 @@ public class PlayerMovement : MonoBehaviour
 
         change.Normalize();
         myRigidbody.MovePosition(
-            transform.position + change * speed * Time.fixedDeltaTime  //can be changed to deltaTime
+            transform.position + change * speed * Time.fixedDeltaTime  
             );
     }
     public void Knock(float knockTime, float damage)

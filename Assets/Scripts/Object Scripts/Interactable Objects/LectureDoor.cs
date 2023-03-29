@@ -17,7 +17,7 @@ public class LectureDoor : Interactable
     public CourseEvent[] courseinfo; 
     public CalendarData currtime; 
 
-    [SerializeField] private BoolValue examComplted; 
+    //[SerializeField] private BoolValue examComplted; 
     // Start is called before the first frame update
     private void Start() 
     {

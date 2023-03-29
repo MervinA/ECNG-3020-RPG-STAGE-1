@@ -74,17 +74,21 @@ public class GradeScript : MonoBehaviour
         {
             grade = "A";
         }
-        else
+        else if(playerinventory.CompSysCoins>25)
         {
             grade = "B";
         }
+        else if (playerinventory.CompSysCoins < 15 )
+        {
+            grade = "C"; 
+        }
     }
-    else if ((completedAssignments >= totalAssignments - 1) && (completedAssignments != 0))
-    {
+    else if ((completedAssignments >= (int)(totalAssignments / 2)) && (playerinventory.CompSysCoins > 25))
+        {
         grade = "B";
-    }
-    else if ((completedAssignments >= totalAssignments - 2) && (completedAssignments != 0))
-    {
+        }
+    else if ((completedAssignments <= (int)(totalAssignments/2)) && (playerinventory.CompSysCoins <= 25))
+        {
         grade = "C";
     }
     else 

@@ -42,25 +42,21 @@ public class EndScene : MonoBehaviour
             }
         }
 
-        if (aCount == courseGradesSO.Length)
+        if (aCount > (bCount+cCount))
         {
             EndingRating[0].SetActive(true);
             EndText.text = "Congratulations!! You Have Achieved The Gold Ending, Excellent Work!!";
         }
-        else if (aCount == 0 && bCount == 1)
-        {
-            EndingRating[2].SetActive(true);
-            EndText.text = "You Have Achieved The Copper Ending, There Is Work To Be Done";
-        }
-        else if (aCount > 0 && bCount > 0 && cCount == 0)
+        else if (bCount>= (aCount+cCount))
         {
             EndingRating[1].SetActive(true);
             EndText.text = "Good Job, You Have Achieved The Silver Ending";
         }
-        else if (aCount > cCount)
+        
+        else if (cCount > (aCount+bCount))
         {
-            EndingRating[0].SetActive(true);
-            EndText.text = "Congratulations!! You Have Achieved The Gold Ending, Excellent Work!!";
+            EndingRating[2].SetActive(true);
+            EndText.text = "You Have Achieved The Copper Ending, There Is Work To Be Done";
         }
         else
         {

@@ -1,4 +1,4 @@
-Oh, are you a new student? 
+Oh, are you a Year 3 student? 
     *[Yes] Yes i am  
     OK good, and you're here for the Orientation right? 
         **[Yes] Yes, i hope i'm in the right classroom

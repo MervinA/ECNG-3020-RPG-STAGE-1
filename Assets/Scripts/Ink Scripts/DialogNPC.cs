@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class DialogNPC : Interactable
 {
-    [SerializeField] private SignalSender branchingDialogSignal; 
-    [SerializeField] private SignalSender branchingDialogSignalExit; 
-   
+    [SerializeField] private SignalSender branchingDialogSignal;
+    [SerializeField] private SignalSender branchingDialogSignalExit;
+
     private Vector3 directionVector;
     private Transform myTransform;
     public float speed;
@@ -20,12 +20,12 @@ public class DialogNPC : Interactable
     public float minWaitTime;
     public float maxWaitTime;
     private float waitTimeSeconds;
-    public GameObject player; 
+    public GameObject player;
 
     // Start is called before the first frame update
     void Start()
     {
-       
+
         moveTimeSeconds = Random.Range(minMoveTime, maxMoveTime);
         waitTimeSeconds = Random.Range(minMoveTime, maxMoveTime);
         anim = GetComponent<Animator>();
@@ -35,30 +35,30 @@ public class DialogNPC : Interactable
     }
 
     // Update is called once per frame
-    public  void Update()
+    public void Update()
     {
-        if(playerInRange)
+        if (playerInRange)
         {
-            if(Input.GetKeyDown(KeyCode.Space))
+            if (Input.GetKeyDown(KeyCode.Space))
             {
                 branchingDialogSignal.Raise();
             }
-            
+
         }
-       /* else if (!playerInRange)
-        {
-            branchingDialogSignal.Raise();
-        }*/
-        
-        if(isMoving)
+        /* else if (!playerInRange)
+         {
+             branchingDialogSignal.Raise();
+         }*/
+
+        if (isMoving)
         {
             moveTimeSeconds -= Time.deltaTime;
-            if(moveTimeSeconds<= 0)
+            if (moveTimeSeconds <= 0)
             {
                 anim.SetBool("paused", true);
                 moveTimeSeconds = Random.Range(minMoveTime, maxMoveTime);
                 isMoving = false;
-                
+
             }
             if (!playerInRange)
             {
@@ -68,71 +68,71 @@ public class DialogNPC : Interactable
         }
         else
         {
-            if(playerInRange==false)
+            if (playerInRange == false)
             {
                 waitTimeSeconds -= Time.deltaTime;
-                if(waitTimeSeconds <= 0)
+                if (waitTimeSeconds <= 0)
                 {
                     ChooseDifferentDirection();
                     isMoving = true;
                     waitTimeSeconds = Random.Range(minMoveTime, maxMoveTime);
                 }
             }
-            if(playerInRange==true)
+            if (playerInRange == true)
             {
-                
-                playerDirection();  
-                isMoving = false; 
-                anim.SetBool("paused", true); 
+
+                playerDirection();
+                isMoving = false;
+                anim.SetBool("paused", true);
                 waitTimeSeconds = Random.Range(minMoveTime, maxMoveTime);
-            
+
             }
         }
     }
 
- public override void OnTriggerExit2D(Collider2D  other)
+    public override void OnTriggerExit2D(Collider2D other)
     {
 
-         if((other.CompareTag("Player") ||other.CompareTag("Player_Passive")) && !other.isTrigger)
+        if ((other.CompareTag("Player") || other.CompareTag("Player_Passive")) && !other.isTrigger)
         {
             context.Raise();
-            playerInRange = false; 
+            playerInRange = false;
             branchingDialogSignalExit.Raise();
         }
     }
     private void playerDirection()
     {
         Vector3 playerDirection = player.transform.position - myTransform.position;
-         Vector3 roundedDirection = new Vector3(
-            Mathf.Round(playerDirection.x),
-            Mathf.Round(playerDirection.y),
-            Mathf.Round(playerDirection.z));
+        Vector3 roundedDirection = new Vector3(
+           Mathf.Round(playerDirection.x),
+           Mathf.Round(playerDirection.y),
+           Mathf.Round(playerDirection.z));
         if (roundedDirection.x > 0)
         {
             // Player is to the right of this GameObject
-             roundedDirection = Vector3.right;
-             
+            roundedDirection = Vector3.right;
+
         }
         else if (roundedDirection.x < 0)
         {
             // Player is to the left of this GameObject
             roundedDirection = Vector3.left;
-              
+
         }
 
         if (roundedDirection.y > 0)
         {
             // Player is above this GameObject
             roundedDirection = Vector3.up;
-            
-            
+
+
         }
         else if (roundedDirection.y < 0)
         {
             // Player is below this GameObject
             roundedDirection = Vector3.down;
-            
-             
+
+
         }
         UpdateAnim(roundedDirection);
     }
@@ -165,7 +165,7 @@ public class DialogNPC : Interactable
     void ChangeDirection()
     {
         int direction = Random.Range(0, 4);
-        switch(direction)
+        switch (direction)
         {
             case 0:
                 // Walking to the right
